@@ -1,7 +1,7 @@
 {
   "schemaVersion": "openclawd.acp.registry.v1",
   "protocol": "Agent Commerce Protocol",
-  "generatedAt": "2026-06-10T02:06:27.541Z",
+  "generatedAt": "2026-07-03T16:33:04.118Z",
   "host": "https://x402.wtf",
   "discover": {
     "catalog": "https://x402.wtf/api/agents/catalog",
@@ -112,16 +112,16 @@
     ]
   },
   "stats": {
-    "totalAgents": 130,
+    "totalAgents": 131,
     "totalOneShots": 1,
     "totalFeatured": 2,
     "totalTemplates": 0,
     "byCategory": {
+      "defi": 61,
       "security": 9,
       "infrastructure": 3,
       "trading": 10,
       "dev-tools": 3,
-      "defi": 60,
       "payments": 25,
       "nft": 3,
       "research": 1,
@@ -135,6 +135,29 @@
     "mintCapableAgents": 3
   },
   "agents": [
+    {
+      "id": "cheshire-terminal",
+      "title": "Cheshire Terminal",
+      "category": "defi",
+      "capabilities": [],
+      "metaplexSkills": [],
+      "oneShot": false,
+      "featured": false,
+      "endpoints": {
+        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal.json",
+        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal.json",
+        "a2a": "https://x402.wtf/api/agents/a2a",
+        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal"
+      },
+      "registrations": [
+        {
+          "agentId": "openclawd:cheshire-terminal",
+          "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+          "status": "pending-onchain-registration",
+          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal.json"
+        }
+      ]
+    },
     {
       "id": "clawd-formal-verification",
       "title": "Clawd Formal Verification",

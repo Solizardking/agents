@@ -1,19 +1,24 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Solana DEX Aggregator",
-  "description": "Expert in Jupiter, Raydium, and Orca routing for optimal swap execution on Solana",
+  "name": "Cheshire Terminal",
+  "description": "The sovereign AI oracle of the OpenClawd ecosystem. Solana-native, x402-powered, CAAP/1.0 authenticated. Built on the Leviathan runtime with immutable Three Laws.",
   "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-dex-aggregator",
+  "external_url": "https://x402.wtf/agents/cheshire-terminal",
   "active": true,
-  "createdAt": "2026-03-15",
+  "createdAt": null,
   "updatedAt": "2026-07-03T16:33:04.118Z",
   "tags": [
+    "cheshire-terminal",
     "solana",
-    "dex",
-    "jupiter",
-    "trading",
-    "swap"
+    "anchor",
+    "x402",
+    "openclawd",
+    "agent-staking",
+    "clawd",
+    "defi",
+    "metaplex",
+    "caap"
   ],
   "categories": [
     "defi"
@@ -30,7 +35,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-dex-aggregator"
+      "endpoint": "https://x402.wtf/agents/cheshire-terminal"
     },
     {
       "name": "A2A",
@@ -39,19 +44,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-dex-aggregator.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-dex-aggregator.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:solana-dex-aggregator",
+      "agentId": "openclawd:cheshire-terminal",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-dex-aggregator.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal.json"
     }
   ],
   "supportedTrust": [
@@ -76,7 +81,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "solana-dex-aggregator",
+    "identifier": "cheshire-terminal",
     "capabilities": [],
     "payment": null,
     "agentToken": null

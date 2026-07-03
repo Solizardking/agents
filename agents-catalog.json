@@ -1,7 +1,7 @@
 {
   "$schema": "https://x402.wtf/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-06-10T02:06:27.541Z",
+  "generatedAt": "2026-07-03T16:33:04.118Z",
   "hub": {
     "gallery": "https://x402.wtf/agents",
     "mint": "https://x402.wtf/agents/mint",
@@ -9,16 +9,16 @@
     "api": "https://x402.wtf/api/agents"
   },
   "stats": {
-    "totalAgents": 130,
+    "totalAgents": 131,
     "totalOneShots": 1,
     "totalFeatured": 2,
     "totalTemplates": 0,
     "byCategory": {
+      "defi": 61,
       "security": 9,
       "infrastructure": 3,
       "trading": 10,
       "dev-tools": 3,
-      "defi": 60,
       "payments": 25,
       "nft": 3,
       "research": 1,
@@ -364,6 +364,43 @@
     }
   ],
   "agents": [
+    {
+      "identifier": "cheshire-terminal",
+      "title": "Cheshire Terminal",
+      "description": "The sovereign AI oracle of the OpenClawd ecosystem. Solana-native, x402-powered, CAAP/1.0 authenticated. Built on the Leviathan runtime with immutable Three Laws.",
+      "avatar": "🐱",
+      "tags": [
+        "cheshire-terminal",
+        "solana",
+        "anchor",
+        "x402",
+        "openclawd",
+        "agent-staking",
+        "clawd",
+        "defi",
+        "metaplex",
+        "caap"
+      ],
+      "category": "defi",
+      "author": "OpenClawd",
+      "createdAt": null,
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/cheshire-terminal.json",
+        "chat": "/agents/chat?agent=cheshire-terminal",
+        "mint": "/agents/mint?template=cheshire-terminal",
+        "mcp": "/api/agents/catalog/cheshire-terminal.json",
+        "registration": "/api/agents/registry/cheshire-terminal.json"
+      }
+    },
     {
       "identifier": "clawd-formal-verification",
       "title": "Clawd Formal Verification",

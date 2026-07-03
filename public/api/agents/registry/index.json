@@ -1,10 +1,17 @@
 {
   "schemaVersion": "openclawd.metaplex.registry.index.v1",
-  "generatedAt": "2026-06-10T02:06:27.541Z",
+  "generatedAt": "2026-07-03T16:33:04.118Z",
   "registry": "metaplex-agent-registry",
   "host": "https://x402.wtf",
-  "count": 130,
+  "count": 131,
   "agents": [
+    {
+      "id": "cheshire-terminal",
+      "name": "Cheshire Terminal",
+      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
     {
       "id": "clawd-formal-verification",
       "name": "Clawd Formal Verification",

@@ -1,0 +1,3 @@
+.DS_Store
+cli/dist/
+cloudflare-agent-api/.wrangler/
