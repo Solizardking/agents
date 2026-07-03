@@ -123,7 +123,7 @@ const replacements = [
   [/\bClawd Router\b/g, "Cheshire Terminal Router"],
   [/x402agent/g, "cheshire-terminal"],
   [/([{\s,])cheshire-terminal-solana-agents:/g, '$1"cheshire-terminal-solana-agents":'],
-  [/\.cheshire-terminal-solana-agents\b/g, '["cheshire-terminal-solana-agents"]'],
+  [/\bdoc\.cheshire-terminal-solana-agents\b/g, 'doc["cheshire-terminal-solana-agents"]'],
   [/api: `\$\{HOST\}\/api\/agents`,/g, 'api: `${HOST}/api/clawd/browser-agents`,'],
   [
     /\[path\.join\("\.well-known", "ai-plugin\.json"\), path\.join\(WELL_KNOWN_DIR, "ai-plugin\.json"\)\]/g,
