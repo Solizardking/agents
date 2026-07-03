@@ -1,0 +1,215 @@
+    Blocking waiting for file lock on package cache
+   0.147150708s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+   0.147174250s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-2b00f19d2222ec71/lib-solana_gpt_oracle`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.150120167s  INFO prepare_target{force=false package_id=anchor-lang v0.31.1 target="anchor_lang"}: cargo::core::compiler::fingerprint: fingerprint error for anchor-lang v0.31.1/Check { test: false }/TargetInner { ..: lib_target("anchor_lang", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anchor-lang-0.31.1/src/lib.rs", Edition2021) }
+   0.150128708s  INFO prepare_target{force=false package_id=anchor-lang v0.31.1 target="anchor_lang"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/anchor-lang-8c0d84923022c5be/lib-anchor_lang`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.155061333s  INFO prepare_target{force=false package_id=solana-program v2.3.0 target="solana_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-program v2.3.0/Check { test: false }/TargetInner { ..: lib_target("solana_program", ["cdylib", "rlib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-2.3.0/src/lib.rs", Edition2021) }
+   0.155073625s  INFO prepare_target{force=false package_id=solana-program v2.3.0 target="solana_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-program-4202030d3a84052c/lib-solana_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.163756833s  INFO prepare_target{force=false package_id=solana-secp256k1-recover v2.2.1 target="solana_secp256k1_recover"}: cargo::core::compiler::fingerprint: fingerprint error for solana-secp256k1-recover v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_secp256k1_recover", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-secp256k1-recover-2.2.1/src/lib.rs", Edition2021) }
+   0.163769250s  INFO prepare_target{force=false package_id=solana-secp256k1-recover v2.2.1 target="solana_secp256k1_recover"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-secp256k1-recover-07580c4bde30e691/lib-solana_secp256k1_recover`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.164039958s  INFO prepare_target{force=false package_id=libsecp256k1 v0.6.0 target="libsecp256k1"}: cargo::core::compiler::fingerprint: fingerprint error for libsecp256k1 v0.6.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("libsecp256k1", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libsecp256k1-0.6.0/src/lib.rs", Edition2018) }
+   0.164045958s  INFO prepare_target{force=false package_id=libsecp256k1 v0.6.0 target="libsecp256k1"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/libsecp256k1-12964b37f46c3f87/lib-libsecp256k1`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.166789833s  INFO prepare_target{force=false package_id=solana-sysvar v2.3.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint: fingerprint error for solana-sysvar v2.3.0/Check { test: false }/TargetInner { ..: lib_target("solana_sysvar", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sysvar-2.3.0/src/lib.rs", Edition2021) }
+   0.166799792s  INFO prepare_target{force=false package_id=solana-sysvar v2.3.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-sysvar-813cb2ec009b1fe4/lib-solana_sysvar`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.167645625s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
+   0.167651750s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/ephemeral-rollups-sdk-f5a6be4b1f924f82/lib-ephemeral_rollups_sdk`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.173480708s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: true }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+   0.173489458s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-22659ac60e780b72/test-lib-solana_gpt_oracle`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking libsecp256k1 v0.6.0
+    Checking solana-sysvar v2.3.0
+    Checking ephemeral-rollups-sdk v0.2.4
+error: could not compile `ephemeral-rollups-sdk` (lib) due to 13 previous errors
+warning: build failed, waiting for other jobs to finish...
+    Checking solana-secp256k1-recover v2.2.1
+    Checking solana-program v2.3.0
+    Checking anchor-lang v0.31.1
