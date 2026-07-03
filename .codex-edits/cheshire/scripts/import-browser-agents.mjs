@@ -98,6 +98,10 @@ function uniqueStrings(values) {
   return Array.from(new Set((values ?? []).filter(Boolean)));
 }
 
+function arrayValue(value) {
+  return Array.isArray(value) ? value : [];
+}
+
 function summarizeText(raw, maxLines = 6) {
   return raw
     .split("\n")
@@ -142,17 +146,17 @@ function findAgentSourceFile(identifier) {
 
 function normalizeAgent(raw, catalogEntry, sourceFile) {
   const capabilities = uniqueStrings([
-    ...(raw.capabilities ?? []),
-    ...(raw.solana?.capabilities ?? []),
+    ...arrayValue(raw.capabilities),
+    ...arrayValue(raw.solana?.capabilities),
   ]);
 
   const metaplexSkills = uniqueStrings([
-    ...(raw.metaplexSkills ?? []),
-    ...(raw.solana?.metaplexSkills ?? []),
+    ...arrayValue(raw.metaplexSkills),
+    ...arrayValue(raw.solana?.metaplexSkills),
   ]);
 
-  const vulcanSkills = uniqueStrings(raw.solana?.vulcanSkills ?? []);
-  const skillPaths = uniqueStrings(raw.solana?.skillPaths ?? []);
+  const vulcanSkills = uniqueStrings(arrayValue(raw.solana?.vulcanSkills));
+  const skillPaths = uniqueStrings(arrayValue(raw.solana?.skillPaths));
 
   return {
     id: raw.identifier,
