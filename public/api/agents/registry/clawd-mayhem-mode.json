@@ -21,9 +21,7 @@
     "launch",
     "one-shot"
   ],
-  "categories": [
-    "trading"
-  ],
+  "categories": ["trading"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -60,11 +58,7 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-mayhem-mode.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
     "programs": [
       "agent-registry",

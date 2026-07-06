@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "🐋",
     "description": "Tracks and analyzes whale wallet movements, accumulation/distribution patterns on Solana",
-    "tags": [
-      "whale",
-      "wallet-tracking",
-      "accumulation",
-      "distribution"
-    ],
+    "tags": ["whale", "wallet-tracking", "accumulation", "distribution"],
     "title": "Whale Wallet Intelligence"
   },
   "pluginCount": 0,

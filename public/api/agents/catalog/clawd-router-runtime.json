@@ -13,10 +13,7 @@
       "mountedAt": "./agents/clawdrouter",
       "sourcePath": "../clawdrouter",
       "package": "@solana-clawd/clawdrouter",
-      "entrypoints": [
-        "src/index.ts",
-        "src/types.ts"
-      ],
+      "entrypoints": ["src/index.ts", "src/types.ts"],
       "hostedEndpoint": "https://clawdrouter.fly.dev",
       "smokeCommand": "cd clawdrouter && npm test"
     }
@@ -46,13 +43,8 @@
   "payment": {
     "enabled": true,
     "network": "solana-mainnet",
-    "protocols": [
-      "x402"
-    ],
-    "acceptedCurrencies": [
-      "USDC",
-      "CLAWD"
-    ],
+    "protocols": ["x402"],
+    "acceptedCurrencies": ["USDC", "CLAWD"],
     "approvalMode": "api-key"
   },
   "pluginCount": 0,
@@ -66,9 +58,7 @@
       "openai-compatible-api",
       "read-only"
     ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "metaplexSkills": ["agent-registry"]
   },
   "tokenUsage": 0
 }

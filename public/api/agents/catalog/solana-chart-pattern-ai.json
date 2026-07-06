@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "👁️",
     "description": "Computer vision-powered chart pattern detection for Solana token charts",
-    "tags": [
-      "chart-patterns",
-      "computer-vision",
-      "ai",
-      "pattern-recognition"
-    ],
+    "tags": ["chart-patterns", "computer-vision", "ai", "pattern-recognition"],
     "title": "AI Chart Pattern Recognition"
   },
   "pluginCount": 0,

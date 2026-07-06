@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "🔍",
     "description": "Identifies and executes arbitrage opportunities across Solana DEXes and CEXes",
-    "tags": [
-      "arbitrage",
-      "cross-dex",
-      "profit",
-      "scanner"
-    ],
+    "tags": ["arbitrage", "cross-dex", "profit", "scanner"],
     "title": "Cross-DEX Arbitrage Scanner"
   },
   "pluginCount": 0,

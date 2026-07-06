@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -48,17 +41,8 @@
           "objective": "Emit provider docs and registry-ready metadata"
         }
       ],
-      "inputs": [
-        "task",
-        "budget",
-        "wallet-state"
-      ],
-      "outputs": [
-        "decision",
-        "provider",
-        "cost-breakdown",
-        "result"
-      ],
+      "inputs": ["task", "budget", "wallet-state"],
+      "outputs": ["decision", "provider", "cost-breakdown", "result"],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -77,15 +61,7 @@
     "riskLevel": "low",
     "variant": "x402",
     "description": "Creates provider specs and catalog entries for new paid APIs in the x402 fleet.",
-    "tags": [
-      "solana",
-      "x402",
-      "providers",
-      "catalog",
-      "authoring",
-      "pay",
-      "gateway"
-    ],
+    "tags": ["solana", "x402", "providers", "catalog", "authoring", "pay", "gateway"],
     "title": "x402 Provider Author"
   },
   "pluginCount": 0,

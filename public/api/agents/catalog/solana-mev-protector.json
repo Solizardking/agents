@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🛡️",
     "description": "Shields transactions from sandwich attacks, front-running, and MEV extraction on Solana",
-    "tags": [
-      "mev",
-      "jito",
-      "security",
-      "sandwich",
-      "front-running"
-    ],
+    "tags": ["mev", "jito", "security", "sandwich", "front-running"],
     "title": "MEV Protection Specialist"
   },
   "pluginCount": 0,

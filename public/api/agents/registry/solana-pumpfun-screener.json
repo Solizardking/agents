@@ -8,18 +8,8 @@
   "active": true,
   "createdAt": "2026-04-16",
   "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": [
-    "solana",
-    "pumpfun",
-    "memecoin",
-    "security",
-    "screening",
-    "one-shot",
-    "clawd"
-  ],
-  "categories": [
-    "security"
-  ],
+  "tags": ["solana", "pumpfun", "memecoin", "security", "screening", "one-shot", "clawd"],
+  "categories": ["security"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -56,16 +46,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/solana-pumpfun-screener.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry",
-      "token-metadata"
-    ],
+    "programs": ["agent-registry", "token-metadata"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -82,10 +65,7 @@
   },
   "openclawd": {
     "identifier": "solana-pumpfun-screener",
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["read-only", "a2a-message"],
     "payment": null,
     "agentToken": null
   }

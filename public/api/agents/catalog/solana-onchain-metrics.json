@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🔗",
     "description": "Real-time on-chain analytics: TVL, volume, active addresses, velocity for Solana",
-    "tags": [
-      "on-chain",
-      "metrics",
-      "tvl",
-      "analytics",
-      "dashboard"
-    ],
+    "tags": ["on-chain", "metrics", "tvl", "analytics", "dashboard"],
     "title": "On-Chain Metrics Dashboard"
   },
   "pluginCount": 0,

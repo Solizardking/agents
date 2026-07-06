@@ -19,9 +19,7 @@
     "moonpay",
     "solana"
   ],
-  "categories": [
-    "defi"
-  ],
+  "categories": ["defi"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -58,11 +56,7 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/solana-hermes-mail-settlement.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",

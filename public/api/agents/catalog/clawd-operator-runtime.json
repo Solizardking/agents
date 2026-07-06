@@ -13,12 +13,7 @@
       "mountedAt": "./agents/clawd-operator",
       "sourcePath": "../clawd-operator",
       "package": "ralph-orchestrator",
-      "entrypoints": [
-        "main.py",
-        "orchestrator.py",
-        "adapters/acp.py",
-        "web/server.py"
-      ],
+      "entrypoints": ["main.py", "orchestrator.py", "adapters/acp.py", "web/server.py"],
       "smokeCommand": "cd clawd-operator && python -m pytest tests/test_orchestrator.py"
     }
   },
@@ -54,9 +49,7 @@
       "task-loop",
       "read-only"
     ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "metaplexSkills": ["agent-registry"]
   },
   "tokenUsage": 0
 }

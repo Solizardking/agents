@@ -44,14 +44,8 @@
   "oneShot": true,
   "featured": true,
   "tokenUsage": null,
-  "capabilities": [
-    "swap-execution",
-    "read-only",
-    "a2a-message"
-  ],
-  "metaplexSkills": [
-    "agent-registry"
-  ],
+  "capabilities": ["swap-execution", "read-only", "a2a-message"],
+  "metaplexSkills": ["agent-registry"],
   "payment": null,
   "agentToken": null,
   "createdAt": "2026-05-11"

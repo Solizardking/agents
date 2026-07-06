@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "💱",
     "description": "Optimizes spot trading execution on Solana DEXes with minimal slippage and fees",
-    "tags": [
-      "spot-trading",
-      "execution",
-      "slippage",
-      "optimization"
-    ],
+    "tags": ["spot-trading", "execution", "slippage", "optimization"],
     "title": "Spot Trading Optimizer"
   },
   "pluginCount": 0,

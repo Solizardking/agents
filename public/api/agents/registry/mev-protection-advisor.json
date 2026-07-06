@@ -19,9 +19,7 @@
     "jito",
     "bundles"
   ],
-  "categories": [
-    "security"
-  ],
+  "categories": ["security"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -58,15 +56,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/mev-protection-advisor.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -83,11 +75,7 @@
   },
   "openclawd": {
     "identifier": "mev-protection-advisor",
-    "capabilities": [
-      "swap-execution",
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["swap-execution", "read-only", "a2a-message"],
     "payment": null,
     "agentToken": null
   }

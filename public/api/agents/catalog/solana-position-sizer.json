@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "📏",
     "description": "Calculates optimal position sizes using Kelly Criterion, fixed-fractional, and volatility-based methods",
-    "tags": [
-      "position-sizing",
-      "kelly",
-      "risk-management",
-      "money-management"
-    ],
+    "tags": ["position-sizing", "kelly", "risk-management", "money-management"],
     "title": "Position Sizing Engine"
   },
   "pluginCount": 0,

@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "⚖️",
     "description": "Comprehensive portfolio risk analysis: VaR, correlation, drawdown for Solana portfolios",
-    "tags": [
-      "portfolio",
-      "risk",
-      "var",
-      "correlation",
-      "drawdown"
-    ],
+    "tags": ["portfolio", "risk", "var", "correlation", "drawdown"],
     "title": "Portfolio Risk Manager"
   },
   "pluginCount": 0,

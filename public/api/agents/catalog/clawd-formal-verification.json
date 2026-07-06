@@ -12,12 +12,7 @@
     "runtime": {
       "mountedAt": "./agents/formal_verification",
       "sourcePath": "../formal_verification",
-      "entrypoints": [
-        "gate.ts",
-        "skill-hub.ts",
-        "stride.ts",
-        "risk_engine_harness.rs"
-      ],
+      "entrypoints": ["gate.ts", "skill-hub.ts", "stride.ts", "risk_engine_harness.rs"],
       "smokeCommand": "npx tsc --noEmit --allowJs false formal_verification/gate.ts formal_verification/skill-hub.ts formal_verification/stride.ts"
     }
   },
@@ -54,10 +49,7 @@
       "metaplex-delegate-execution",
       "read-only"
     ],
-    "metaplexSkills": [
-      "agent-registry",
-      "core"
-    ]
+    "metaplexSkills": ["agent-registry", "core"]
   },
   "tokenUsage": 0
 }

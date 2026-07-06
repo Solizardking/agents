@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "📈",
     "description": "Comprehensive technical analysis with indicators, patterns, and multi-timeframe analysis for Solana tokens",
-    "tags": [
-      "technical-analysis",
-      "indicators",
-      "charts",
-      "patterns",
-      "trading"
-    ],
+    "tags": ["technical-analysis", "indicators", "charts", "patterns", "trading"],
     "title": "Advanced Technical Analyst"
   },
   "pluginCount": 0,

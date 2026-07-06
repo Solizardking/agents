@@ -8,18 +8,8 @@
   "active": true,
   "createdAt": "2026-04-16",
   "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": [
-    "clawd",
-    "education",
-    "onboarding",
-    "beginner",
-    "tutorial",
-    "solana",
-    "one-shot"
-  ],
-  "categories": [
-    "education"
-  ],
+  "tags": ["clawd", "education", "onboarding", "beginner", "tutorial", "solana", "one-shot"],
+  "categories": ["education"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -56,15 +46,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-onboarding-guide.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -81,10 +65,7 @@
   },
   "openclawd": {
     "identifier": "clawd-onboarding-guide",
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["read-only", "a2a-message"],
     "payment": null,
     "agentToken": null
   }

@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "📈",
     "description": "Analyzes on-chain order flow, whale movements, and smart money patterns on Solana",
-    "tags": [
-      "order-flow",
-      "whale-tracking",
-      "smart-money",
-      "analysis"
-    ],
+    "tags": ["order-flow", "whale-tracking", "smart-money", "analysis"],
     "title": "Order Flow Analyst"
   },
   "pluginCount": 0,

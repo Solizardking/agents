@@ -27,16 +27,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "read-only",
-      "a2a-message",
-      "mint-agent",
-      "domain-resolver"
-    ],
-    "metaplexSkills": [
-      "agent-registry",
-      "mpl-core"
-    ]
+    "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
+    "metaplexSkills": ["agent-registry", "mpl-core"]
   },
   "payment": null,
   "agentToken": null

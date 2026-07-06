@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "🤖",
     "description": "Designs and builds production trading bot architectures for Solana",
-    "tags": [
-      "bot",
-      "architecture",
-      "automation",
-      "trading-system"
-    ],
+    "tags": ["bot", "architecture", "automation", "trading-system"],
     "title": "Trading Bot Architect"
   },
   "pluginCount": 0,

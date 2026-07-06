@@ -18,9 +18,7 @@
     "agent-registry",
     "one-shot"
   ],
-  "categories": [
-    "infrastructure"
-  ],
+  "categories": ["infrastructure"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,16 +55,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-web3-domain-agent.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry",
-      "mpl-core"
-    ],
+    "programs": ["agent-registry", "mpl-core"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -83,12 +74,7 @@
   },
   "openclawd": {
     "identifier": "clawd-web3-domain-agent",
-    "capabilities": [
-      "read-only",
-      "a2a-message",
-      "mint-agent",
-      "domain-resolver"
-    ],
+    "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
     "payment": null,
     "agentToken": null
   }

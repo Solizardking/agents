@@ -10,15 +10,7 @@
     "title": "Solana Kamino Vault Picker",
     "description": "Pick the right Kamino lending, Multiply, or Liquidity vault with net APY, liquidation math, and risk breakdown",
     "avatar": "https://x402.wtf/nich.jpg",
-    "tags": [
-      "solana",
-      "kamino",
-      "lending",
-      "yield",
-      "defi",
-      "one-shot",
-      "clawd"
-    ],
+    "tags": ["solana", "kamino", "lending", "yield", "defi", "one-shot", "clawd"],
     "category": "defi"
   },
   "config": {
@@ -33,9 +25,7 @@
       "read-only",
       "a2a-message"
     ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "metaplexSkills": ["agent-registry"]
   },
   "payment": null,
   "agentToken": null

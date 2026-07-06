@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🔬",
     "description": "Expert analysis of token supply, distribution, vesting, inflation, and token value accrual mechanisms",
-    "tags": [
-      "tokenomics",
-      "supply",
-      "vesting",
-      "inflation",
-      "valuation"
-    ],
+    "tags": ["tokenomics", "supply", "vesting", "inflation", "valuation"],
     "title": "Tokenomics Deep Researcher"
   },
   "pluginCount": 0,

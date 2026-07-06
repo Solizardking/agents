@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -43,17 +36,8 @@
           "objective": "Archive audit-ready traces for later review"
         }
       ],
-      "inputs": [
-        "task",
-        "budget",
-        "wallet-state"
-      ],
-      "outputs": [
-        "decision",
-        "provider",
-        "cost-breakdown",
-        "result"
-      ],
+      "inputs": ["task", "budget", "wallet-state"],
+      "outputs": ["decision", "provider", "cost-breakdown", "result"],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -72,15 +56,7 @@
     "riskLevel": "low",
     "variant": "openclawd",
     "description": "Audits fleet traces, settlement logs, and operational guardrails across OpenClawd loops.",
-    "tags": [
-      "solana",
-      "openclawd",
-      "audit",
-      "shell",
-      "payments",
-      "security",
-      "logs"
-    ],
+    "tags": ["solana", "openclawd", "audit", "shell", "payments", "security", "logs"],
     "title": "OpenClawd SHELL Auditor"
   },
   "pluginCount": 0,

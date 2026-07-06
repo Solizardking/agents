@@ -27,12 +27,7 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "payment-gated",
-      "x402",
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
     "metaplexSkills": []
   },
   "payment": {

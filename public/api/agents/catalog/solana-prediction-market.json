@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🎯",
     "description": "Expert in DFlow/Kalshi and Solana prediction markets for probabilistic forecasting and trade workflow design",
-    "tags": [
-      "prediction-market",
-      "probability",
-      "dflow",
-      "kalshi",
-      "forecasting"
-    ],
+    "tags": ["prediction-market", "probability", "dflow", "kalshi", "forecasting"],
     "title": "Prediction Market Analyst"
   },
   "pluginCount": 0,

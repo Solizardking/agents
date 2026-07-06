@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "📐",
     "description": "Develops and backtests quantitative trading strategies for Solana markets",
-    "tags": [
-      "quantitative",
-      "backtesting",
-      "alpha",
-      "research",
-      "strategy"
-    ],
+    "tags": ["quantitative", "backtesting", "alpha", "research", "strategy"],
     "title": "Quantitative Research Analyst"
   },
   "pluginCount": 0,

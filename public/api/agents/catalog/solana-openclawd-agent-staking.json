@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl https://x402.wtf/api/staking/config",
       "productionCommand": "pay curl https://x402.wtf/api/staking/config"
@@ -49,18 +42,8 @@
           "objective": "Use /api/staking/transaction for unsigned stake or unstake transactions"
         }
       ],
-      "inputs": [
-        "wallet",
-        "agent asset",
-        "collection",
-        "action"
-      ],
-      "outputs": [
-        "holding status",
-        "staking state",
-        "transaction plan",
-        "confirmation signature"
-      ],
+      "inputs": ["wallet", "agent asset", "collection", "action"],
+      "outputs": ["holding status", "staking state", "transaction plan", "confirmation signature"],
       "guardrails": [
         "Never claim rewards are active unless the staking API reports them",
         "Require wallet ownership before normal stake",
@@ -106,10 +89,7 @@
       "agent-unstake",
       "x402-gateway-routing"
     ],
-    "metaplexSkills": [
-      "agent-registry",
-      "core"
-    ]
+    "metaplexSkills": ["agent-registry", "core"]
   },
   "tokenUsage": 0
 }

@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🔔",
     "description": "Monitors smart contract risk, oracle risk, and systemic risk across Solana DeFi",
-    "tags": [
-      "risk",
-      "monitoring",
-      "smart-contract",
-      "oracle",
-      "systemic"
-    ],
+    "tags": ["risk", "monitoring", "smart-contract", "oracle", "systemic"],
     "title": "Protocol Risk Sentinel"
   },
   "pluginCount": 0,

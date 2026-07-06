@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "💭",
     "description": "NLP-powered sentiment analysis of Twitter/X, Discord, and on-chain signals for Solana tokens",
-    "tags": [
-      "sentiment",
-      "nlp",
-      "twitter",
-      "social",
-      "analysis"
-    ],
+    "tags": ["sentiment", "nlp", "twitter", "social", "analysis"],
     "title": "Crypto Sentiment Analyzer"
   },
   "pluginCount": 0,

@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🖥️",
     "description": "Optimizes RPC usage, WebSocket connections, and Solana infrastructure for trading bots",
-    "tags": [
-      "rpc",
-      "infrastructure",
-      "helius",
-      "quicknode",
-      "websocket"
-    ],
+    "tags": ["rpc", "infrastructure", "helius", "quicknode", "websocket"],
     "title": "RPC & Infrastructure Expert"
   },
   "pluginCount": 0,

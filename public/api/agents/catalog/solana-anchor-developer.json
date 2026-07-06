@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "⚓",
     "description": "Expert in developing Solana programs with Anchor framework for DeFi applications",
-    "tags": [
-      "anchor",
-      "solana",
-      "rust",
-      "smart-contract",
-      "development"
-    ],
+    "tags": ["anchor", "solana", "rust", "smart-contract", "development"],
     "title": "Anchor Program Developer"
   },
   "pluginCount": 0,

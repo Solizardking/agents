@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -42,17 +35,8 @@
           "objective": "Promote the plan to production only after a clean rehearsal"
         }
       ],
-      "inputs": [
-        "task",
-        "budget",
-        "wallet-state"
-      ],
-      "outputs": [
-        "decision",
-        "provider",
-        "cost-breakdown",
-        "result"
-      ],
+      "inputs": ["task", "budget", "wallet-state"],
+      "outputs": ["decision", "provider", "cost-breakdown", "result"],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -71,15 +55,7 @@
     "riskLevel": "low",
     "variant": "nanoclawd",
     "description": "Runs safe sandbox payment rehearsals before real stablecoin settlement.",
-    "tags": [
-      "solana",
-      "nanoclawd",
-      "sandbox",
-      "testing",
-      "x402",
-      "mpp",
-      "payments"
-    ],
+    "tags": ["solana", "nanoclawd", "sandbox", "testing", "x402", "mpp", "payments"],
     "title": "NanoClawd Sandbox Runner"
   },
   "pluginCount": 0,

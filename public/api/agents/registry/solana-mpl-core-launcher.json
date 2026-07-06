@@ -8,18 +8,8 @@
   "active": true,
   "createdAt": "2026-04-16",
   "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": [
-    "solana",
-    "nft",
-    "mpl-core",
-    "metaplex",
-    "launch",
-    "one-shot",
-    "clawd"
-  ],
-  "categories": [
-    "nft"
-  ],
+  "tags": ["solana", "nft", "mpl-core", "metaplex", "launch", "one-shot", "clawd"],
+  "categories": ["nft"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -56,19 +46,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/solana-mpl-core-launcher.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "core",
-      "token-metadata",
-      "candy-machine",
-      "bubblegum",
-      "agent-registry"
-    ],
+    "programs": ["core", "token-metadata", "candy-machine", "bubblegum", "agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,

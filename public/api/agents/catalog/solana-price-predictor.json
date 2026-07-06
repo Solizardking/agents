@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🧠",
     "description": "Uses LSTM, Transformer, and ensemble models to predict Solana token prices",
-    "tags": [
-      "machine-learning",
-      "prediction",
-      "lstm",
-      "transformer",
-      "price"
-    ],
+    "tags": ["machine-learning", "prediction", "lstm", "transformer", "price"],
     "title": "ML Price Prediction Engine"
   },
   "pluginCount": 0,

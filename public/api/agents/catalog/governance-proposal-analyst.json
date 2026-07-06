@@ -28,14 +28,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "governance-vote",
-      "read-only",
-      "a2a-message"
-    ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "capabilities": ["governance-vote", "read-only", "a2a-message"],
+    "metaplexSkills": ["agent-registry"]
   },
   "payment": null,
   "agentToken": null

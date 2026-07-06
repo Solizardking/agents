@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -48,17 +41,8 @@
           "objective": "Withdraw quickly when payment demand rises"
         }
       ],
-      "inputs": [
-        "task",
-        "budget",
-        "wallet-state"
-      ],
-      "outputs": [
-        "decision",
-        "provider",
-        "cost-breakdown",
-        "result"
-      ],
+      "inputs": ["task", "budget", "wallet-state"],
+      "outputs": ["decision", "provider", "cost-breakdown", "result"],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -77,15 +61,7 @@
     "riskLevel": "medium",
     "variant": "nemoclawd",
     "description": "Deploys idle payment treasury into Solana yield while preserving liquidity for the fleet.",
-    "tags": [
-      "solana",
-      "nemoclawd",
-      "yield",
-      "treasury",
-      "usdc",
-      "defi",
-      "payments"
-    ],
+    "tags": ["solana", "nemoclawd", "yield", "treasury", "usdc", "defi", "payments"],
     "title": "NemoClawd Yield Treasurer"
   },
   "pluginCount": 0,

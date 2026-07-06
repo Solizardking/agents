@@ -18,9 +18,7 @@
     "metaplex",
     "agent-registry"
   ],
-  "categories": [
-    "security"
-  ],
+  "categories": ["security"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,16 +55,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-formal-verification.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry",
-      "core"
-    ],
+    "programs": ["agent-registry", "core"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,

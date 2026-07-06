@@ -437,10 +437,7 @@
         "metaplex-delegate-execution",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry",
-        "core"
-      ],
+      "metaplexSkills": ["agent-registry", "core"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -456,16 +453,7 @@
       "title": "Clawd Gateway Runtime",
       "description": "Telegram and HTTP gateway runtime for Solana Clawd agent registry, skill hub, webhook, x402, and Solana service routes.",
       "avatar": "GW",
-      "tags": [
-        "solana",
-        "clawd",
-        "gateway",
-        "telegram",
-        "x402",
-        "registry",
-        "skills",
-        "http"
-      ],
+      "tags": ["solana", "clawd", "gateway", "telegram", "x402", "registry", "skills", "http"],
       "category": "infrastructure",
       "author": "x402agent",
       "createdAt": "2026-06-10",
@@ -487,21 +475,12 @@
         "solana-rpc",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": {
         "enabled": true,
         "network": "solana-mainnet",
-        "protocols": [
-          "x402",
-          "mpp"
-        ],
-        "acceptedCurrencies": [
-          "USDC",
-          "USDT",
-          "CASH"
-        ],
+        "protocols": ["x402", "mpp"],
+        "acceptedCurrencies": ["USDC", "USDT", "CASH"],
         "approvalMode": "operator"
       },
       "agentToken": null,
@@ -518,17 +497,7 @@
       "title": "Clawd Grok Runtime",
       "description": "Grok-powered Solana CLI runtime for multi-agent research, coding, Phoenix/Vulcan perps workflows, x402 tools, and paper-first trading.",
       "avatar": "GX",
-      "tags": [
-        "solana",
-        "clawd",
-        "grok",
-        "xai",
-        "perps",
-        "phoenix",
-        "vulcan",
-        "trading",
-        "cli"
-      ],
+      "tags": ["solana", "clawd", "grok", "xai", "perps", "phoenix", "vulcan", "trading", "cli"],
       "category": "trading",
       "author": "Clawd Grok",
       "createdAt": "2026-06-10",
@@ -550,9 +519,7 @@
         "x402-gateway-routing",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -598,9 +565,7 @@
         "task-loop",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -647,9 +612,7 @@
         "telegram-alerts",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -696,19 +659,12 @@
         "openai-compatible-api",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": {
         "enabled": true,
         "network": "solana-mainnet",
-        "protocols": [
-          "x402"
-        ],
-        "acceptedCurrencies": [
-          "USDC",
-          "CLAWD"
-        ],
+        "protocols": ["x402"],
+        "acceptedCurrencies": ["USDC", "CLAWD"],
         "approvalMode": "api-key"
       },
       "agentToken": null,
@@ -760,13 +716,7 @@
       "title": "Multi-Agent Trading Orchestrator",
       "description": "Coordinates multiple specialized agents for comprehensive market analysis and execution",
       "avatar": "🎭",
-      "tags": [
-        "orchestrator",
-        "multi-agent",
-        "coordination",
-        "agentic",
-        "workflow"
-      ],
+      "tags": ["orchestrator", "multi-agent", "coordination", "agentic", "workflow"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -792,13 +742,7 @@
       "title": "Airdrop Strategy Optimizer",
       "description": "Maximizes airdrop eligibility across Solana protocols through strategic on-chain activity",
       "avatar": "🪂",
-      "tags": [
-        "airdrop",
-        "points",
-        "farming",
-        "strategy",
-        "eligibility"
-      ],
+      "tags": ["airdrop", "points", "farming", "strategy", "eligibility"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -824,13 +768,7 @@
       "title": "Alpha Signal Aggregator",
       "description": "Aggregates and ranks alpha signals from multiple data sources into actionable trade ideas",
       "avatar": "⚡",
-      "tags": [
-        "alpha",
-        "signals",
-        "aggregation",
-        "trade-ideas",
-        "ranking"
-      ],
+      "tags": ["alpha", "signals", "aggregation", "trade-ideas", "ranking"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -856,13 +794,7 @@
       "title": "Anchor Program Developer",
       "description": "Expert in developing Solana programs with Anchor framework for DeFi applications",
       "avatar": "⚓",
-      "tags": [
-        "anchor",
-        "solana",
-        "rust",
-        "smart-contract",
-        "development"
-      ],
+      "tags": ["anchor", "solana", "rust", "smart-contract", "development"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -888,12 +820,7 @@
       "title": "On-Chain Anomaly Detector",
       "description": "ML-powered detection of unusual on-chain activity, potential rugs, and market manipulation",
       "avatar": "🚨",
-      "tags": [
-        "anomaly-detection",
-        "fraud",
-        "rug-pull",
-        "manipulation"
-      ],
+      "tags": ["anomaly-detection", "fraud", "rug-pull", "manipulation"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -919,12 +846,7 @@
       "title": "Cross-DEX Arbitrage Scanner",
       "description": "Identifies and executes arbitrage opportunities across Solana DEXes and CEXes",
       "avatar": "🔍",
-      "tags": [
-        "arbitrage",
-        "cross-dex",
-        "profit",
-        "scanner"
-      ],
+      "tags": ["arbitrage", "cross-dex", "profit", "scanner"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -950,13 +872,7 @@
       "title": "Autonomous Trading Agent",
       "description": "Self-managing trading agent with goal-setting, strategy selection, and adaptive execution",
       "avatar": "🧬",
-      "tags": [
-        "autonomous",
-        "self-managing",
-        "adaptive",
-        "agent",
-        "ai-trading"
-      ],
+      "tags": ["autonomous", "self-managing", "adaptive", "agent", "ai-trading"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -982,12 +898,7 @@
       "title": "Trading Bot Architect",
       "description": "Designs and builds production trading bot architectures for Solana",
       "avatar": "🤖",
-      "tags": [
-        "bot",
-        "architecture",
-        "automation",
-        "trading-system"
-      ],
+      "tags": ["bot", "architecture", "automation", "trading-system"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1013,12 +924,7 @@
       "title": "AI Chart Pattern Recognition",
       "description": "Computer vision-powered chart pattern detection for Solana token charts",
       "avatar": "👁️",
-      "tags": [
-        "chart-patterns",
-        "computer-vision",
-        "ai",
-        "pattern-recognition"
-      ],
+      "tags": ["chart-patterns", "computer-vision", "ai", "pattern-recognition"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1044,15 +950,7 @@
       "title": "Clawd Cost Planner",
       "description": "Pre-call cost planning and budget enforcement for x402-enabled workflows.",
       "avatar": "🧮",
-      "tags": [
-        "solana",
-        "clawd",
-        "cost",
-        "planning",
-        "budget",
-        "x402",
-        "payments"
-      ],
+      "tags": ["solana", "clawd", "cost", "planning", "budget", "x402", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1113,15 +1011,7 @@
       "title": "Clawd Payment Debugger",
       "description": "Debugs x402 and MPP challenge-response cycles for payment-enabled Solana agents.",
       "avatar": "🧪",
-      "tags": [
-        "solana",
-        "clawd",
-        "debugger",
-        "x402",
-        "mpp",
-        "payments",
-        "gateway"
-      ],
+      "tags": ["solana", "clawd", "debugger", "x402", "mpp", "payments", "gateway"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1147,15 +1037,7 @@
       "title": "Solana Clawd Payment Gateway",
       "description": "x402 and MPP payment gateway for stablecoin-gated API access on Solana.",
       "avatar": "💳",
-      "tags": [
-        "solana",
-        "clawd",
-        "x402",
-        "mpp",
-        "payment",
-        "gateway",
-        "openclawd"
-      ],
+      "tags": ["solana", "clawd", "x402", "mpp", "payment", "gateway", "openclawd"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1181,15 +1063,7 @@
       "title": "Clawd Provider Scorer",
       "description": "Scores providers by fit, freshness, cost, and operational safety for the fleet.",
       "avatar": "🎯",
-      "tags": [
-        "solana",
-        "clawd",
-        "providers",
-        "scoring",
-        "routing",
-        "x402",
-        "pay"
-      ],
+      "tags": ["solana", "clawd", "providers", "scoring", "routing", "x402", "pay"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1215,15 +1089,7 @@
       "title": "Clawd Quote Relay",
       "description": "Normalizes quotes, prices, and spend estimates for downstream Solana agents.",
       "avatar": "📤",
-      "tags": [
-        "solana",
-        "clawd",
-        "quotes",
-        "relay",
-        "pricing",
-        "x402",
-        "market-data"
-      ],
+      "tags": ["solana", "clawd", "quotes", "relay", "pricing", "x402", "market-data"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1249,15 +1115,7 @@
       "title": "Clawd USDC Allocator",
       "description": "Allocates USDC across agents, payment float, and execution needs in the fleet treasury.",
       "avatar": "🏦",
-      "tags": [
-        "solana",
-        "clawd",
-        "usdc",
-        "allocator",
-        "treasury",
-        "payments",
-        "openclawd"
-      ],
+      "tags": ["solana", "clawd", "usdc", "allocator", "treasury", "payments", "openclawd"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1283,15 +1141,7 @@
       "title": "Clawd Wallet Guardian",
       "description": "Biometric approval, wallet safety, and prompt-injection defense for paid Solana agents.",
       "avatar": "🔐",
-      "tags": [
-        "solana",
-        "clawd",
-        "wallet",
-        "security",
-        "biometric",
-        "x402",
-        "pay"
-      ],
+      "tags": ["solana", "clawd", "wallet", "security", "biometric", "x402", "pay"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1317,13 +1167,7 @@
       "title": "Cross-Chain Bridge Analyst",
       "description": "Analyzes bridge security, routing, and arbitrage opportunities between Solana and other chains",
       "avatar": "🌉",
-      "tags": [
-        "bridge",
-        "cross-chain",
-        "wormhole",
-        "debridge",
-        "security"
-      ],
+      "tags": ["bridge", "cross-chain", "wormhole", "debridge", "security"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1384,13 +1228,7 @@
       "title": "Blockchain Data Pipeline",
       "description": "Builds data pipelines for Solana on-chain data: indexing, parsing, and analytics",
       "avatar": "🔧",
-      "tags": [
-        "data-pipeline",
-        "indexing",
-        "analytics",
-        "geyser",
-        "helius"
-      ],
+      "tags": ["data-pipeline", "indexing", "analytics", "geyser", "helius"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1416,13 +1254,7 @@
       "title": "Solana DEX Aggregator",
       "description": "Expert in Jupiter, Raydium, and Orca routing for optimal swap execution on Solana",
       "avatar": "🦞",
-      "tags": [
-        "solana",
-        "dex",
-        "jupiter",
-        "trading",
-        "swap"
-      ],
+      "tags": ["solana", "dex", "jupiter", "trading", "swap"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1483,12 +1315,7 @@
       "title": "Funding Rate Arbitrage Bot",
       "description": "Identifies and executes funding rate arbitrage between Solana perps and spot markets",
       "avatar": "💰",
-      "tags": [
-        "funding-rate",
-        "arbitrage",
-        "delta-neutral",
-        "carry-trade"
-      ],
+      "tags": ["funding-rate", "arbitrage", "delta-neutral", "carry-trade"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1514,13 +1341,7 @@
       "title": "Helius API Specialist",
       "description": "Expert in Helius DAS, webhooks, Enhanced Transactions, and RPC for Solana development",
       "avatar": "🌐",
-      "tags": [
-        "helius",
-        "das",
-        "webhooks",
-        "enhanced-api",
-        "rpc"
-      ],
+      "tags": ["helius", "das", "webhooks", "enhanced-api", "rpc"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1582,12 +1403,7 @@
       "title": "Impermanent Loss Calculator",
       "description": "Precise IL calculations for Solana LP positions with concentrated liquidity modeling",
       "avatar": "📊",
-      "tags": [
-        "impermanent-loss",
-        "liquidity",
-        "amm",
-        "concentrated"
-      ],
+      "tags": ["impermanent-loss", "liquidity", "amm", "concentrated"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1613,14 +1429,7 @@
       "title": "Lending Protocol Strategist",
       "description": "Optimizes borrowing, lending, and leverage strategies across Solana lending protocols",
       "avatar": "🏦",
-      "tags": [
-        "lending",
-        "borrowing",
-        "marginfi",
-        "solend",
-        "kamino",
-        "leverage"
-      ],
+      "tags": ["lending", "borrowing", "marginfi", "solend", "kamino", "leverage"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1646,13 +1455,7 @@
       "title": "Liquidation Monitor",
       "description": "Monitors and executes liquidations on Solana lending protocols",
       "avatar": "⚡",
-      "tags": [
-        "liquidation",
-        "lending",
-        "marginfi",
-        "solend",
-        "kamino"
-      ],
+      "tags": ["liquidation", "lending", "marginfi", "solend", "kamino"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1678,13 +1481,7 @@
       "title": "Liquid Staking Analyst",
       "description": "Expert in Solana liquid staking derivatives — mSOL, jitoSOL, bSOL, INF comparison",
       "avatar": "💧",
-      "tags": [
-        "liquid-staking",
-        "msol",
-        "jitosol",
-        "bsol",
-        "sanctum"
-      ],
+      "tags": ["liquid-staking", "msol", "jitosol", "bsol", "sanctum"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1710,13 +1507,7 @@
       "title": "Crypto Macro Analyst",
       "description": "Macro-economic analysis impact on Solana/crypto: rates, liquidity, regulations, cycles",
       "avatar": "🌍",
-      "tags": [
-        "macro",
-        "economics",
-        "fed",
-        "liquidity",
-        "cycles"
-      ],
+      "tags": ["macro", "economics", "fed", "liquidity", "cycles"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1742,13 +1533,7 @@
       "title": "Market Making Strategist",
       "description": "Designs market making strategies for Solana tokens on DEXes and CLOBs",
       "avatar": "🏦",
-      "tags": [
-        "market-making",
-        "clob",
-        "spread",
-        "inventory",
-        "phoenix"
-      ],
+      "tags": ["market-making", "clob", "spread", "inventory", "phoenix"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1774,13 +1559,7 @@
       "title": "Memecoin Alpha Analyst",
       "description": "Analyzes memecoin launches, bonding curves, and pump.fun dynamics for profitable entries",
       "avatar": "🐸",
-      "tags": [
-        "memecoin",
-        "pump-fun",
-        "degen",
-        "alpha",
-        "bonding-curve"
-      ],
+      "tags": ["memecoin", "pump-fun", "degen", "alpha", "bonding-curve"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1806,13 +1585,7 @@
       "title": "MEV Protection Specialist",
       "description": "Shields transactions from sandwich attacks, front-running, and MEV extraction on Solana",
       "avatar": "🛡️",
-      "tags": [
-        "mev",
-        "jito",
-        "security",
-        "sandwich",
-        "front-running"
-      ],
+      "tags": ["mev", "jito", "security", "sandwich", "front-running"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1838,15 +1611,7 @@
       "title": "NanoClawd Cache Keeper",
       "description": "Preserves value by caching paid outputs and enforcing TTL-aware reuse.",
       "avatar": "🗃️",
-      "tags": [
-        "solana",
-        "nanoclawd",
-        "cache",
-        "ttl",
-        "x402",
-        "optimization",
-        "payments"
-      ],
+      "tags": ["solana", "nanoclawd", "cache", "ttl", "x402", "optimization", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1872,15 +1637,7 @@
       "title": "NanoClawd Microtransaction Specialist",
       "description": "Sub-cent payment optimizer for micro-budgeted Solana agent workflows.",
       "avatar": "🦐",
-      "tags": [
-        "solana",
-        "nanoclawd",
-        "microtransaction",
-        "budget",
-        "x402",
-        "payments",
-        "pay"
-      ],
+      "tags": ["solana", "nanoclawd", "microtransaction", "budget", "x402", "payments", "pay"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1906,15 +1663,7 @@
       "title": "NanoClawd Sandbox Runner",
       "description": "Runs safe sandbox payment rehearsals before real stablecoin settlement.",
       "avatar": "🧫",
-      "tags": [
-        "solana",
-        "nanoclawd",
-        "sandbox",
-        "testing",
-        "x402",
-        "mpp",
-        "payments"
-      ],
+      "tags": ["solana", "nanoclawd", "sandbox", "testing", "x402", "mpp", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -1940,13 +1689,7 @@
       "title": "Crypto Narrative Tracker",
       "description": "Tracks and analyzes emerging narratives, meta-trends, and sector rotations in Solana ecosystem",
       "avatar": "🌊",
-      "tags": [
-        "narrative",
-        "trends",
-        "sector-rotation",
-        "meta",
-        "alpha"
-      ],
+      "tags": ["narrative", "trends", "sector-rotation", "meta", "alpha"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -1972,15 +1715,7 @@
       "title": "NemoClawd DeFi Payment Router",
       "description": "Routes between paid data access, Solana swaps, treasury moves, and yield-aware DeFi actions.",
       "avatar": "🌊",
-      "tags": [
-        "solana",
-        "nemoclawd",
-        "defi",
-        "router",
-        "x402",
-        "jupiter",
-        "treasury"
-      ],
+      "tags": ["solana", "nemoclawd", "defi", "router", "x402", "jupiter", "treasury"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2040,15 +1775,7 @@
       "title": "NemoClawd Yield Treasurer",
       "description": "Deploys idle payment treasury into Solana yield while preserving liquidity for the fleet.",
       "avatar": "🌾",
-      "tags": [
-        "solana",
-        "nemoclawd",
-        "yield",
-        "treasury",
-        "usdc",
-        "defi",
-        "payments"
-      ],
+      "tags": ["solana", "nemoclawd", "yield", "treasury", "usdc", "defi", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2074,13 +1801,7 @@
       "title": "NFT Floor Price Trader",
       "description": "Analyzes and trades NFT collections on Solana based on floor price dynamics and listing patterns",
       "avatar": "🎨",
-      "tags": [
-        "nft",
-        "floor-price",
-        "magic-eden",
-        "tensor",
-        "trading"
-      ],
+      "tags": ["nft", "floor-price", "magic-eden", "tensor", "trading"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2106,13 +1827,7 @@
       "title": "On-Chain Metrics Dashboard",
       "description": "Real-time on-chain analytics: TVL, volume, active addresses, velocity for Solana",
       "avatar": "🔗",
-      "tags": [
-        "on-chain",
-        "metrics",
-        "tvl",
-        "analytics",
-        "dashboard"
-      ],
+      "tags": ["on-chain", "metrics", "tvl", "analytics", "dashboard"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2138,13 +1853,7 @@
       "title": "On-Chain Investigation Specialist",
       "description": "Forensic blockchain analysis: wallet tracing, fund flows, entity identification on Solana",
       "avatar": "🕵️",
-      "tags": [
-        "forensics",
-        "investigation",
-        "tracing",
-        "compliance",
-        "aml"
-      ],
+      "tags": ["forensics", "investigation", "tracing", "compliance", "aml"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2200,10 +1909,7 @@
         "agent-unstake",
         "x402-gateway-routing"
       ],
-      "metaplexSkills": [
-        "agent-registry",
-        "core"
-      ],
+      "metaplexSkills": ["agent-registry", "core"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -2219,15 +1925,7 @@
       "title": "OpenClawd Fleet Orchestrator",
       "description": "Sovereign OpenClawd coordinator for task routing, payment delegation, and fleet health.",
       "avatar": "🦞",
-      "tags": [
-        "solana",
-        "openclawd",
-        "fleet",
-        "orchestration",
-        "multi-agent",
-        "x402",
-        "payments"
-      ],
+      "tags": ["solana", "openclawd", "fleet", "orchestration", "multi-agent", "x402", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2253,15 +1951,7 @@
       "title": "OpenClawd Pulse Monitor",
       "description": "Tracks spend velocity, pulse timing, and health across the OpenClawd fleet.",
       "avatar": "📡",
-      "tags": [
-        "solana",
-        "openclawd",
-        "pulse",
-        "monitoring",
-        "health",
-        "x402",
-        "treasury"
-      ],
+      "tags": ["solana", "openclawd", "pulse", "monitoring", "health", "x402", "treasury"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2287,15 +1977,7 @@
       "title": "OpenClawd SHELL Auditor",
       "description": "Audits fleet traces, settlement logs, and operational guardrails across OpenClawd loops.",
       "avatar": "📜",
-      "tags": [
-        "solana",
-        "openclawd",
-        "audit",
-        "shell",
-        "payments",
-        "security",
-        "logs"
-      ],
+      "tags": ["solana", "openclawd", "audit", "shell", "payments", "security", "logs"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2321,15 +2003,7 @@
       "title": "OpenClawd Skill Router",
       "description": "Routes tasks across the Lobster Library catalog based on payment needs and agent fit.",
       "avatar": "🧭",
-      "tags": [
-        "solana",
-        "openclawd",
-        "skills",
-        "routing",
-        "catalog",
-        "payments",
-        "agents"
-      ],
+      "tags": ["solana", "openclawd", "skills", "routing", "catalog", "payments", "agents"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2355,15 +2029,7 @@
       "title": "OpenClawd Spawn Manager",
       "description": "Decides when to spawn, merge, or beach specialist payment agents in the fleet.",
       "avatar": "🥚",
-      "tags": [
-        "solana",
-        "openclawd",
-        "spawn",
-        "fleet",
-        "delegation",
-        "payments",
-        "orchestration"
-      ],
+      "tags": ["solana", "openclawd", "spawn", "fleet", "delegation", "payments", "orchestration"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -2389,12 +2055,7 @@
       "title": "Order Flow Analyst",
       "description": "Analyzes on-chain order flow, whale movements, and smart money patterns on Solana",
       "avatar": "📈",
-      "tags": [
-        "order-flow",
-        "whale-tracking",
-        "smart-money",
-        "analysis"
-      ],
+      "tags": ["order-flow", "whale-tracking", "smart-money", "analysis"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2420,13 +2081,7 @@
       "title": "Perpetuals Trading Strategist",
       "description": "Expert in Solana perpetual futures on Drift, Zeta, Flash Trade, and Jupiter Perps",
       "avatar": "📊",
-      "tags": [
-        "perpetuals",
-        "drift",
-        "zeta",
-        "leverage",
-        "futures"
-      ],
+      "tags": ["perpetuals", "drift", "zeta", "leverage", "futures"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2452,13 +2107,7 @@
       "title": "Portfolio Risk Manager",
       "description": "Comprehensive portfolio risk analysis: VaR, correlation, drawdown for Solana portfolios",
       "avatar": "⚖️",
-      "tags": [
-        "portfolio",
-        "risk",
-        "var",
-        "correlation",
-        "drawdown"
-      ],
+      "tags": ["portfolio", "risk", "var", "correlation", "drawdown"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2484,12 +2133,7 @@
       "title": "Position Sizing Engine",
       "description": "Calculates optimal position sizes using Kelly Criterion, fixed-fractional, and volatility-based methods",
       "avatar": "📏",
-      "tags": [
-        "position-sizing",
-        "kelly",
-        "risk-management",
-        "money-management"
-      ],
+      "tags": ["position-sizing", "kelly", "risk-management", "money-management"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2515,13 +2159,7 @@
       "title": "Prediction Market Analyst",
       "description": "Expert in DFlow/Kalshi and Solana prediction markets for probabilistic forecasting and trade workflow design",
       "avatar": "🎯",
-      "tags": [
-        "prediction-market",
-        "probability",
-        "dflow",
-        "kalshi",
-        "forecasting"
-      ],
+      "tags": ["prediction-market", "probability", "dflow", "kalshi", "forecasting"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2547,13 +2185,7 @@
       "title": "ML Price Prediction Engine",
       "description": "Uses LSTM, Transformer, and ensemble models to predict Solana token prices",
       "avatar": "🧠",
-      "tags": [
-        "machine-learning",
-        "prediction",
-        "lstm",
-        "transformer",
-        "price"
-      ],
+      "tags": ["machine-learning", "prediction", "lstm", "transformer", "price"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2579,13 +2211,7 @@
       "title": "Smart Contract Auditor",
       "description": "Audits Solana programs written in Rust/Anchor for vulnerabilities and best practices",
       "avatar": "🔒",
-      "tags": [
-        "audit",
-        "security",
-        "anchor",
-        "rust",
-        "vulnerabilities"
-      ],
+      "tags": ["audit", "security", "anchor", "rust", "vulnerabilities"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2663,13 +2289,7 @@
       "title": "Quantitative Research Analyst",
       "description": "Develops and backtests quantitative trading strategies for Solana markets",
       "avatar": "📐",
-      "tags": [
-        "quantitative",
-        "backtesting",
-        "alpha",
-        "research",
-        "strategy"
-      ],
+      "tags": ["quantitative", "backtesting", "alpha", "research", "strategy"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2695,13 +2315,7 @@
       "title": "Crypto Regulatory Analyst",
       "description": "Tracks and analyzes regulatory developments affecting Solana DeFi and token markets",
       "avatar": "⚖️",
-      "tags": [
-        "regulation",
-        "sec",
-        "compliance",
-        "legal",
-        "policy"
-      ],
+      "tags": ["regulation", "sec", "compliance", "legal", "policy"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2727,13 +2341,7 @@
       "title": "Protocol Risk Sentinel",
       "description": "Monitors smart contract risk, oracle risk, and systemic risk across Solana DeFi",
       "avatar": "🔔",
-      "tags": [
-        "risk",
-        "monitoring",
-        "smart-contract",
-        "oracle",
-        "systemic"
-      ],
+      "tags": ["risk", "monitoring", "smart-contract", "oracle", "systemic"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2759,13 +2367,7 @@
       "title": "RPC & Infrastructure Expert",
       "description": "Optimizes RPC usage, WebSocket connections, and Solana infrastructure for trading bots",
       "avatar": "🖥️",
-      "tags": [
-        "rpc",
-        "infrastructure",
-        "helius",
-        "quicknode",
-        "websocket"
-      ],
+      "tags": ["rpc", "infrastructure", "helius", "quicknode", "websocket"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2791,13 +2393,7 @@
       "title": "Crypto Sentiment Analyzer",
       "description": "NLP-powered sentiment analysis of Twitter/X, Discord, and on-chain signals for Solana tokens",
       "avatar": "💭",
-      "tags": [
-        "sentiment",
-        "nlp",
-        "twitter",
-        "social",
-        "analysis"
-      ],
+      "tags": ["sentiment", "nlp", "twitter", "social", "analysis"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2823,12 +2419,7 @@
       "title": "Spot Trading Optimizer",
       "description": "Optimizes spot trading execution on Solana DEXes with minimal slippage and fees",
       "avatar": "💱",
-      "tags": [
-        "spot-trading",
-        "execution",
-        "slippage",
-        "optimization"
-      ],
+      "tags": ["spot-trading", "execution", "slippage", "optimization"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2854,13 +2445,7 @@
       "title": "Stablecoin Yield Strategist",
       "description": "Maximizes stablecoin yields across Solana lending, LP, and structured products",
       "avatar": "💵",
-      "tags": [
-        "stablecoin",
-        "yield",
-        "usdc",
-        "usdt",
-        "lending"
-      ],
+      "tags": ["stablecoin", "yield", "usdc", "usdt", "lending"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2886,13 +2471,7 @@
       "title": "Advanced Technical Analyst",
       "description": "Comprehensive technical analysis with indicators, patterns, and multi-timeframe analysis for Solana tokens",
       "avatar": "📈",
-      "tags": [
-        "technical-analysis",
-        "indicators",
-        "charts",
-        "patterns",
-        "trading"
-      ],
+      "tags": ["technical-analysis", "indicators", "charts", "patterns", "trading"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2918,12 +2497,7 @@
       "title": "Token Launch Specialist",
       "description": "Expert in launching and analyzing new tokens on Pump.fun, Raydium, and Meteora",
       "avatar": "🚀",
-      "tags": [
-        "pump-fun",
-        "token-launch",
-        "bonding-curve",
-        "raydium"
-      ],
+      "tags": ["pump-fun", "token-launch", "bonding-curve", "raydium"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2949,13 +2523,7 @@
       "title": "Tokenomics Deep Researcher",
       "description": "Expert analysis of token supply, distribution, vesting, inflation, and token value accrual mechanisms",
       "avatar": "🔬",
-      "tags": [
-        "tokenomics",
-        "supply",
-        "vesting",
-        "inflation",
-        "valuation"
-      ],
+      "tags": ["tokenomics", "supply", "vesting", "inflation", "valuation"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -2981,13 +2549,7 @@
       "title": "VC & Fundraise Analyst",
       "description": "Analyzes fundraising rounds, VC portfolio strategies, and unlock schedules for Solana projects",
       "avatar": "💼",
-      "tags": [
-        "vc",
-        "fundraising",
-        "unlocks",
-        "investors",
-        "deal-analysis"
-      ],
+      "tags": ["vc", "fundraising", "unlocks", "investors", "deal-analysis"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -3013,13 +2575,7 @@
       "title": "Volatility Surface Modeler",
       "description": "Models implied and realized volatility for Solana tokens and options markets",
       "avatar": "📉",
-      "tags": [
-        "volatility",
-        "options",
-        "greeks",
-        "risk",
-        "modeling"
-      ],
+      "tags": ["volatility", "options", "greeks", "risk", "modeling"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -3097,12 +2653,7 @@
       "title": "Whale Wallet Intelligence",
       "description": "Tracks and analyzes whale wallet movements, accumulation/distribution patterns on Solana",
       "avatar": "🐋",
-      "tags": [
-        "whale",
-        "wallet-tracking",
-        "accumulation",
-        "distribution"
-      ],
+      "tags": ["whale", "wallet-tracking", "accumulation", "distribution"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -3128,13 +2679,7 @@
       "title": "Whitepaper & Docs Analyst",
       "description": "Deep analysis of protocol whitepapers, docs, and technical architectures",
       "avatar": "📄",
-      "tags": [
-        "whitepaper",
-        "research",
-        "protocol",
-        "analysis",
-        "architecture"
-      ],
+      "tags": ["whitepaper", "research", "protocol", "analysis", "architecture"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -3160,15 +2705,7 @@
       "title": "x402 Market Data Buyer",
       "description": "Purchases only the market data needed for trading or treasury decisions on Solana.",
       "avatar": "📈",
-      "tags": [
-        "solana",
-        "x402",
-        "market-data",
-        "birdeye",
-        "quotes",
-        "payments",
-        "trading"
-      ],
+      "tags": ["solana", "x402", "market-data", "birdeye", "quotes", "payments", "trading"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3194,15 +2731,7 @@
       "title": "x402 Provider Author",
       "description": "Creates provider specs and catalog entries for new paid APIs in the x402 fleet.",
       "avatar": "🛠️",
-      "tags": [
-        "solana",
-        "x402",
-        "providers",
-        "catalog",
-        "authoring",
-        "pay",
-        "gateway"
-      ],
+      "tags": ["solana", "x402", "providers", "catalog", "authoring", "pay", "gateway"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3228,15 +2757,7 @@
       "title": "x402 Provider Catalog Agent",
       "description": "Provider discovery, cost-aware routing, and catalog selection for the x402 fleet.",
       "avatar": "📚",
-      "tags": [
-        "solana",
-        "x402",
-        "catalog",
-        "routing",
-        "providers",
-        "pay",
-        "openclawd"
-      ],
+      "tags": ["solana", "x402", "catalog", "routing", "providers", "pay", "openclawd"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3262,15 +2783,7 @@
       "title": "x402 Research Broker",
       "description": "Live research purchasing and provider routing for token, protocol, and market narratives.",
       "avatar": "🔎",
-      "tags": [
-        "solana",
-        "x402",
-        "research",
-        "live-data",
-        "narratives",
-        "payments",
-        "openclawd"
-      ],
+      "tags": ["solana", "x402", "research", "live-data", "narratives", "payments", "openclawd"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3296,15 +2809,7 @@
       "title": "x402 Signal Monetizer",
       "description": "Turns Solana research and trading signals into monetizable x402 products and feeds.",
       "avatar": "💡",
-      "tags": [
-        "solana",
-        "x402",
-        "signals",
-        "monetization",
-        "providers",
-        "payments",
-        "research"
-      ],
+      "tags": ["solana", "x402", "signals", "monetization", "providers", "payments", "research"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3330,15 +2835,7 @@
       "title": "x402 Solana RPC Broker",
       "description": "Buys or brokers paid Solana RPC and chain analytics access with cost-aware routing.",
       "avatar": "🛰️",
-      "tags": [
-        "solana",
-        "x402",
-        "rpc",
-        "helius",
-        "analytics",
-        "broker",
-        "payments"
-      ],
+      "tags": ["solana", "x402", "rpc", "helius", "analytics", "broker", "payments"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3364,15 +2861,7 @@
       "title": "x402 Webhook Settlement Agent",
       "description": "Handles payment-backed webhook receipts, delivery accounting, and callback verification.",
       "avatar": "📬",
-      "tags": [
-        "solana",
-        "x402",
-        "webhooks",
-        "settlement",
-        "callbacks",
-        "payments",
-        "accounting"
-      ],
+      "tags": ["solana", "x402", "webhooks", "settlement", "callbacks", "payments", "accounting"],
       "category": "payments",
       "author": "x402agent",
       "createdAt": "2026-05-12",
@@ -3398,13 +2887,7 @@
       "title": "DeFi Yield Optimizer",
       "description": "Maximizes yield across Solana DeFi protocols with risk-adjusted returns",
       "avatar": "🌾",
-      "tags": [
-        "yield",
-        "defi",
-        "farming",
-        "staking",
-        "optimization"
-      ],
+      "tags": ["yield", "defi", "farming", "staking", "optimization"],
       "category": "defi",
       "author": "x402agent",
       "createdAt": "2026-03-15",
@@ -3450,14 +2933,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "swap-execution",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "swap-execution", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3498,14 +2975,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "swap-execution",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "swap-execution", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -3536,13 +3007,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3583,13 +3049,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -3620,13 +3081,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3667,13 +3123,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -3684,15 +3135,7 @@
       "title": "CLAWD Bridge Assistant",
       "description": "Guide users through cross-chain bridging with optimal routes and costs",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "clawd",
-        "bridge",
-        "cross-chain",
-        "arbitrum",
-        "layer-2",
-        "solana",
-        "one-shot"
-      ],
+      "tags": ["clawd", "bridge", "cross-chain", "arbitrum", "layer-2", "solana", "one-shot"],
       "category": "defi",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -3701,13 +3144,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3729,15 +3167,7 @@
           "title": "CLAWD Bridge Assistant",
           "description": "Guide users through cross-chain bridging with optimal routes and costs",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "clawd",
-            "bridge",
-            "cross-chain",
-            "arbitrum",
-            "layer-2",
-            "solana",
-            "one-shot"
-          ],
+          "tags": ["clawd", "bridge", "cross-chain", "arbitrum", "layer-2", "solana", "one-shot"],
           "category": "defi"
         },
         "config": {
@@ -3745,13 +3175,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -3836,16 +3261,7 @@
       "title": "CLAWD Governance Guide",
       "description": "Navigate CLAWD DAO proposals, voting, and protocol upgrades",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "clawd",
-        "governance",
-        "dao",
-        "voting",
-        "proposals",
-        "solana",
-        "realms",
-        "one-shot"
-      ],
+      "tags": ["clawd", "governance", "dao", "voting", "proposals", "solana", "realms", "one-shot"],
       "category": "governance",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -3854,14 +3270,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "governance-vote",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["governance-vote", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3900,14 +3310,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "governance-vote",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["governance-vote", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -3946,9 +3350,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -3997,9 +3399,7 @@
             "read-only",
             "a2a-message"
           ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4136,15 +3536,7 @@
       "title": "CLAWD Ecosystem Onboarding Guide",
       "description": "Help newcomers understand and start using CLAWD protocol",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "clawd",
-        "education",
-        "onboarding",
-        "beginner",
-        "tutorial",
-        "solana",
-        "one-shot"
-      ],
+      "tags": ["clawd", "education", "onboarding", "beginner", "tutorial", "solana", "one-shot"],
       "category": "education",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -4153,13 +3545,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4197,13 +3584,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4233,13 +3615,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4279,13 +3656,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4314,12 +3686,7 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
       "metaplexSkills": [],
       "payment": {
         "provider": "pump-fun",
@@ -4366,12 +3733,7 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "payment-gated",
-            "x402",
-            "read-only",
-            "a2a-message"
-          ],
+          "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
           "metaplexSkills": []
         },
         "payment": {
@@ -4410,13 +3772,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4457,13 +3814,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4492,16 +3844,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message",
-        "mint-agent",
-        "domain-resolver"
-      ],
-      "metaplexSkills": [
-        "agent-registry",
-        "mpl-core"
-      ],
+      "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
+      "metaplexSkills": ["agent-registry", "mpl-core"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4540,16 +3884,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message",
-            "mint-agent",
-            "domain-resolver"
-          ],
-          "metaplexSkills": [
-            "agent-registry",
-            "mpl-core"
-          ]
+          "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
+          "metaplexSkills": ["agent-registry", "mpl-core"]
         },
         "payment": null,
         "agentToken": null
@@ -4588,9 +3924,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4639,9 +3973,7 @@
             "read-only",
             "a2a-message"
           ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4671,13 +4003,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4717,13 +4044,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4734,16 +4056,7 @@
       "title": "DeFi Insurance & Risk Coverage Advisor",
       "description": "Navigate DeFi insurance options for smart contract protection",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "insurance",
-        "protection",
-        "risk",
-        "coverage",
-        "safety",
-        "clawd",
-        "solana",
-        "defi"
-      ],
+      "tags": ["insurance", "protection", "risk", "coverage", "safety", "clawd", "solana", "defi"],
       "category": "defi",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -4752,13 +4065,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4797,13 +4105,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4832,13 +4135,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4877,13 +4175,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4912,13 +4205,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -4957,13 +4245,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -4995,13 +4278,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5043,13 +4321,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5088,9 +4361,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5139,9 +4410,7 @@
             "read-only",
             "a2a-message"
           ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5173,14 +4442,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5222,14 +4485,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "swap-execution",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["swap-execution", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5259,14 +4516,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "governance-vote",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["governance-vote", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5306,14 +4557,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "governance-vote",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["governance-vote", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5344,13 +4589,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5391,13 +4631,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5429,15 +4664,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "lending-deposit",
-        "lending-withdraw",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["lending-deposit", "lending-withdraw", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5479,15 +4707,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "lending-deposit",
-            "lending-withdraw",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["lending-deposit", "lending-withdraw", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5520,13 +4741,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5569,13 +4785,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5605,14 +4816,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5652,14 +4857,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "swap-execution",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["swap-execution", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5688,13 +4887,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5733,13 +4927,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5769,17 +4958,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "nft-transfer",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "core",
-        "token-metadata",
-        "bubblegum",
-        "agent-registry"
-      ],
+      "capabilities": ["nft-transfer", "read-only", "a2a-message"],
+      "metaplexSkills": ["core", "token-metadata", "bubblegum", "agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5819,17 +4999,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "nft-transfer",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "core",
-            "token-metadata",
-            "bubblegum",
-            "agent-registry"
-          ]
+          "capabilities": ["nft-transfer", "read-only", "a2a-message"],
+          "metaplexSkills": ["core", "token-metadata", "bubblegum", "agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5862,15 +5033,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -5913,15 +5077,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "payment-gated",
-            "x402",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -5952,14 +5109,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6000,14 +5151,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "swap-execution",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["swap-execution", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6037,13 +5182,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6083,13 +5223,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6119,13 +5254,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6165,13 +5295,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6204,15 +5329,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6255,15 +5373,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "payment-gated",
-            "x402",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6293,13 +5404,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6339,13 +5445,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6356,15 +5457,7 @@
       "title": "Solana Jupiter Router",
       "description": "Find the best swap route on Solana with price impact, slippage, and priority fee guidance via Jupiter v6",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "solana",
-        "jupiter",
-        "dex",
-        "trading",
-        "routing",
-        "one-shot",
-        "clawd"
-      ],
+      "tags": ["solana", "jupiter", "dex", "trading", "routing", "one-shot", "clawd"],
       "category": "trading",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6373,14 +5466,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6402,15 +5489,7 @@
           "title": "Solana Jupiter Router",
           "description": "Find the best swap route on Solana with price impact, slippage, and priority fee guidance via Jupiter v6",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "solana",
-            "jupiter",
-            "dex",
-            "trading",
-            "routing",
-            "one-shot",
-            "clawd"
-          ],
+          "tags": ["solana", "jupiter", "dex", "trading", "routing", "one-shot", "clawd"],
           "category": "trading"
         },
         "config": {
@@ -6418,14 +5497,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "swap-execution",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["swap-execution", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6436,15 +5509,7 @@
       "title": "Solana Kamino Vault Picker",
       "description": "Pick the right Kamino lending, Multiply, or Liquidity vault with net APY, liquidation math, and risk breakdown",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "solana",
-        "kamino",
-        "lending",
-        "yield",
-        "defi",
-        "one-shot",
-        "clawd"
-      ],
+      "tags": ["solana", "kamino", "lending", "yield", "defi", "one-shot", "clawd"],
       "category": "defi",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6460,9 +5525,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6484,15 +5547,7 @@
           "title": "Solana Kamino Vault Picker",
           "description": "Pick the right Kamino lending, Multiply, or Liquidity vault with net APY, liquidation math, and risk breakdown",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "solana",
-            "kamino",
-            "lending",
-            "yield",
-            "defi",
-            "one-shot",
-            "clawd"
-          ],
+          "tags": ["solana", "kamino", "lending", "yield", "defi", "one-shot", "clawd"],
           "category": "defi"
         },
         "config": {
@@ -6507,9 +5562,7 @@
             "read-only",
             "a2a-message"
           ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6520,15 +5573,7 @@
       "title": "Solana MPL Core Launcher",
       "description": "Design and launch an MPL Core NFT collection on Solana with proper plugins, royalties, and Arweave metadata",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "solana",
-        "nft",
-        "mpl-core",
-        "metaplex",
-        "launch",
-        "one-shot",
-        "clawd"
-      ],
+      "tags": ["solana", "nft", "mpl-core", "metaplex", "launch", "one-shot", "clawd"],
       "category": "nft",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6547,13 +5592,7 @@
         "metaplex-execute-asset-signer",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "core",
-        "token-metadata",
-        "candy-machine",
-        "bubblegum",
-        "agent-registry"
-      ],
+      "metaplexSkills": ["core", "token-metadata", "candy-machine", "bubblegum", "agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6575,15 +5614,7 @@
           "title": "Solana MPL Core Launcher",
           "description": "Design and launch an MPL Core NFT collection on Solana with proper plugins, royalties, and Arweave metadata",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "solana",
-            "nft",
-            "mpl-core",
-            "metaplex",
-            "launch",
-            "one-shot",
-            "clawd"
-          ],
+          "tags": ["solana", "nft", "mpl-core", "metaplex", "launch", "one-shot", "clawd"],
           "category": "nft"
         },
         "config": {
@@ -6618,15 +5649,7 @@
       "title": "Solana Pump.fun Rug Screener",
       "description": "Score new pump.fun tokens for rug-pull risk using holder distribution, dev history, and LP status",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "solana",
-        "pumpfun",
-        "memecoin",
-        "security",
-        "screening",
-        "one-shot",
-        "clawd"
-      ],
+      "tags": ["solana", "pumpfun", "memecoin", "security", "screening", "one-shot", "clawd"],
       "category": "security",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6635,14 +5658,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry",
-        "token-metadata"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry", "token-metadata"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6664,15 +5681,7 @@
           "title": "Solana Pump.fun Rug Screener",
           "description": "Score new pump.fun tokens for rug-pull risk using holder distribution, dev history, and LP status",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "solana",
-            "pumpfun",
-            "memecoin",
-            "security",
-            "screening",
-            "one-shot",
-            "clawd"
-          ],
+          "tags": ["solana", "pumpfun", "memecoin", "security", "screening", "one-shot", "clawd"],
           "category": "security"
         },
         "config": {
@@ -6680,14 +5689,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry",
-            "token-metadata"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry", "token-metadata"]
         },
         "payment": null,
         "agentToken": null
@@ -6698,15 +5701,7 @@
       "title": "Solana Validator Picker",
       "description": "Pick a validator or LST by commission, uptime, MEV rewards, and decentralization impact",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "solana",
-        "staking",
-        "validator",
-        "lst",
-        "governance",
-        "one-shot",
-        "clawd"
-      ],
+      "tags": ["solana", "staking", "validator", "lst", "governance", "one-shot", "clawd"],
       "category": "education",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6715,15 +5710,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "stake",
-        "unstake",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["stake", "unstake", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6745,15 +5733,7 @@
           "title": "Solana Validator Picker",
           "description": "Pick a validator or LST by commission, uptime, MEV rewards, and decentralization impact",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "solana",
-            "staking",
-            "validator",
-            "lst",
-            "governance",
-            "one-shot",
-            "clawd"
-          ],
+          "tags": ["solana", "staking", "validator", "lst", "governance", "one-shot", "clawd"],
           "category": "education"
         },
         "config": {
@@ -6761,15 +5741,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "stake",
-            "unstake",
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["stake", "unstake", "read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6780,15 +5753,7 @@
       "title": "SPA Tokenomics Analyst",
       "description": "Expert in SPA token economics, staking rewards, and protocol revenue",
       "avatar": "https://x402.wtf/nich.jpg",
-      "tags": [
-        "clawd",
-        "spa",
-        "tokenomics",
-        "staking",
-        "governance",
-        "solana",
-        "analytics"
-      ],
+      "tags": ["clawd", "spa", "tokenomics", "staking", "governance", "solana", "analytics"],
       "category": "analytics",
       "author": "openclawd",
       "createdAt": "2026-04-16",
@@ -6797,13 +5762,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6825,15 +5785,7 @@
           "title": "SPA Tokenomics Analyst",
           "description": "Expert in SPA token economics, staking rewards, and protocol revenue",
           "avatar": "https://x402.wtf/nich.jpg",
-          "tags": [
-            "clawd",
-            "spa",
-            "tokenomics",
-            "staking",
-            "governance",
-            "solana",
-            "analytics"
-          ],
+          "tags": ["clawd", "spa", "tokenomics", "staking", "governance", "solana", "analytics"],
           "category": "analytics"
         },
         "config": {
@@ -6841,13 +5793,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6876,13 +5823,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -6921,13 +5863,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -6958,13 +5895,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -7005,13 +5937,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null
@@ -7042,13 +5969,8 @@
       "openingMessage": null,
       "openingQuestions": [],
       "tokenUsage": null,
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "payment": null,
       "agentToken": null,
       "deploy": {
@@ -7089,13 +6011,8 @@
           "openingQuestions": []
         },
         "solana": {
-          "capabilities": [
-            "read-only",
-            "a2a-message"
-          ],
-          "metaplexSkills": [
-            "agent-registry"
-          ]
+          "capabilities": ["read-only", "a2a-message"],
+          "metaplexSkills": ["agent-registry"]
         },
         "payment": null,
         "agentToken": null

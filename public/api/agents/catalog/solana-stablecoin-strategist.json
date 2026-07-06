@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "💵",
     "description": "Maximizes stablecoin yields across Solana lending, LP, and structured products",
-    "tags": [
-      "stablecoin",
-      "yield",
-      "usdc",
-      "usdt",
-      "lending"
-    ],
+    "tags": ["stablecoin", "yield", "usdc", "usdt", "lending"],
     "title": "Stablecoin Yield Strategist"
   },
   "pluginCount": 0,

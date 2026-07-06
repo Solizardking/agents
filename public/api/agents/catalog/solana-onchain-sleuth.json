@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🕵️",
     "description": "Forensic blockchain analysis: wallet tracing, fund flows, entity identification on Solana",
-    "tags": [
-      "forensics",
-      "investigation",
-      "tracing",
-      "compliance",
-      "aml"
-    ],
+    "tags": ["forensics", "investigation", "tracing", "compliance", "aml"],
     "title": "On-Chain Investigation Specialist"
   },
   "pluginCount": 0,

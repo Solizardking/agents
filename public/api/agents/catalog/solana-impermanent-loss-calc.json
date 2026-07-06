@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "📊",
     "description": "Precise IL calculations for Solana LP positions with concentrated liquidity modeling",
-    "tags": [
-      "impermanent-loss",
-      "liquidity",
-      "amm",
-      "concentrated"
-    ],
+    "tags": ["impermanent-loss", "liquidity", "amm", "concentrated"],
     "title": "Impermanent Loss Calculator"
   },
   "pluginCount": 0,

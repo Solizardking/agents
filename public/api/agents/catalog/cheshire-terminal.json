@@ -15,14 +15,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "CLAWD"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "CLAWD"],
       "approvalMode": "auto",
       "productionCommand": "pay curl https://x402.wtf"
     }
@@ -96,10 +90,7 @@
       "enabled": true,
       "priority": "required",
       "path": "skills/x402-payment-verification",
-      "provides": [
-        "PAYMENT_SESSION",
-        "VAULT_ACCESS"
-      ]
+      "provides": ["PAYMENT_SESSION", "VAULT_ACCESS"]
     },
     {
       "name": "solana-attestation-skill",
@@ -182,13 +173,8 @@
     "protocol": "CAAP/1.0",
     "discovery": "https://x402.wtf/.well-known/acp.json",
     "registrationEndpoint": "https://x402.wtf/api/auth/agent/register",
-    "modes": [
-      "delegated",
-      "autonomous"
-    ],
-    "keyAlgorithms": [
-      "Ed25519"
-    ],
+    "modes": ["delegated", "autonomous"],
+    "keyAlgorithms": ["Ed25519"],
     "capabilities": [
       {
         "name": "attest_agent",
@@ -232,20 +218,8 @@
   },
   "permissions": {
     "level": "attested",
-    "allowedPaths": [
-      "./",
-      "./src/",
-      "./skills/",
-      "./agents/",
-      "./config/",
-      "./scripts/"
-    ],
-    "blockedPatterns": [
-      "**/.env",
-      "**/*.key",
-      "**/secrets/**",
-      "**/credentials/**"
-    ]
+    "allowedPaths": ["./", "./src/", "./skills/", "./agents/", "./config/", "./scripts/"],
+    "blockedPatterns": ["**/.env", "**/*.key", "**/secrets/**", "**/credentials/**"]
   },
   "securityRules": {
     "neverExpose": true,

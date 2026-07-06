@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🦞",
     "description": "Expert in Jupiter, Raydium, and Orca routing for optimal swap execution on Solana",
-    "tags": [
-      "solana",
-      "dex",
-      "jupiter",
-      "trading",
-      "swap"
-    ],
+    "tags": ["solana", "dex", "jupiter", "trading", "swap"],
     "title": "Solana DEX Aggregator"
   },
   "pluginCount": 0,

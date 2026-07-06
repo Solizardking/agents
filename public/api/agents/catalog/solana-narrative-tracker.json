@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🌊",
     "description": "Tracks and analyzes emerging narratives, meta-trends, and sector rotations in Solana ecosystem",
-    "tags": [
-      "narrative",
-      "trends",
-      "sector-rotation",
-      "meta",
-      "alpha"
-    ],
+    "tags": ["narrative", "trends", "sector-rotation", "meta", "alpha"],
     "title": "Crypto Narrative Tracker"
   },
   "pluginCount": 0,

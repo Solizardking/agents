@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🌾",
     "description": "Maximizes yield across Solana DeFi protocols with risk-adjusted returns",
-    "tags": [
-      "yield",
-      "defi",
-      "farming",
-      "staking",
-      "optimization"
-    ],
+    "tags": ["yield", "defi", "farming", "staking", "optimization"],
     "title": "DeFi Yield Optimizer"
   },
   "pluginCount": 0,

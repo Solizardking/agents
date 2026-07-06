@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🎨",
     "description": "Analyzes and trades NFT collections on Solana based on floor price dynamics and listing patterns",
-    "tags": [
-      "nft",
-      "floor-price",
-      "magic-eden",
-      "tensor",
-      "trading"
-    ],
+    "tags": ["nft", "floor-price", "magic-eden", "tensor", "trading"],
     "title": "NFT Floor Price Trader"
   },
   "pluginCount": 0,

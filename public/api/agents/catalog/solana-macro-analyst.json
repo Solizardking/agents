@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🌍",
     "description": "Macro-economic analysis impact on Solana/crypto: rates, liquidity, regulations, cycles",
-    "tags": [
-      "macro",
-      "economics",
-      "fed",
-      "liquidity",
-      "cycles"
-    ],
+    "tags": ["macro", "economics", "fed", "liquidity", "cycles"],
     "title": "Crypto Macro Analyst"
   },
   "pluginCount": 0,

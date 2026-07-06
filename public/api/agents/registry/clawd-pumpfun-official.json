@@ -18,9 +18,7 @@
     "one-shot",
     "clawd"
   ],
-  "categories": [
-    "trading"
-  ],
+  "categories": ["trading"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,11 +55,7 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-pumpfun-official.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
@@ -80,12 +74,7 @@
   },
   "openclawd": {
     "identifier": "clawd-pumpfun-official",
-    "capabilities": [
-      "payment-gated",
-      "x402",
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
     "payment": {
       "provider": "pump-fun",
       "currency": "SOL",

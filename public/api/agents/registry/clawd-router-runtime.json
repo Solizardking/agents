@@ -18,9 +18,7 @@
     "clawd-token",
     "infrastructure"
   ],
-  "categories": [
-    "infrastructure"
-  ],
+  "categories": ["infrastructure"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,15 +55,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-router-runtime.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -93,13 +85,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "CLAWD"
-      ],
+      "protocols": ["x402"],
+      "acceptedCurrencies": ["USDC", "CLAWD"],
       "approvalMode": "api-key"
     },
     "agentToken": null

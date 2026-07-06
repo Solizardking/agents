@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🐸",
     "description": "Analyzes memecoin launches, bonding curves, and pump.fun dynamics for profitable entries",
-    "tags": [
-      "memecoin",
-      "pump-fun",
-      "degen",
-      "alpha",
-      "bonding-curve"
-    ],
+    "tags": ["memecoin", "pump-fun", "degen", "alpha", "bonding-curve"],
     "title": "Memecoin Alpha Analyst"
   },
   "pluginCount": 0,

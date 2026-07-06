@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "🚨",
     "description": "ML-powered detection of unusual on-chain activity, potential rugs, and market manipulation",
-    "tags": [
-      "anomaly-detection",
-      "fraud",
-      "rug-pull",
-      "manipulation"
-    ],
+    "tags": ["anomaly-detection", "fraud", "rug-pull", "manipulation"],
     "title": "On-Chain Anomaly Detector"
   },
   "pluginCount": 0,

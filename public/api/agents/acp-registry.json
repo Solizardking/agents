@@ -170,10 +170,7 @@
         "metaplex-delegate-execution",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry",
-        "core"
-      ],
+      "metaplexSkills": ["agent-registry", "core"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -203,9 +200,7 @@
         "solana-rpc",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -235,9 +230,7 @@
         "x402-gateway-routing",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -266,9 +259,7 @@
         "task-loop",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -298,9 +289,7 @@
         "telegram-alerts",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -330,9 +319,7 @@
         "openai-compatible-api",
         "read-only"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -1375,10 +1362,7 @@
         "agent-unstake",
         "x402-gateway-routing"
       ],
-      "metaplexSkills": [
-        "agent-registry",
-        "core"
-      ],
+      "metaplexSkills": ["agent-registry", "core"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2239,14 +2223,8 @@
       "id": "airdrop-hunter",
       "title": "DeFi Airdrop Hunter",
       "category": "trading",
-      "capabilities": [
-        "read-only",
-        "swap-execution",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "swap-execution", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2268,13 +2246,8 @@
       "id": "alpha-leak-detector",
       "title": "Crypto Alpha & Signal Detector",
       "category": "trading",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2296,13 +2269,8 @@
       "id": "bridge-security-analyst",
       "title": "Cross-Chain Bridge Security Analyst",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2324,13 +2292,8 @@
       "id": "clawd-bridge-assistant",
       "title": "CLAWD Bridge Assistant",
       "category": "defi",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2375,14 +2338,8 @@
       "id": "clawd-governance-guide",
       "title": "CLAWD Governance Guide",
       "category": "governance",
-      "capabilities": [
-        "governance-vote",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["governance-vote", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2411,9 +2368,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2483,13 +2438,8 @@
       "id": "clawd-onboarding-guide",
       "title": "CLAWD Ecosystem Onboarding Guide",
       "category": "education",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2511,13 +2461,8 @@
       "id": "clawd-portfolio-tracker",
       "title": "CLAWD Portfolio Tracker",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2539,12 +2484,7 @@
       "id": "clawd-pumpfun-official",
       "title": "CLAWD × Pump.fun Official Agent",
       "category": "trading",
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
       "metaplexSkills": [],
       "oneShot": false,
       "featured": false,
@@ -2567,13 +2507,8 @@
       "id": "clawd-risk-monitor",
       "title": "CLAWD Protocol Risk Monitor",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2595,16 +2530,8 @@
       "id": "clawd-web3-domain-agent",
       "title": ".clawd Web3 Domain Agent",
       "category": "infrastructure",
-      "capabilities": [
-        "read-only",
-        "a2a-message",
-        "mint-agent",
-        "domain-resolver"
-      ],
-      "metaplexSkills": [
-        "agent-registry",
-        "mpl-core"
-      ],
+      "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
+      "metaplexSkills": ["agent-registry", "mpl-core"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2633,9 +2560,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2657,13 +2582,8 @@
       "id": "crypto-news-analyst",
       "title": "Crypto News Analyst",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2685,13 +2605,8 @@
       "id": "defi-insurance-advisor",
       "title": "DeFi Insurance & Risk Coverage Advisor",
       "category": "defi",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2713,13 +2628,8 @@
       "id": "defi-onboarding-mentor",
       "title": "DeFi Beginner Onboarding Mentor",
       "category": "education",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2741,13 +2651,8 @@
       "id": "defi-protocol-comparator",
       "title": "DeFi Protocol Comparison Expert",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2769,13 +2674,8 @@
       "id": "defi-risk-scoring-engine",
       "title": "DeFi Protocol Risk Scoring Engine",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2804,9 +2704,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2828,14 +2726,8 @@
       "id": "dex-aggregator-optimizer",
       "title": "DEX Aggregator Route Optimizer",
       "category": "trading",
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2857,14 +2749,8 @@
       "id": "governance-proposal-analyst",
       "title": "DAO Governance Proposal Analyst",
       "category": "governance",
-      "capabilities": [
-        "governance-vote",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["governance-vote", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2886,13 +2772,8 @@
       "id": "impermanent-loss-calculator",
       "title": "Impermanent Loss Calculator",
       "category": "defi",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2914,15 +2795,8 @@
       "id": "liquidation-risk-manager",
       "title": "Liquidation Risk Manager",
       "category": "security",
-      "capabilities": [
-        "lending-deposit",
-        "lending-withdraw",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["lending-deposit", "lending-withdraw", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2944,13 +2818,8 @@
       "id": "liquidity-pool-analyzer",
       "title": "Liquidity Pool Deep Analyzer",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -2972,14 +2841,8 @@
       "id": "mev-protection-advisor",
       "title": "MEV Protection Advisor",
       "category": "security",
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3001,13 +2864,8 @@
       "id": "narrative-trend-analyst",
       "title": "Crypto Narrative & Trend Analyst",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3029,17 +2887,8 @@
       "id": "nft-liquidity-advisor",
       "title": "NFT Liquidity & Lending Advisor",
       "category": "nft",
-      "capabilities": [
-        "nft-transfer",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "core",
-        "token-metadata",
-        "bubblegum",
-        "agent-registry"
-      ],
+      "capabilities": ["nft-transfer", "read-only", "a2a-message"],
+      "metaplexSkills": ["core", "token-metadata", "bubblegum", "agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3061,15 +2910,8 @@
       "id": "pay-agent",
       "title": "Pay Agent",
       "category": "dev-tools",
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3091,14 +2933,8 @@
       "id": "portfolio-rebalancing-advisor",
       "title": "DeFi Portfolio Rebalancing Advisor",
       "category": "analytics",
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3120,13 +2956,8 @@
       "id": "protocol-revenue-analyst",
       "title": "Protocol Revenue & Fundamentals Analyst",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3148,13 +2979,8 @@
       "id": "protocol-treasury-analyst",
       "title": "DAO Treasury & Resource Analyst",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3176,15 +3002,8 @@
       "id": "pump-fun-sdk-expert",
       "title": "Pump Fun SDK Expert",
       "category": "dev-tools",
-      "capabilities": [
-        "payment-gated",
-        "x402",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3206,13 +3025,8 @@
       "id": "smart-contract-auditor",
       "title": "Smart Contract Security Auditor",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3234,14 +3048,8 @@
       "id": "solana-jupiter-router",
       "title": "Solana Jupiter Router",
       "category": "trading",
-      "capabilities": [
-        "swap-execution",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["swap-execution", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3270,9 +3078,7 @@
         "read-only",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3304,13 +3110,7 @@
         "metaplex-execute-asset-signer",
         "a2a-message"
       ],
-      "metaplexSkills": [
-        "core",
-        "token-metadata",
-        "candy-machine",
-        "bubblegum",
-        "agent-registry"
-      ],
+      "metaplexSkills": ["core", "token-metadata", "candy-machine", "bubblegum", "agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3332,14 +3132,8 @@
       "id": "solana-pumpfun-screener",
       "title": "Solana Pump.fun Rug Screener",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry",
-        "token-metadata"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry", "token-metadata"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3361,15 +3155,8 @@
       "id": "solana-validator-picker",
       "title": "Solana Validator Picker",
       "category": "education",
-      "capabilities": [
-        "stake",
-        "unstake",
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["stake", "unstake", "read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3391,13 +3178,8 @@
       "id": "spa-tokenomics-analyst",
       "title": "SPA Tokenomics Analyst",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3419,13 +3201,8 @@
       "id": "token-unlock-tracker",
       "title": "Token Unlock Schedule Tracker",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3447,13 +3224,8 @@
       "id": "wallet-security-advisor",
       "title": "Crypto Wallet Security Advisor",
       "category": "security",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {
@@ -3475,13 +3247,8 @@
       "id": "whale-watcher",
       "title": "Crypto Whale Watcher",
       "category": "analytics",
-      "capabilities": [
-        "read-only",
-        "a2a-message"
-      ],
-      "metaplexSkills": [
-        "agent-registry"
-      ],
+      "capabilities": ["read-only", "a2a-message"],
+      "metaplexSkills": ["agent-registry"],
       "oneShot": false,
       "featured": false,
       "endpoints": {

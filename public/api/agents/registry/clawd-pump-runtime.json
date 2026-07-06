@@ -18,9 +18,7 @@
     "risk-management",
     "telegram"
   ],
-  "categories": [
-    "trading"
-  ],
+  "categories": ["trading"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,15 +55,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/clawd-pump-runtime.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,

@@ -10,15 +10,7 @@
     "title": "Solana Pump.fun Rug Screener",
     "description": "Score new pump.fun tokens for rug-pull risk using holder distribution, dev history, and LP status",
     "avatar": "https://x402.wtf/nich.jpg",
-    "tags": [
-      "solana",
-      "pumpfun",
-      "memecoin",
-      "security",
-      "screening",
-      "one-shot",
-      "clawd"
-    ],
+    "tags": ["solana", "pumpfun", "memecoin", "security", "screening", "one-shot", "clawd"],
     "category": "security"
   },
   "config": {
@@ -26,14 +18,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
-    "metaplexSkills": [
-      "agent-registry",
-      "token-metadata"
-    ]
+    "capabilities": ["read-only", "a2a-message"],
+    "metaplexSkills": ["agent-registry", "token-metadata"]
   },
   "payment": null,
   "agentToken": null

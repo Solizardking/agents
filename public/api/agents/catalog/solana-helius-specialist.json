@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🌐",
     "description": "Expert in Helius DAS, webhooks, Enhanced Transactions, and RPC for Solana development",
-    "tags": [
-      "helius",
-      "das",
-      "webhooks",
-      "enhanced-api",
-      "rpc"
-    ],
+    "tags": ["helius", "das", "webhooks", "enhanced-api", "rpc"],
     "title": "Helius API Specialist"
   },
   "pluginCount": 0,

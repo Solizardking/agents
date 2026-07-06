@@ -10,15 +10,7 @@
     "title": "Solana MPL Core Launcher",
     "description": "Design and launch an MPL Core NFT collection on Solana with proper plugins, royalties, and Arweave metadata",
     "avatar": "https://x402.wtf/nich.jpg",
-    "tags": [
-      "solana",
-      "nft",
-      "mpl-core",
-      "metaplex",
-      "launch",
-      "one-shot",
-      "clawd"
-    ],
+    "tags": ["solana", "nft", "mpl-core", "metaplex", "launch", "one-shot", "clawd"],
     "category": "nft"
   },
   "config": {
@@ -36,13 +28,7 @@
       "metaplex-execute-asset-signer",
       "a2a-message"
     ],
-    "metaplexSkills": [
-      "core",
-      "token-metadata",
-      "candy-machine",
-      "bubblegum",
-      "agent-registry"
-    ]
+    "metaplexSkills": ["core", "token-metadata", "candy-machine", "bubblegum", "agent-registry"]
   },
   "payment": null,
   "agentToken": null

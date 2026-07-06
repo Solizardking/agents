@@ -5,15 +5,8 @@
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": [
-        "x402",
-        "mpp"
-      ],
-      "acceptedCurrencies": [
-        "USDC",
-        "USDT",
-        "CASH"
-      ],
+      "protocols": ["x402", "mpp"],
+      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -50,17 +43,8 @@
           "objective": "Retry the exact gateway URL with payment proof attached"
         }
       ],
-      "inputs": [
-        "task",
-        "budget",
-        "wallet-state"
-      ],
-      "outputs": [
-        "decision",
-        "provider",
-        "cost-breakdown",
-        "result"
-      ],
+      "inputs": ["task", "budget", "wallet-state"],
+      "outputs": ["decision", "provider", "cost-breakdown", "result"],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -79,15 +63,7 @@
     "riskLevel": "medium",
     "variant": "clawd",
     "description": "x402 and MPP payment gateway for stablecoin-gated API access on Solana.",
-    "tags": [
-      "solana",
-      "clawd",
-      "x402",
-      "mpp",
-      "payment",
-      "gateway",
-      "openclawd"
-    ],
+    "tags": ["solana", "clawd", "x402", "mpp", "payment", "gateway", "openclawd"],
     "title": "Solana Clawd Payment Gateway"
   },
   "pluginCount": 0,

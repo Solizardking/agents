@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "⚖️",
     "description": "Tracks and analyzes regulatory developments affecting Solana DeFi and token markets",
-    "tags": [
-      "regulation",
-      "sec",
-      "compliance",
-      "legal",
-      "policy"
-    ],
+    "tags": ["regulation", "sec", "compliance", "legal", "policy"],
     "title": "Crypto Regulatory Analyst"
   },
   "pluginCount": 0,

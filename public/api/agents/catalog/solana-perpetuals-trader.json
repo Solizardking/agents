@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "📊",
     "description": "Expert in Solana perpetual futures on Drift, Zeta, Flash Trade, and Jupiter Perps",
-    "tags": [
-      "perpetuals",
-      "drift",
-      "zeta",
-      "leverage",
-      "futures"
-    ],
+    "tags": ["perpetuals", "drift", "zeta", "leverage", "futures"],
     "title": "Perpetuals Trading Strategist"
   },
   "pluginCount": 0,

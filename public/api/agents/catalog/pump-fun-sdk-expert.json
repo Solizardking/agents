@@ -31,15 +31,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "payment-gated",
-      "x402",
-      "read-only",
-      "a2a-message"
-    ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
+    "metaplexSkills": ["agent-registry"]
   },
   "payment": null,
   "agentToken": null

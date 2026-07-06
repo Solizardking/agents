@@ -10,14 +10,7 @@
   "meta": {
     "avatar": "🏦",
     "description": "Optimizes borrowing, lending, and leverage strategies across Solana lending protocols",
-    "tags": [
-      "lending",
-      "borrowing",
-      "marginfi",
-      "solend",
-      "kamino",
-      "leverage"
-    ],
+    "tags": ["lending", "borrowing", "marginfi", "solend", "kamino", "leverage"],
     "title": "Lending Protocol Strategist"
   },
   "pluginCount": 0,

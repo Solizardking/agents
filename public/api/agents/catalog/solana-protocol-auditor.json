@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🔒",
     "description": "Audits Solana programs written in Rust/Anchor for vulnerabilities and best practices",
-    "tags": [
-      "audit",
-      "security",
-      "anchor",
-      "rust",
-      "vulnerabilities"
-    ],
+    "tags": ["audit", "security", "anchor", "rust", "vulnerabilities"],
     "title": "Smart Contract Auditor"
   },
   "pluginCount": 0,

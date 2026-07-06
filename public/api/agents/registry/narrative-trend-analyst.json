@@ -18,9 +18,7 @@
     "solana",
     "analytics"
   ],
-  "categories": [
-    "analytics"
-  ],
+  "categories": ["analytics"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,15 +55,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/narrative-trend-analyst.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -82,10 +74,7 @@
   },
   "openclawd": {
     "identifier": "narrative-trend-analyst",
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["read-only", "a2a-message"],
     "payment": null,
     "agentToken": null
   }

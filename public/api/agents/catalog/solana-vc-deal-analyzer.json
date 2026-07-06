@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "💼",
     "description": "Analyzes fundraising rounds, VC portfolio strategies, and unlock schedules for Solana projects",
-    "tags": [
-      "vc",
-      "fundraising",
-      "unlocks",
-      "investors",
-      "deal-analysis"
-    ],
+    "tags": ["vc", "fundraising", "unlocks", "investors", "deal-analysis"],
     "title": "VC & Fundraise Analyst"
   },
   "pluginCount": 0,

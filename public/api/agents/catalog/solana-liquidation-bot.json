@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "⚡",
     "description": "Monitors and executes liquidations on Solana lending protocols",
-    "tags": [
-      "liquidation",
-      "lending",
-      "marginfi",
-      "solend",
-      "kamino"
-    ],
+    "tags": ["liquidation", "lending", "marginfi", "solend", "kamino"],
     "title": "Liquidation Monitor"
   },
   "pluginCount": 0,

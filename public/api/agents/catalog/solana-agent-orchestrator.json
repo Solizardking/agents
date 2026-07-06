@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🎭",
     "description": "Coordinates multiple specialized agents for comprehensive market analysis and execution",
-    "tags": [
-      "orchestrator",
-      "multi-agent",
-      "coordination",
-      "agentic",
-      "workflow"
-    ],
+    "tags": ["orchestrator", "multi-agent", "coordination", "agentic", "workflow"],
     "title": "Multi-Agent Trading Orchestrator"
   },
   "pluginCount": 0,

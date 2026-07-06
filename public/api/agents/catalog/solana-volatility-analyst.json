@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "📉",
     "description": "Models implied and realized volatility for Solana tokens and options markets",
-    "tags": [
-      "volatility",
-      "options",
-      "greeks",
-      "risk",
-      "modeling"
-    ],
+    "tags": ["volatility", "options", "greeks", "risk", "modeling"],
     "title": "Volatility Surface Modeler"
   },
   "pluginCount": 0,

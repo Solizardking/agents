@@ -29,9 +29,7 @@
     "mayhem-mode",
     "fee-tiers"
   ],
-  "categories": [
-    "trading"
-  ],
+  "categories": ["trading"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -68,11 +66,7 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/solana-pumpfun-bot.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",

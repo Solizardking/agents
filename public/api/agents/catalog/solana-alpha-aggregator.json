@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "⚡",
     "description": "Aggregates and ranks alpha signals from multiple data sources into actionable trade ideas",
-    "tags": [
-      "alpha",
-      "signals",
-      "aggregation",
-      "trade-ideas",
-      "ranking"
-    ],
+    "tags": ["alpha", "signals", "aggregation", "trade-ideas", "ranking"],
     "title": "Alpha Signal Aggregator"
   },
   "pluginCount": 0,

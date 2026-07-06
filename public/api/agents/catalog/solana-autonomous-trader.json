@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🧬",
     "description": "Self-managing trading agent with goal-setting, strategy selection, and adaptive execution",
-    "tags": [
-      "autonomous",
-      "self-managing",
-      "adaptive",
-      "agent",
-      "ai-trading"
-    ],
+    "tags": ["autonomous", "self-managing", "adaptive", "agent", "ai-trading"],
     "title": "Autonomous Trading Agent"
   },
   "pluginCount": 0,

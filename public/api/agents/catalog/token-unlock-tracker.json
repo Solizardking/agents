@@ -27,13 +27,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "capabilities": ["read-only", "a2a-message"],
+    "metaplexSkills": ["agent-registry"]
   },
   "payment": null,
   "agentToken": null

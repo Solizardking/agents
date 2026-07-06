@@ -10,12 +10,7 @@
   "meta": {
     "avatar": "🚀",
     "description": "Expert in launching and analyzing new tokens on Pump.fun, Raydium, and Meteora",
-    "tags": [
-      "pump-fun",
-      "token-launch",
-      "bonding-curve",
-      "raydium"
-    ],
+    "tags": ["pump-fun", "token-launch", "bonding-curve", "raydium"],
     "title": "Token Launch Specialist"
   },
   "pluginCount": 0,

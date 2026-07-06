@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🏦",
     "description": "Designs market making strategies for Solana tokens on DEXes and CLOBs",
-    "tags": [
-      "market-making",
-      "clob",
-      "spread",
-      "inventory",
-      "phoenix"
-    ],
+    "tags": ["market-making", "clob", "spread", "inventory", "phoenix"],
     "title": "Market Making Strategist"
   },
   "pluginCount": 0,

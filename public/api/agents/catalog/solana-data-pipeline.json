@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🔧",
     "description": "Builds data pipelines for Solana on-chain data: indexing, parsing, and analytics",
-    "tags": [
-      "data-pipeline",
-      "indexing",
-      "analytics",
-      "geyser",
-      "helius"
-    ],
+    "tags": ["data-pipeline", "indexing", "analytics", "geyser", "helius"],
     "title": "Blockchain Data Pipeline"
   },
   "pluginCount": 0,

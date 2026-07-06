@@ -8,19 +8,8 @@
   "active": true,
   "createdAt": "2026-04-16",
   "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": [
-    "insurance",
-    "protection",
-    "risk",
-    "coverage",
-    "safety",
-    "clawd",
-    "solana",
-    "defi"
-  ],
-  "categories": [
-    "defi"
-  ],
+  "tags": ["insurance", "protection", "risk", "coverage", "safety", "clawd", "solana", "defi"],
+  "categories": ["defi"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -57,15 +46,9 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/defi-insurance-advisor.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
-    "programs": [
-      "agent-registry"
-    ],
+    "programs": ["agent-registry"],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -82,10 +65,7 @@
   },
   "openclawd": {
     "identifier": "defi-insurance-advisor",
-    "capabilities": [
-      "read-only",
-      "a2a-message"
-    ],
+    "capabilities": ["read-only", "a2a-message"],
     "payment": null,
     "agentToken": null
   }

@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "🌉",
     "description": "Analyzes bridge security, routing, and arbitrage opportunities between Solana and other chains",
-    "tags": [
-      "bridge",
-      "cross-chain",
-      "wormhole",
-      "debridge",
-      "security"
-    ],
+    "tags": ["bridge", "cross-chain", "wormhole", "debridge", "security"],
     "title": "Cross-Chain Bridge Analyst"
   },
   "pluginCount": 0,

@@ -13,11 +13,7 @@
       "mountedAt": "./agents/clawd-pump",
       "sourcePath": "../clawd-pump",
       "package": "clawd-pump",
-      "entrypoints": [
-        "src/main.rs",
-        "src/lib.rs",
-        "src/http_server.rs"
-      ],
+      "entrypoints": ["src/main.rs", "src/lib.rs", "src/http_server.rs"],
       "smokeCommand": "cd clawd-pump && cargo check"
     }
   },
@@ -54,9 +50,7 @@
       "telegram-alerts",
       "read-only"
     ],
-    "metaplexSkills": [
-      "agent-registry"
-    ]
+    "metaplexSkills": ["agent-registry"]
   },
   "tokenUsage": 0
 }

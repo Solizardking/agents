@@ -10,13 +10,7 @@
   "meta": {
     "avatar": "📄",
     "description": "Deep analysis of protocol whitepapers, docs, and technical architectures",
-    "tags": [
-      "whitepaper",
-      "research",
-      "protocol",
-      "analysis",
-      "architecture"
-    ],
+    "tags": ["whitepaper", "research", "protocol", "analysis", "architecture"],
     "title": "Whitepaper & Docs Analyst"
   },
   "pluginCount": 0,

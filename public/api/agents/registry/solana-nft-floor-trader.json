@@ -8,16 +8,8 @@
   "active": true,
   "createdAt": "2026-03-15",
   "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": [
-    "nft",
-    "floor-price",
-    "magic-eden",
-    "tensor",
-    "trading"
-  ],
-  "categories": [
-    "defi"
-  ],
+  "tags": ["nft", "floor-price", "magic-eden", "tensor", "trading"],
+  "categories": ["defi"],
   "owner": {
     "organization": "OpenClawd",
     "website": "https://x402.wtf",
@@ -54,11 +46,7 @@
       "registrationUri": "https://x402.wtf/api/agents/registry/solana-nft-floor-trader.json"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "token-gated"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",

@@ -28,17 +28,8 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": [
-      "nft-transfer",
-      "read-only",
-      "a2a-message"
-    ],
-    "metaplexSkills": [
-      "core",
-      "token-metadata",
-      "bubblegum",
-      "agent-registry"
-    ]
+    "capabilities": ["nft-transfer", "read-only", "a2a-message"],
+    "metaplexSkills": ["core", "token-metadata", "bubblegum", "agent-registry"]
   },
   "payment": null,
   "agentToken": null
