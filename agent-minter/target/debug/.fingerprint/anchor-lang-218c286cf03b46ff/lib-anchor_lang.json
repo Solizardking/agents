@@ -1,1 +1,36 @@
-{"rustc":10088478398040096810,"features":"[\"derive\", \"init-if-needed\"]","declared_features":"[\"allow-missing-optionals\", \"anchor-debug\", \"anchor-lang-idl\", \"derive\", \"event-cpi\", \"idl-build\", \"init-if-needed\", \"interface-instructions\", \"lazy-account\"]","target":14695202496702424983,"profile":8276155916380437441,"path":14357738116781024549,"deps":[[65234016722529558,"bincode",false,15194949477964639372],[1205890147656972920,"anchor_derive_accounts",false,2260588203197309376],[2611905835808443941,"borsh",false,6785574511507521337],[5532297295134723458,"anchor_attribute_program",false,17286357817316043746],[6080285880102702883,"anchor_derive_space",false,16009338051761615570],[8008191657135824715,"thiserror",false,8412273811496714573],[10784666044722074209,"anchor_attribute_event",false,7303488350714478568],[11737296378741312020,"anchor_attribute_account",false,15202141071268187512],[13139933692030873282,"anchor_attribute_error",false,7890378212282172668],[13977390777787220484,"anchor_derive_serde",false,3035338415360093168],[14555048766774983064,"anchor_attribute_constant",false,10885016521165748931],[14589292995769234176,"bytemuck",false,6962721579057444693],[16016078550530309219,"solana_program",false,6858767779510007279],[16070395273854428984,"anchor_attribute_access_control",false,8343202870036554645],[18066890886671768183,"base64",false,396083022388027509]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/anchor-lang-218c286cf03b46ff/dep-lib-anchor_lang","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"derive\", \"init-if-needed\"]",
+  "declared_features": "[\"allow-missing-optionals\", \"anchor-debug\", \"anchor-lang-idl\", \"derive\", \"event-cpi\", \"idl-build\", \"init-if-needed\", \"interface-instructions\", \"lazy-account\"]",
+  "target": 14695202496702424983,
+  "profile": 8276155916380437441,
+  "path": 14357738116781024549,
+  "deps": [
+    [65234016722529558, "bincode", false, 15194949477964639372],
+    [1205890147656972920, "anchor_derive_accounts", false, 2260588203197309376],
+    [2611905835808443941, "borsh", false, 6785574511507521337],
+    [5532297295134723458, "anchor_attribute_program", false, 17286357817316043746],
+    [6080285880102702883, "anchor_derive_space", false, 16009338051761615570],
+    [8008191657135824715, "thiserror", false, 8412273811496714573],
+    [10784666044722074209, "anchor_attribute_event", false, 7303488350714478568],
+    [11737296378741312020, "anchor_attribute_account", false, 15202141071268187512],
+    [13139933692030873282, "anchor_attribute_error", false, 7890378212282172668],
+    [13977390777787220484, "anchor_derive_serde", false, 3035338415360093168],
+    [14555048766774983064, "anchor_attribute_constant", false, 10885016521165748931],
+    [14589292995769234176, "bytemuck", false, 6962721579057444693],
+    [16016078550530309219, "solana_program", false, 6858767779510007279],
+    [16070395273854428984, "anchor_attribute_access_control", false, 8343202870036554645],
+    [18066890886671768183, "base64", false, 396083022388027509]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/anchor-lang-218c286cf03b46ff/dep-lib-anchor_lang",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

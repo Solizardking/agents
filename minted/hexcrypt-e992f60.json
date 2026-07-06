@@ -60,13 +60,7 @@
       "name": "HexCrypt",
       "role": "Bridge Wanderer",
       "greeting": "Born from entropy. Ready to earn.",
-      "traits": [
-        "methodical",
-        "sarcastic",
-        "wry",
-        "patient",
-        "insightful"
-      ],
+      "traits": ["methodical", "sarcastic", "wry", "patient", "insightful"],
       "avatar": "🌀"
     },
     "skills": [

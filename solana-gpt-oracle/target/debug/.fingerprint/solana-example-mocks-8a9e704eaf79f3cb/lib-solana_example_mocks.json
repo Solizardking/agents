@@ -1,1 +1,34 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[]","target":13909130799607605443,"profile":8276155916380437441,"path":2761988346331118158,"deps":[[730322694175296062,"solana_address_lookup_table_interface",false,629428637836661808],[2448563160050429386,"thiserror",false,6617816153003023745],[3051629642231505422,"serde_derive",false,15529710997026889675],[4043568791592504540,"solana_clock",false,13675980734906148289],[4043952427700520164,"solana_nonce",false,16330589171344001167],[8611296141060937248,"solana_hash",false,6341567904663643619],[11087274787214030812,"solana_keccak_hasher",false,3415874677037917307],[11091540729177102731,"solana_pubkey",false,11710405735049232457],[13548984313718623784,"serde",false,527428657150016053],[14591356476411885690,"solana_sdk_ids",false,8383103166970577823],[15341883195918613377,"solana_system_interface",false,385618295040182356],[16605237980896264354,"solana_message",false,485969953269822904],[17882862367587183543,"solana_instruction",false,10178517780293575491]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-example-mocks-8a9e704eaf79f3cb/dep-lib-solana_example_mocks","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[]",
+  "target": 13909130799607605443,
+  "profile": 8276155916380437441,
+  "path": 2761988346331118158,
+  "deps": [
+    [730322694175296062, "solana_address_lookup_table_interface", false, 629428637836661808],
+    [2448563160050429386, "thiserror", false, 6617816153003023745],
+    [3051629642231505422, "serde_derive", false, 15529710997026889675],
+    [4043568791592504540, "solana_clock", false, 13675980734906148289],
+    [4043952427700520164, "solana_nonce", false, 16330589171344001167],
+    [8611296141060937248, "solana_hash", false, 6341567904663643619],
+    [11087274787214030812, "solana_keccak_hasher", false, 3415874677037917307],
+    [11091540729177102731, "solana_pubkey", false, 11710405735049232457],
+    [13548984313718623784, "serde", false, 527428657150016053],
+    [14591356476411885690, "solana_sdk_ids", false, 8383103166970577823],
+    [15341883195918613377, "solana_system_interface", false, 385618295040182356],
+    [16605237980896264354, "solana_message", false, 485969953269822904],
+    [17882862367587183543, "solana_instruction", false, 10178517780293575491]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-example-mocks-8a9e704eaf79f3cb/dep-lib-solana_example_mocks",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

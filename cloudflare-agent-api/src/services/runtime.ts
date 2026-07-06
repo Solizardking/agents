@@ -34,11 +34,14 @@ export interface ToolDefinition {
     description: string;
     parameters: {
       type: 'object';
-      properties: Record<string, {
-        type: string;
-        description?: string;
-        enum?: string[];
-      }>;
+      properties: Record<
+        string,
+        {
+          type: string;
+          description?: string;
+          enum?: string[];
+        }
+      >;
       required?: string[];
     };
   };
@@ -52,14 +55,16 @@ export interface ChatCompletionRequest {
   temperature?: number;
   max_tokens?: number;
   stream?: boolean;
-  response_format?: { type: 'json_object' | 'text' } | {
-    type: 'json_schema';
-    json_schema: {
-      name: string;
-      strict?: boolean;
-      schema: Record<string, unknown>;
-    };
-  };
+  response_format?:
+    | { type: 'json_object' | 'text' }
+    | {
+        type: 'json_schema';
+        json_schema: {
+          name: string;
+          strict?: boolean;
+          schema: Record<string, unknown>;
+        };
+      };
 }
 
 export interface ChatCompletionResponse {
@@ -332,7 +337,8 @@ export const SOLANA_TOOLS: ToolDefinition[] = [
         properties: {
           inputMint: {
             type: 'string',
-            description: 'The input token mint address (use "So11111111111111111111111111111111111111112" for SOL)',
+            description:
+              'The input token mint address (use "So11111111111111111111111111111111111111112" for SOL)',
           },
           outputMint: {
             type: 'string',
@@ -407,7 +413,8 @@ export const SOLANA_TOOLS: ToolDefinition[] = [
           },
           validatorAddress: {
             type: 'string',
-            description: 'The validator vote account address (optional, uses recommended if not provided)',
+            description:
+              'The validator vote account address (optional, uses recommended if not provided)',
           },
         },
         required: ['amount'],
@@ -479,9 +486,8 @@ export class AgentRuntimeService {
       const fullMessages = [systemMessage, ...messages];
 
       // Get available tools based on capabilities
-      const tools = options?.tools !== false
-        ? this.getToolsForCapabilities(context.capabilities)
-        : undefined;
+      const tools =
+        options?.tools !== false ? this.getToolsForCapabilities(context.capabilities) : undefined;
 
       // Make API call based on provider
       const response = await this.callModelAPI(
@@ -581,7 +587,10 @@ export class AgentRuntimeService {
       }),
     });
 
-    const data = await response.json() as { result?: { value: number }; error?: { message: string } };
+    const data = (await response.json()) as {
+      result?: { value: number };
+      error?: { message: string };
+    };
     if (data.error) {
       return { result: `Error: ${data.error.message}` };
     }
@@ -603,15 +612,17 @@ export class AgentRuntimeService {
         jsonrpc: '2.0',
         id: 1,
         method: 'getTokenAccountsByOwner',
-        params: [
-          args.walletAddress,
-          { mint: args.tokenMint },
-          { encoding: 'jsonParsed' },
-        ],
+        params: [args.walletAddress, { mint: args.tokenMint }, { encoding: 'jsonParsed' }],
       }),
     });
 
-    const data = await response.json() as { result?: { value: Array<{ account: { data: { parsed: { info: { tokenAmount: { uiAmount: number } } } } } }> } };
+    const data = (await response.json()) as {
+      result?: {
+        value: Array<{
+          account: { data: { parsed: { info: { tokenAmount: { uiAmount: number } } } } };
+        }>;
+      };
+    };
     const accounts = data.result?.value || [];
 
     if (accounts.length === 0) {
@@ -692,16 +703,16 @@ export class AgentRuntimeService {
         }),
       };
     } catch (error) {
-      return { result: `Error getting swap quote: ${error instanceof Error ? error.message : 'Unknown error'}` };
+      return {
+        result: `Error getting swap quote: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      };
     }
   }
 
-  private async toolGetTokenPrice(
-    args: { tokenMint: string }
-  ): Promise<{ result: string }> {
+  private async toolGetTokenPrice(args: { tokenMint: string }): Promise<{ result: string }> {
     try {
       const response = await fetch(`https://api.jup.ag/price/v2?ids=${args.tokenMint}`);
-      const data = await response.json() as { data?: Record<string, { price: number }> };
+      const data = (await response.json()) as { data?: Record<string, { price: number }> };
       const price = data.data?.[args.tokenMint]?.price;
 
       return {
@@ -711,13 +722,17 @@ export class AgentRuntimeService {
         }),
       };
     } catch (error) {
-      return { result: `Error getting price: ${error instanceof Error ? error.message : 'Unknown error'}` };
+      return {
+        result: `Error getting price: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      };
     }
   }
 
-  private async toolGetSwapQuote(
-    args: { inputMint: string; outputMint: string; amount: string }
-  ): Promise<{ result: string }> {
+  private async toolGetSwapQuote(args: {
+    inputMint: string;
+    outputMint: string;
+    amount: string;
+  }): Promise<{ result: string }> {
     try {
       const quoteUrl = `https://quote-api.jup.ag/v6/quote?inputMint=${args.inputMint}&outputMint=${args.outputMint}&amount=${args.amount}&slippageBps=50`;
       const response = await fetch(quoteUrl);
@@ -725,7 +740,9 @@ export class AgentRuntimeService {
 
       return { result: JSON.stringify(quote) };
     } catch (error) {
-      return { result: `Error getting quote: ${error instanceof Error ? error.message : 'Unknown error'}` };
+      return {
+        result: `Error getting quote: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      };
     }
   }
 
@@ -772,7 +789,9 @@ export class AgentRuntimeService {
         }),
       });
 
-      const data = await response.json() as { result?: Array<{ signature: string; slot: number; blockTime: number }> };
+      const data = (await response.json()) as {
+        result?: Array<{ signature: string; slot: number; blockTime: number }>;
+      };
       return { result: JSON.stringify(data.result || []) };
     } catch (error) {
       return { result: `Error: ${error instanceof Error ? error.message : 'Unknown error'}` };
@@ -784,7 +803,8 @@ export class AgentRuntimeService {
   // ─────────────────────────────────────────────────
 
   private buildSystemPrompt(context: AgentExecutionContext): string {
-    const basePrompt = context.configuration.systemPrompt ||
+    const basePrompt =
+      context.configuration.systemPrompt ||
       'You are an autonomous AI agent with a Solana wallet. You can perform on-chain actions when requested.';
 
     const capabilityDescriptions: Record<string, string> = {
@@ -798,7 +818,7 @@ export class AgentRuntimeService {
     };
 
     const capabilities = context.capabilities
-      .map(cap => capabilityDescriptions[cap])
+      .map((cap) => capabilityDescriptions[cap])
       .filter(Boolean)
       .join(' ');
 
@@ -818,17 +838,22 @@ When using tools, always confirm important actions with the user before executin
       swap: ['swap_tokens', 'get_swap_quote', 'get_token_price'],
       stake: ['stake_sol', 'get_wallet_balance'],
       chat: [],
-      analyze: ['get_wallet_balance', 'get_token_balance', 'get_token_price', 'get_transaction_history'],
+      analyze: [
+        'get_wallet_balance',
+        'get_token_balance',
+        'get_token_price',
+        'get_transaction_history',
+      ],
       trade: ['swap_tokens', 'get_swap_quote', 'get_token_price', 'get_wallet_balance'],
     };
 
     const toolNames = new Set<string>();
     for (const cap of capabilities) {
       const tools = capabilityToTools[cap] || [];
-      tools.forEach(t => toolNames.add(t));
+      tools.forEach((t) => toolNames.add(t));
     }
 
-    return SOLANA_TOOLS.filter(t => toolNames.has(t.function.name));
+    return SOLANA_TOOLS.filter((t) => toolNames.has(t.function.name));
   }
 
   private async callModelAPI(
@@ -855,7 +880,7 @@ When using tools, always confirm important actions with the user before executin
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         model: config.modelId,
@@ -885,10 +910,10 @@ When using tools, always confirm important actions with the user before executin
     apiKey?: string
   ): Promise<ChatCompletionResponse> {
     // Convert messages to Anthropic format
-    const systemMessage = messages.find(m => m.role === 'system');
-    const conversationMessages = messages.filter(m => m.role !== 'system');
+    const systemMessage = messages.find((m) => m.role === 'system');
+    const conversationMessages = messages.filter((m) => m.role !== 'system');
 
-    const anthropicTools = tools?.map(t => ({
+    const anthropicTools = tools?.map((t) => ({
       name: t.function.name,
       description: t.function.description,
       input_schema: t.function.parameters,
@@ -905,7 +930,7 @@ When using tools, always confirm important actions with the user before executin
         model: config.modelId,
         max_tokens: agentConfig.maxTokens,
         system: systemMessage?.content || '',
-        messages: conversationMessages.map(m => ({
+        messages: conversationMessages.map((m) => ({
           role: m.role === 'assistant' ? 'assistant' : 'user',
           content: m.content,
         })),
@@ -918,9 +943,14 @@ When using tools, always confirm important actions with the user before executin
       throw new Error(`Anthropic API error: ${error}`);
     }
 
-    const anthropicResponse = await response.json() as {
+    const anthropicResponse = (await response.json()) as {
       id: string;
-      content: Array<{ type: string; text?: string; name?: string; input?: Record<string, unknown> }>;
+      content: Array<{
+        type: string;
+        text?: string;
+        name?: string;
+        input?: Record<string, unknown>;
+      }>;
       stop_reason: string;
       usage: { input_tokens: number; output_tokens: number };
     };
@@ -949,15 +979,17 @@ When using tools, always confirm important actions with the user before executin
       object: 'chat.completion',
       created: Date.now(),
       model: config.modelId,
-      choices: [{
-        index: 0,
-        message: {
-          role: 'assistant',
-          content: textContent || null,
-          tool_calls: toolCalls.length > 0 ? toolCalls : undefined,
+      choices: [
+        {
+          index: 0,
+          message: {
+            role: 'assistant',
+            content: textContent || null,
+            tool_calls: toolCalls.length > 0 ? toolCalls : undefined,
+          },
+          finish_reason: toolCalls.length > 0 ? 'tool_calls' : 'stop',
         },
-        finish_reason: toolCalls.length > 0 ? 'tool_calls' : 'stop',
-      }],
+      ],
       usage: {
         prompt_tokens: anthropicResponse.usage.input_tokens,
         completion_tokens: anthropicResponse.usage.output_tokens,
@@ -997,20 +1029,23 @@ When using tools, always confirm important actions with the user before executin
     error?: string
   ): Promise<void> {
     try {
-      await this.db.prepare(`
+      await this.db
+        .prepare(`
         INSERT INTO agent_execution_logs (
           deployment_id, action, input, output, status, error, tokens_used, execution_time_ms
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      `).bind(
-        context.deploymentId,
-        action,
-        JSON.stringify(input),
-        output ? JSON.stringify(output) : null,
-        error ? 'error' : 'success',
-        error || null,
-        (output as ChatCompletionResponse)?.usage?.total_tokens || 0,
-        executionTimeMs
-      ).run();
+      `)
+        .bind(
+          context.deploymentId,
+          action,
+          JSON.stringify(input),
+          output ? JSON.stringify(output) : null,
+          error ? 'error' : 'success',
+          error || null,
+          (output as ChatCompletionResponse)?.usage?.total_tokens || 0,
+          executionTimeMs
+        )
+        .run();
     } catch (e) {
       console.error('Failed to log execution:', e);
     }
@@ -1030,7 +1065,7 @@ When using tools, always confirm important actions with the user before executin
   }> {
     return Object.entries(MODEL_CONFIGS).map(([id, config]) => ({
       id,
-      name: id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+      name: id.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
       provider: config.provider,
       supportsTools: config.supportsTools,
       supportsVision: config.supportsVision,

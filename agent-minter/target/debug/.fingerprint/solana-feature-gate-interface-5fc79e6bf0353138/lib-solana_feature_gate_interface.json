@@ -1,1 +1,24 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[\"bincode\", \"dev-context-only-utils\", \"serde\"]","target":16785018135431918194,"profile":13904601386562544002,"path":1293123216963962240,"deps":[[8996746183978561962,"solana_sdk_ids",false,11205403632063890973],[10883467655869887408,"solana_program_error",false,7343332924441667680],[14356704656658903383,"solana_pubkey",false,10523131262638833572]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-feature-gate-interface-5fc79e6bf0353138/dep-lib-solana_feature_gate_interface","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[\"bincode\", \"dev-context-only-utils\", \"serde\"]",
+  "target": 16785018135431918194,
+  "profile": 13904601386562544002,
+  "path": 1293123216963962240,
+  "deps": [
+    [8996746183978561962, "solana_sdk_ids", false, 11205403632063890973],
+    [10883467655869887408, "solana_program_error", false, 7343332924441667680],
+    [14356704656658903383, "solana_pubkey", false, 10523131262638833572]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-feature-gate-interface-5fc79e6bf0353138/dep-lib-solana_feature_gate_interface",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

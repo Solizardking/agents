@@ -1,1 +1,33 @@
-{"rustc":10088478398040096810,"features":"[\"borsh\"]","declared_features":"[\"borsh\", \"serde-traits\"]","target":1586917627076750936,"profile":8276155916380437441,"path":5079353088197410087,"deps":[[547853541011860437,"solana_zk_sdk",false,16023931394963719735],[761872526999005629,"solana_msg",false,1219892521562148489],[2448563160050429386,"thiserror",false,17496387828855450915],[4145337479814240220,"solana_decode_error",false,9874968205060029542],[4917153833802766511,"solana_program_error",false,7971800277136418334],[5157631553186200874,"num_traits",false,16151257895603573568],[5293063661450705635,"borsh",false,6808008253154236373],[11091540729177102731,"solana_pubkey",false,8259773041305735160],[11263754829263059703,"num_derive",false,14514163362931294420],[13740259144933249371,"solana_program_option",false,1335337500803692911],[14589292995769234176,"bytemuck",false,6962721579057444693],[15783091771682552589,"bytemuck_derive",false,17777408018614003626]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/spl-pod-6e4b4f199ec42c8f/dep-lib-spl_pod","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"borsh\"]",
+  "declared_features": "[\"borsh\", \"serde-traits\"]",
+  "target": 1586917627076750936,
+  "profile": 8276155916380437441,
+  "path": 5079353088197410087,
+  "deps": [
+    [547853541011860437, "solana_zk_sdk", false, 16023931394963719735],
+    [761872526999005629, "solana_msg", false, 1219892521562148489],
+    [2448563160050429386, "thiserror", false, 17496387828855450915],
+    [4145337479814240220, "solana_decode_error", false, 9874968205060029542],
+    [4917153833802766511, "solana_program_error", false, 7971800277136418334],
+    [5157631553186200874, "num_traits", false, 16151257895603573568],
+    [5293063661450705635, "borsh", false, 6808008253154236373],
+    [11091540729177102731, "solana_pubkey", false, 8259773041305735160],
+    [11263754829263059703, "num_derive", false, 14514163362931294420],
+    [13740259144933249371, "solana_program_option", false, 1335337500803692911],
+    [14589292995769234176, "bytemuck", false, 6962721579057444693],
+    [15783091771682552589, "bytemuck_derive", false, 17777408018614003626]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/spl-pod-6e4b4f199ec42c8f/dep-lib-spl_pod",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

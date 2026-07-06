@@ -1,1 +1,28 @@
-{"rustc":10088478398040096810,"features":"[\"bincode\", \"borsh\", \"default\", \"serde\", \"std\", \"syscalls\"]","declared_features":"[\"bincode\", \"borsh\", \"default\", \"frozen-abi\", \"serde\", \"std\", \"syscalls\"]","target":11200884870583074897,"profile":13904601386562544002,"path":14104859145271202828,"deps":[[65234016722529558,"bincode",false,6340159803544484260],[3051629642231505422,"serde_derive",false,15529710997026889675],[5157631553186200874,"num_traits",false,16151257895603573568],[5293063661450705635,"borsh",false,4590505346341224492],[8578586876803397814,"serde_json",false,3661851707396093795],[11091540729177102731,"solana_pubkey",false,11710405735049232457],[13548984313718623784,"serde",false,527428657150016053]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-instruction-e80c0e7eeecfc21b/dep-lib-solana_instruction","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"bincode\", \"borsh\", \"default\", \"serde\", \"std\", \"syscalls\"]",
+  "declared_features": "[\"bincode\", \"borsh\", \"default\", \"frozen-abi\", \"serde\", \"std\", \"syscalls\"]",
+  "target": 11200884870583074897,
+  "profile": 13904601386562544002,
+  "path": 14104859145271202828,
+  "deps": [
+    [65234016722529558, "bincode", false, 6340159803544484260],
+    [3051629642231505422, "serde_derive", false, 15529710997026889675],
+    [5157631553186200874, "num_traits", false, 16151257895603573568],
+    [5293063661450705635, "borsh", false, 4590505346341224492],
+    [8578586876803397814, "serde_json", false, 3661851707396093795],
+    [11091540729177102731, "solana_pubkey", false, 11710405735049232457],
+    [13548984313718623784, "serde", false, 527428657150016053]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-instruction-e80c0e7eeecfc21b/dep-lib-solana_instruction",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

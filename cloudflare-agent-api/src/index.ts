@@ -74,16 +74,20 @@ export interface Session {
 // ─────────────────────────────────────────────────
 
 function corsHeaders(env: Env, requestOrigin?: string): HeadersInit {
-  const allowed = (env.CORS_ORIGIN || '').split(',').map(o => o.trim()).filter(Boolean);
-  const origin = requestOrigin && allowed.includes(requestOrigin)
-    ? requestOrigin
-    : allowed[0] ?? 'https://x402.wtf';
+  const allowed = (env.CORS_ORIGIN || '')
+    .split(',')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const origin =
+    requestOrigin && allowed.includes(requestOrigin)
+      ? requestOrigin
+      : (allowed[0] ?? 'https://x402.wtf');
   return {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, X-Agent-API-Key, X-Agent-Session',
     'Access-Control-Max-Age': '86400',
-    'Vary': 'Origin',
+    Vary: 'Origin',
   };
 }
 
@@ -125,39 +129,43 @@ export default {
     try {
       // Route requests
       if (path === '/health' || path === '/') {
-        return jsonResponse({
-          success: true,
-          service: 'AI Agent API',
-          version: '2.1.0',
-          environment: env.ENVIRONMENT,
-          timestamp: new Date().toISOString(),
-          features: {
-            wallets: 'Crossmint smart wallets with delegated signing',
-            smartWallets: 'Smart wallets with admin signer + MPC wallets',
-            goatSdk: 'GOAT SDK tools (balance, transfer, price, swap quotes)',
-            models: 'Multi-provider AI models (OpenAI, Anthropic, Phala, DeepSeek)',
-            tools: 'On-chain Solana actions (transfer, swap, stake)',
-            streaming: 'Real-time response streaming',
+        return jsonResponse(
+          {
+            success: true,
+            service: 'AI Agent API',
+            version: '2.1.0',
+            environment: env.ENVIRONMENT,
+            timestamp: new Date().toISOString(),
+            features: {
+              wallets: 'Crossmint smart wallets with delegated signing',
+              smartWallets: 'Smart wallets with admin signer + MPC wallets',
+              goatSdk: 'GOAT SDK tools (balance, transfer, price, swap quotes)',
+              models: 'Multi-provider AI models (OpenAI, Anthropic, Phala, DeepSeek)',
+              tools: 'On-chain Solana actions (transfer, swap, stake)',
+              streaming: 'Real-time response streaming',
+            },
+            endpoints: {
+              agents: '/api/agents/*',
+              wallets: '/api/wallets/*',
+              smartWallets: '/api/smart-wallets/*',
+              catalog: '/api/catalog/*',
+            },
+            providers: {
+              openai: !!env.OPENAI_API_KEY,
+              anthropic: !!env.ANTHROPIC_API_KEY,
+              phala: !!env.PHALA_API_KEY,
+              deepseek: !!env.DEEPSEEK_API_KEY,
+              crossmint: !!env.CROSSMINT_SERVERSIDE_API_KEY,
+            },
+            catalog: {
+              url: env.CLAWD_CATALOG_URL || 'https://x402.wtf/api/agents',
+              auth: env.CLAWD_AUTH_URL || 'https://x402.wtf/api/auth',
+              gateway: env.CLAWD_GATEWAY_URL || 'https://clawd-gateway.fly.dev',
+            },
           },
-          endpoints: {
-            agents: '/api/agents/*',
-            wallets: '/api/wallets/*',
-            smartWallets: '/api/smart-wallets/*',
-            catalog: '/api/catalog/*',
-          },
-          providers: {
-            openai: !!env.OPENAI_API_KEY,
-            anthropic: !!env.ANTHROPIC_API_KEY,
-            phala: !!env.PHALA_API_KEY,
-            deepseek: !!env.DEEPSEEK_API_KEY,
-            crossmint: !!env.CROSSMINT_SERVERSIDE_API_KEY,
-          },
-          catalog: {
-            url: env.CLAWD_CATALOG_URL || 'https://x402.wtf/api/agents',
-            auth: env.CLAWD_AUTH_URL || 'https://x402.wtf/api/auth',
-            gateway: env.CLAWD_GATEWAY_URL || 'https://clawd-gateway.fly.dev',
-          },
-        }, 200, env);
+          200,
+          env
+        );
       }
 
       // API routes

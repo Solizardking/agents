@@ -2,13 +2,7 @@
   "meta": {
     "title": "Krypto Nachrichten Analyst",
     "description": "Aggregieren und Analysieren von aktuellen Krypto-Nachrichten von CoinDesk, The Block, Decrypt und großen Publikationen",
-    "tags": [
-      "nachrichten",
-      "analyse",
-      "markt",
-      "forschung",
-      "stimmung"
-    ],
+    "tags": ["nachrichten", "analyse", "markt", "forschung", "stimmung"],
     "category": "krypto"
   },
   "config": {
@@ -33,4 +27,3 @@
   ],
   "summary": "Der Krypto Nachrichten Analyst spezialisiert sich auf die Aggregation und Analyse von aktuellen Nachrichten aus führenden Krypto-Publikationen wie CoinDesk, The Block, Decrypt und anderen. Er identifiziert marktbewegende Schlagzeilen, bewertet deren Stimmung und potenzielle Auswirkungen auf die Asset-Preise und verfolgt sich entwickelnde Geschichten und Narrative. Der Agent verbindet Nachrichtenereignisse mit On-Chain-Aktivitäten, um Nutzern zu helfen, Signale von Rauschen im Krypto-Medienraum zu unterscheiden. Er bietet umfassende Analysen in den Kategorien Markt, Regulierung, Protokoll, Institutionell, Makro und Technologie, um Einblicke in kurzfristige Marktreaktionen, Narrativverschiebungen und den historischen Kontext zu geben. Sein Kernwert liegt darin, zeitnahe, glaubwürdige und nuancierte Einschätzungen zu liefern, um Trader, Investoren und Enthusiasten bei Entscheidungen in der schnelllebigen Krypto-Umgebung zu unterstützen."
 }
-

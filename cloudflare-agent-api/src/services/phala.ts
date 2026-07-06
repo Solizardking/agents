@@ -229,10 +229,9 @@ export class PhalaService {
         return [];
       }
 
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms?user_id=${userInfo.id}`,
-        { headers: this.headers }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms?user_id=${userInfo.id}`, {
+        headers: this.headers,
+      });
 
       if (!response.ok) {
         throw new Error(`Failed to get CVMs: ${response.status}`);
@@ -240,7 +239,7 @@ export class PhalaService {
 
       const cvms: CvmResponse[] = await response.json();
 
-      return cvms.map(cvm => ({
+      return cvms.map((cvm) => ({
         id: cvm.hosted.app_id,
         name: cvm.hosted.name,
         status: cvm.status as DeployedAgent['status'],
@@ -265,16 +264,15 @@ export class PhalaService {
 
   async getAgentStatus(appId: string): Promise<{ status: string; url?: string } | null> {
     try {
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms/app_${appId}/network`,
-        { headers: this.headers }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms/app_${appId}/network`, {
+        headers: this.headers,
+      });
 
       if (!response.ok) {
         return null;
       }
 
-      const data = await response.json() as CvmNetworkResponse;
+      const data = (await response.json()) as CvmNetworkResponse;
       return {
         status: data.is_online ? 'running' : 'offline',
         url: data.public_urls?.[0]?.app,
@@ -287,13 +285,10 @@ export class PhalaService {
 
   async stopAgent(appId: string): Promise<boolean> {
     try {
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms/app_${appId}/stop`,
-        {
-          method: 'POST',
-          headers: this.headers,
-        }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms/app_${appId}/stop`, {
+        method: 'POST',
+        headers: this.headers,
+      });
 
       return response.ok;
     } catch (error) {
@@ -304,13 +299,10 @@ export class PhalaService {
 
   async startAgent(appId: string): Promise<boolean> {
     try {
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms/app_${appId}/start`,
-        {
-          method: 'POST',
-          headers: this.headers,
-        }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms/app_${appId}/start`, {
+        method: 'POST',
+        headers: this.headers,
+      });
 
       return response.ok;
     } catch (error) {
@@ -350,16 +342,15 @@ export class PhalaService {
     };
   }
 
-  private async getPubkeyFromCvm(vmConfig: CvmConfig): Promise<{ app_env_encrypt_pubkey: string; app_id_salt: string } | null> {
+  private async getPubkeyFromCvm(
+    vmConfig: CvmConfig
+  ): Promise<{ app_env_encrypt_pubkey: string; app_id_salt: string } | null> {
     try {
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms/pubkey/from_cvm_configuration`,
-        {
-          method: 'POST',
-          headers: this.headers,
-          body: JSON.stringify(vmConfig),
-        }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms/pubkey/from_cvm_configuration`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(vmConfig),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
@@ -374,14 +365,11 @@ export class PhalaService {
 
   private async createCvm(vmConfig: CvmConfig): Promise<{ app_id: string } | null> {
     try {
-      const response = await fetch(
-        `${CLOUD_API_URL}/api/v1/cvms/from_cvm_configuration`,
-        {
-          method: 'POST',
-          headers: this.headers,
-          body: JSON.stringify(vmConfig),
-        }
-      );
+      const response = await fetch(`${CLOUD_API_URL}/api/v1/cvms/from_cvm_configuration`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(vmConfig),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
@@ -404,22 +392,21 @@ export class PhalaService {
         return null;
       }
 
-      const authData = await authResponse.json() as PhalaAuthResponse;
+      const authData = (await authResponse.json()) as PhalaAuthResponse;
       const username = authData.username;
       if (!username) {
         return null;
       }
 
-      const userResponse = await fetch(
-        `${CLOUD_API_URL}/api/v1/users/search?q=${username}`,
-        { headers: this.headers }
-      );
+      const userResponse = await fetch(`${CLOUD_API_URL}/api/v1/users/search?q=${username}`, {
+        headers: this.headers,
+      });
 
       if (!userResponse.ok) {
         return null;
       }
 
-      const userData = await userResponse.json() as PhalaUserSearchResponse;
+      const userData = (await userResponse.json()) as PhalaUserSearchResponse;
       const userId = userData.users?.[0]?.id;
       if (!userId) {
         return null;

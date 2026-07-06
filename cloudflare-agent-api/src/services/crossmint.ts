@@ -78,9 +78,10 @@ export class CrossmintService {
   constructor(private env: Env) {
     this.apiKey = env.CROSSMINT_SERVERSIDE_API_KEY || '';
     this.environment = this.apiKey.startsWith('sk_staging_') ? 'staging' : 'production';
-    this.baseUrl = this.environment === 'staging'
-      ? 'https://staging.crossmint.com'
-      : 'https://www.crossmint.com';
+    this.baseUrl =
+      this.environment === 'staging'
+        ? 'https://staging.crossmint.com'
+        : 'https://www.crossmint.com';
   }
 
   // ─────────────────────────────────────────────────
@@ -239,7 +240,12 @@ export class CrossmintService {
         decimals?: number;
         usdValue?: string;
       }>;
-    }>('GET', `/wallets/${encodeURIComponent(locator)}/balances?tokens=${tokenParams}&chains=${chain}`, undefined, API_VERSION_LEGACY);
+    }>(
+      'GET',
+      `/wallets/${encodeURIComponent(locator)}/balances?tokens=${tokenParams}&chains=${chain}`,
+      undefined,
+      API_VERSION_LEGACY
+    );
 
     return {
       nativeToken: {
@@ -249,14 +255,16 @@ export class CrossmintService {
         decimals: 9,
         usdValue: result.nativeToken?.usdValue,
       },
-      usdc: result.usdc ? {
-        token: 'USDC',
-        symbol: 'USDC',
-        amount: result.usdc.amount || '0',
-        decimals: 6,
-        usdValue: result.usdc.usdValue,
-      } : undefined,
-      tokens: (result.tokens || []).map(t => ({
+      usdc: result.usdc
+        ? {
+            token: 'USDC',
+            symbol: 'USDC',
+            amount: result.usdc.amount || '0',
+            decimals: 6,
+            usdValue: result.usdc.usdValue,
+          }
+        : undefined,
+      tokens: (result.tokens || []).map((t) => ({
         token: t.token || t.mint || '',
         symbol: t.symbol || '',
         amount: t.amount || '0',
@@ -319,15 +327,11 @@ export class CrossmintService {
         explorerLink?: string;
       };
       hash?: string;
-    }>(
-      'POST',
-      `/wallets/${encodeURIComponent(locator)}/tokens/${tokenLocator}/transfers`,
-      {
-        recipient: params.toAddress,
-        amount: params.amount,
-        signer: 'api-key',
-      }
-    );
+    }>('POST', `/wallets/${encodeURIComponent(locator)}/tokens/${tokenLocator}/transfers`, {
+      recipient: params.toAddress,
+      amount: params.amount,
+      signer: 'api-key',
+    });
 
     return {
       id: result.id,
@@ -391,7 +395,12 @@ export class CrossmintService {
         decimals?: number;
         usdValue?: string;
       }>;
-    }>('GET', `/wallets/${address}/balances?tokens=${tokenParams}&chains=${chainParam}`, undefined, API_VERSION_LEGACY);
+    }>(
+      'GET',
+      `/wallets/${address}/balances?tokens=${tokenParams}&chains=${chainParam}`,
+      undefined,
+      API_VERSION_LEGACY
+    );
 
     return {
       nativeToken: {
@@ -401,14 +410,16 @@ export class CrossmintService {
         decimals: 9,
         usdValue: result.nativeToken?.usdValue,
       },
-      usdc: result.usdc ? {
-        token: 'USDC',
-        symbol: 'USDC',
-        amount: result.usdc.amount || '0',
-        decimals: 6,
-        usdValue: result.usdc.usdValue,
-      } : undefined,
-      tokens: (result.tokens || []).map(t => ({
+      usdc: result.usdc
+        ? {
+            token: 'USDC',
+            symbol: 'USDC',
+            amount: result.usdc.amount || '0',
+            decimals: 6,
+            usdValue: result.usdc.usdValue,
+          }
+        : undefined,
+      tokens: (result.tokens || []).map((t) => ({
         token: t.token || t.mint || '',
         symbol: t.symbol || '',
         amount: t.amount || '0',
@@ -641,11 +652,7 @@ export class CrossmintService {
   /**
    * Get balance for a wallet (GOAT: getBalance)
    */
-  async goatGetBalance(params: {
-    address: string;
-    token?: string;
-    chain?: ChainType;
-  }): Promise<{
+  async goatGetBalance(params: { address: string; token?: string; chain?: ChainType }): Promise<{
     token: string;
     symbol: string;
     amount: string;
@@ -664,7 +671,9 @@ export class CrossmintService {
     }
 
     const tokenBalance = balances.tokens.find(
-      t => t.token.toLowerCase() === token.toLowerCase() || t.symbol.toLowerCase() === token.toLowerCase()
+      (t) =>
+        t.token.toLowerCase() === token.toLowerCase() ||
+        t.symbol.toLowerCase() === token.toLowerCase()
     );
 
     if (tokenBalance) {
@@ -702,15 +711,11 @@ export class CrossmintService {
         explorerLink?: string;
       };
       hash?: string;
-    }>(
-      'POST',
-      `/wallets/${params.fromAddress}/tokens/${tokenLocator}/transfers`,
-      {
-        recipient: params.toAddress,
-        amount: params.amount,
-        signer: params.signerType || 'api-key',
-      }
-    );
+    }>('POST', `/wallets/${params.fromAddress}/tokens/${tokenLocator}/transfers`, {
+      recipient: params.toAddress,
+      amount: params.amount,
+      signer: params.signerType || 'api-key',
+    });
 
     return {
       id: result.id,
@@ -723,10 +728,7 @@ export class CrossmintService {
   /**
    * Get token price from CoinGecko (GOAT: getTokenPrice)
    */
-  async goatGetTokenPrice(params: {
-    token: string;
-    currency?: string;
-  }): Promise<{
+  async goatGetTokenPrice(params: { token: string; currency?: string }): Promise<{
     token: string;
     price: number;
     currency: string;
@@ -734,11 +736,11 @@ export class CrossmintService {
   }> {
     const currency = params.currency || 'usd';
     const tokenMap: Record<string, string> = {
-      'sol': 'solana',
-      'usdc': 'usd-coin',
-      'bonk': 'bonk',
-      'jup': 'jupiter',
-      'ray': 'raydium',
+      sol: 'solana',
+      usdc: 'usd-coin',
+      bonk: 'bonk',
+      jup: 'jupiter',
+      ray: 'raydium',
     };
 
     const coinId = tokenMap[params.token.toLowerCase()] || params.token.toLowerCase();
@@ -752,7 +754,7 @@ export class CrossmintService {
         throw new Error('CoinGecko API error');
       }
 
-      const data = await response.json() as Record<string, { [key: string]: number }>;
+      const data = (await response.json()) as Record<string, { [key: string]: number }>;
       const tokenData = data[coinId];
 
       if (!tokenData) {
@@ -800,11 +802,15 @@ export class CrossmintService {
     };
 
     const inputMint = tokenMints[params.inputToken.toLowerCase()]
-      ? tokenMints[params.inputToken.toLowerCase()][this.environment === 'staging' ? 'devnet' : 'mainnet']
+      ? tokenMints[params.inputToken.toLowerCase()][
+          this.environment === 'staging' ? 'devnet' : 'mainnet'
+        ]
       : params.inputToken;
 
     const outputMint = tokenMints[params.outputToken.toLowerCase()]
-      ? tokenMints[params.outputToken.toLowerCase()][this.environment === 'staging' ? 'devnet' : 'mainnet']
+      ? tokenMints[params.outputToken.toLowerCase()][
+          this.environment === 'staging' ? 'devnet' : 'mainnet'
+        ]
       : params.outputToken;
 
     const slippageBps = params.slippageBps || 50; // 0.5% default
@@ -817,7 +823,7 @@ export class CrossmintService {
         throw new Error('Jupiter API error');
       }
 
-      const data = await response.json() as {
+      const data = (await response.json()) as {
         inAmount: string;
         outAmount: string;
         priceImpactPct: string;
@@ -830,7 +836,7 @@ export class CrossmintService {
         inputAmount: data.inAmount,
         outputAmount: data.outAmount,
         priceImpact: data.priceImpactPct,
-        route: data.routePlan?.map(r => r.swapInfo?.label).filter(Boolean) || [],
+        route: data.routePlan?.map((r) => r.swapInfo?.label).filter(Boolean) || [],
       };
     } catch (error) {
       console.error('[GOAT] getSwapQuote error:', error);
@@ -841,10 +847,7 @@ export class CrossmintService {
   /**
    * Request devnet SOL airdrop (GOAT: airdropDevnet)
    */
-  async goatAirdropDevnet(params: {
-    address: string;
-    amount?: number;
-  }): Promise<{
+  async goatAirdropDevnet(params: { address: string; amount?: number }): Promise<{
     success: boolean;
     signature?: string;
     amount: number;
@@ -868,7 +871,7 @@ export class CrossmintService {
         }),
       });
 
-      const data = await response.json() as {
+      const data = (await response.json()) as {
         result?: string;
         error?: { message: string };
       };

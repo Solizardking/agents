@@ -1,49 +1,36 @@
-import * as anchor from "@coral-xyz/anchor";
-import fs from "fs";
+import * as anchor from '@coral-xyz/anchor';
+import { Wallet } from '@coral-xyz/anchor';
+import { fetchAsset, MPL_CORE_PROGRAM_ID } from '@metaplex-foundation/mpl-core';
+import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from '@metaplex-foundation/mpl-token-auth-rules';
+import { createSignerFromKeypair, publicKey, signerIdentity } from '@metaplex-foundation/umi';
+import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
+import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import {
-  PublicKey,
   Connection,
-  SystemProgram,
+  PublicKey,
   SYSVAR_INSTRUCTIONS_PUBKEY,
   SYSVAR_RENT_PUBKEY,
+  SystemProgram,
   Transaction as web3Transaction,
-} from "@solana/web3.js";
-import { Wallet } from "@coral-xyz/anchor";
-
-import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
-import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from "@metaplex-foundation/mpl-token-auth-rules";
-
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+} from '@solana/web3.js';
+import fs from 'fs';
+import { GLOBAL_AUTHORITY_SEED } from './constant';
 import {
-  createSignerFromKeypair,
-  signerIdentity,
-  publicKey,
-} from "@metaplex-foundation/umi";
-import { MPL_CORE_PROGRAM_ID, fetchAsset } from "@metaplex-foundation/mpl-core";
-
-import {
-  METAPLEX,
-  MPL_DEFAULT_RULE_SET,
   findTokenRecordPda,
   getAssociatedTokenAccount,
   getMasterEdition,
   getMetadata,
   getUTCTimestamps,
-} from "./util";
-import { GLOBAL_AUTHORITY_SEED } from "./constant";
+  METAPLEX,
+  MPL_DEFAULT_RULE_SET,
+} from './util';
 
 const findGlobalPoolPda = (programId: PublicKey) =>
-  PublicKey.findProgramAddressSync(
-    [Buffer.from(GLOBAL_AUTHORITY_SEED)],
-    programId
-  )[0];
+  PublicKey.findProgramAddressSync([Buffer.from(GLOBAL_AUTHORITY_SEED)], programId)[0];
 
-export const createInitializeTx = async (
-  admin: PublicKey,
-  program: anchor.Program
-) => {
+export const createInitializeTx = async (admin: PublicKey, program: anchor.Program) => {
   const globalPool = findGlobalPoolPda(program.programId);
-  console.log("globalPool: ", globalPool.toBase58());
+  console.log('globalPool: ', globalPool.toBase58());
 
   const tx = await program.methods
     .initialize()
@@ -65,8 +52,8 @@ export const createStakeAgentTx = async (
   connection: Connection,
   keypair: string
 ) => {
-  const json = Uint8Array.from(JSON.parse(fs.readFileSync(keypair, "utf-8")));
-  const umi = createUmi(connection.rpcEndpoint, "finalized");
+  const json = Uint8Array.from(JSON.parse(fs.readFileSync(keypair, 'utf-8')));
+  const umi = createUmi(connection.rpcEndpoint, 'finalized');
 
   let keyPair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(json));
   const myKeypairSigner = createSignerFromKeypair(umi, keyPair);
@@ -78,7 +65,7 @@ export const createStakeAgentTx = async (
   const assetData = await fetchAsset(umi, asset);
 
   if (assetData.updateAuthority.address != collectionStr) {
-    throw "collection is incorrect";
+    throw 'collection is incorrect';
   }
 
   if (!assetData.freezeDelegate) {
@@ -86,7 +73,7 @@ export const createStakeAgentTx = async (
     const globalPool = findGlobalPoolPda(program.programId);
 
     if (assetData.owner !== userAddress.toBase58()) {
-      throw "wallet is not the agent asset owner";
+      throw 'wallet is not the agent asset owner';
     }
 
     const tx = new web3Transaction();
@@ -113,7 +100,7 @@ export const createStakeAgentTx = async (
 
     return txData.serialize({ requireAllSignatures: false });
   } else if (assetData.freezeDelegate.frozen) {
-    throw "already staked";
+    throw 'already staked';
   }
 };
 
@@ -125,8 +112,8 @@ export const createUnstakeAgentTx = async (
   connection: Connection,
   keypair: string
 ) => {
-  const json = Uint8Array.from(JSON.parse(fs.readFileSync(keypair, "utf-8")));
-  const umi = createUmi(connection.rpcEndpoint, "finalized");
+  const json = Uint8Array.from(JSON.parse(fs.readFileSync(keypair, 'utf-8')));
+  const umi = createUmi(connection.rpcEndpoint, 'finalized');
 
   let keyPair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(json));
   const myKeypairSigner = createSignerFromKeypair(umi, keyPair);
@@ -137,11 +124,11 @@ export const createUnstakeAgentTx = async (
   const collection = publicKey(collectionStr);
 
   if (assetData.updateAuthority.address != collectionStr) {
-    throw "collection is incorrect";
+    throw 'collection is incorrect';
   }
 
   if (!assetData.freezeDelegate) {
-    throw "non staked mint";
+    throw 'non staked mint';
   } else {
     const userAddress = wallet.publicKey;
     const ownerAddress = new PublicKey(assetData.owner);

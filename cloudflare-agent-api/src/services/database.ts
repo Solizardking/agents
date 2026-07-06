@@ -117,22 +117,22 @@ export class Database {
   /**
    * Execute a query and return all results as array
    */
-  async all<T = Record<string, unknown>>(
-    sql: string,
-    ...bindings: unknown[]
-  ): Promise<T[]> {
-    const result = await this.db.prepare(sql).bind(...bindings).all<T>();
+  async all<T = Record<string, unknown>>(sql: string, ...bindings: unknown[]): Promise<T[]> {
+    const result = await this.db
+      .prepare(sql)
+      .bind(...bindings)
+      .all<T>();
     return result.results;
   }
 
   /**
    * Execute a query and return the first result
    */
-  async first<T = Record<string, unknown>>(
-    sql: string,
-    ...bindings: unknown[]
-  ): Promise<T | null> {
-    const result = await this.db.prepare(sql).bind(...bindings).first<T>();
+  async first<T = Record<string, unknown>>(sql: string, ...bindings: unknown[]): Promise<T | null> {
+    const result = await this.db
+      .prepare(sql)
+      .bind(...bindings)
+      .first<T>();
     return result || null;
   }
 
@@ -143,7 +143,10 @@ export class Database {
     sql: string,
     ...bindings: unknown[]
   ): Promise<{ success: boolean; meta?: Record<string, unknown> }> {
-    const result = await this.db.prepare(sql).bind(...bindings).run();
+    const result = await this.db
+      .prepare(sql)
+      .bind(...bindings)
+      .run();
     return { success: true, meta: result.meta };
   }
 
@@ -156,7 +159,10 @@ export class Database {
     const results: Array<{ success: boolean }> = [];
     for (const stmt of statements) {
       try {
-        await this.db.prepare(stmt.sql).bind(...stmt.bindings).run();
+        await this.db
+          .prepare(stmt.sql)
+          .bind(...stmt.bindings)
+          .run();
         results.push({ success: true });
       } catch {
         results.push({ success: false });
@@ -194,10 +200,7 @@ export class Database {
   }
 
   async getAgentById(id: string): Promise<Agent | null> {
-    return this.first<Agent>(
-      'SELECT * FROM agents WHERE id = ?',
-      id
-    );
+    return this.first<Agent>('SELECT * FROM agents WHERE id = ?', id);
   }
 
   async getAgentByApiKeyHash(apiKeyHash: string): Promise<Agent | null> {
@@ -261,23 +264,17 @@ export class Database {
 
   async getSessionByTokenHash(tokenHash: string): Promise<Session | null> {
     return this.first<Session>(
-      "SELECT * FROM sessions WHERE token_hash = ? AND expires_at > CURRENT_TIMESTAMP",
+      'SELECT * FROM sessions WHERE token_hash = ? AND expires_at > CURRENT_TIMESTAMP',
       tokenHash
     );
   }
 
   async deleteSessionByTokenHash(tokenHash: string): Promise<void> {
-    await this.execute(
-      'DELETE FROM sessions WHERE token_hash = ?',
-      tokenHash
-    );
+    await this.execute('DELETE FROM sessions WHERE token_hash = ?', tokenHash);
   }
 
   async deleteSessionsByAgentId(agentId: string): Promise<void> {
-    await this.execute(
-      'DELETE FROM sessions WHERE agent_id = ?',
-      agentId
-    );
+    await this.execute('DELETE FROM sessions WHERE agent_id = ?', agentId);
   }
 
   async updateSessionLastUsed(tokenHash: string): Promise<void> {
@@ -311,10 +308,7 @@ export class Database {
     );
   }
 
-  async getAgentActivity(
-    agentId: string,
-    limit: number = 50
-  ): Promise<AgentActivity[]> {
+  async getAgentActivity(agentId: string, limit: number = 50): Promise<AgentActivity[]> {
     return this.all<AgentActivity>(
       'SELECT * FROM agent_activity WHERE agent_id = ? ORDER BY created_at DESC LIMIT ?',
       agentId,
@@ -376,16 +370,10 @@ export class Database {
     }
 
     bindings.push(txId);
-    await this.execute(
-      `UPDATE transactions SET ${sets.join(', ')} WHERE id = ?`,
-      ...bindings
-    );
+    await this.execute(`UPDATE transactions SET ${sets.join(', ')} WHERE id = ?`, ...bindings);
   }
 
-  async getAgentTransactions(
-    agentId: string,
-    limit: number = 20
-  ): Promise<Transaction[]> {
+  async getAgentTransactions(agentId: string, limit: number = 20): Promise<Transaction[]> {
     return this.all<Transaction>(
       'SELECT * FROM transactions WHERE agent_id = ? ORDER BY created_at DESC LIMIT ?',
       agentId,
@@ -397,10 +385,7 @@ export class Database {
   // API KEY HISTORY
   // ═══════════════════════════════════════════════════
 
-  async addApiKeyHistory(entry: {
-    agent_id: string;
-    api_key_prefix: string;
-  }): Promise<void> {
+  async addApiKeyHistory(entry: { agent_id: string; api_key_prefix: string }): Promise<void> {
     await this.execute(
       `INSERT INTO api_key_history (agent_id, api_key_prefix) VALUES (?, ?)`,
       entry.agent_id,
@@ -408,10 +393,7 @@ export class Database {
     );
   }
 
-  async revokePreviousApiKeys(
-    agentId: string,
-    reason: string = 'regenerated'
-  ): Promise<void> {
+  async revokePreviousApiKeys(agentId: string, reason: string = 'regenerated'): Promise<void> {
     await this.execute(
       `UPDATE api_key_history
        SET revoked_at = CURRENT_TIMESTAMP, revoke_reason = ?
@@ -457,10 +439,7 @@ export class Database {
   }
 
   async getSmartWalletByAddress(address: string): Promise<SmartWallet | null> {
-    return this.first<SmartWallet>(
-      'SELECT * FROM smart_wallets WHERE address = ?',
-      address
-    );
+    return this.first<SmartWallet>('SELECT * FROM smart_wallets WHERE address = ?', address);
   }
 
   async getAgentSmartWallets(agentId: string): Promise<SmartWallet[]> {
@@ -517,10 +496,7 @@ export class Database {
     );
   }
 
-  async updateDeploymentStatus(
-    deploymentId: string,
-    status: string
-  ): Promise<void> {
+  async updateDeploymentStatus(deploymentId: string, status: string): Promise<void> {
     const sets = ['status = ?'];
     const bindings: unknown[] = [status];
 
@@ -529,10 +505,7 @@ export class Database {
     }
     bindings.push(deploymentId);
 
-    await this.execute(
-      `UPDATE agent_deployments SET ${sets.join(', ')} WHERE id = ?`,
-      ...bindings
-    );
+    await this.execute(`UPDATE agent_deployments SET ${sets.join(', ')} WHERE id = ?`, ...bindings);
   }
 
   async updateDeploymentDelegatedSigner(
@@ -603,22 +576,18 @@ export class Database {
   // ═══════════════════════════════════════════════════
 
   async cleanupExpiredSessions(): Promise<number> {
-    const result = await this.execute(
-      'DELETE FROM sessions WHERE expires_at < CURRENT_TIMESTAMP'
-    );
+    const result = await this.execute('DELETE FROM sessions WHERE expires_at < CURRENT_TIMESTAMP');
     return (result.meta?.changes as number) || 0;
   }
 
   async getAgentCount(): Promise<number> {
-    const result = await this.first<{ count: number }>(
-      'SELECT COUNT(*) as count FROM agents'
-    );
+    const result = await this.first<{ count: number }>('SELECT COUNT(*) as count FROM agents');
     return result?.count || 0;
   }
 
   async getActiveSessionCount(): Promise<number> {
     const result = await this.first<{ count: number }>(
-      "SELECT COUNT(*) as count FROM sessions WHERE expires_at > CURRENT_TIMESTAMP"
+      'SELECT COUNT(*) as count FROM sessions WHERE expires_at > CURRENT_TIMESTAMP'
     );
     return result?.count || 0;
   }

@@ -3,7 +3,7 @@
 // Manages agent deployment lifecycle and delegated signing
 // ═══════════════════════════════════════════════════════════════
 
-import type { Env, Agent } from '../index';
+import type { Agent, Env } from '../index';
 
 // ─────────────────────────────────────────────────
 // TYPES
@@ -61,7 +61,10 @@ export class DeploymentService {
   private crossmintApiKey: string;
   private crossmintBaseUrl: string;
 
-  constructor(private env: Env, private db: D1Database) {
+  constructor(
+    private env: Env,
+    private db: D1Database
+  ) {
     this.crossmintApiKey = env.CROSSMINT_SERVERSIDE_API_KEY || '';
     // Determine environment from API key
     const isStaging = this.crossmintApiKey.startsWith('sk_staging_');
@@ -74,7 +77,10 @@ export class DeploymentService {
   // DEPLOYMENT OPERATIONS
   // ═══════════════════════════════════════════════════
 
-  async deployAgent(request: DeploymentRequest, agent: Agent): Promise<{
+  async deployAgent(
+    request: DeploymentRequest,
+    agent: Agent
+  ): Promise<{
     deployment: DeployedAgentConfig;
     delegatedSigner?: DelegatedSignerResult | null;
   }> {
@@ -101,23 +107,26 @@ export class DeploymentService {
     };
 
     // Store deployment in database
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO agent_deployments (
         id, agent_id, name, description, status, wallet_address, chain,
         configuration, capabilities, created_at
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).bind(
-      deployment.id,
-      deployment.agentId,
-      deployment.name,
-      deployment.description || null,
-      deployment.status,
-      deployment.walletAddress,
-      deployment.chain,
-      JSON.stringify(deployment.configuration),
-      JSON.stringify(deployment.capabilities),
-      deployment.createdAt
-    ).run();
+    `)
+      .bind(
+        deployment.id,
+        deployment.agentId,
+        deployment.name,
+        deployment.description || null,
+        deployment.status,
+        deployment.walletAddress,
+        deployment.chain,
+        JSON.stringify(deployment.configuration),
+        JSON.stringify(deployment.capabilities),
+        deployment.createdAt
+      )
+      .run();
 
     // Get or create delegated signer
     const delegatedSigner = await this.getOrCreateDelegatedSigner(
@@ -131,16 +140,19 @@ export class DeploymentService {
       deployment.delegatedSignerId = delegatedSigner.id;
       deployment.delegatedSignerStatus = delegatedSigner.alreadyActive ? 'active' : 'pending';
 
-      await this.db.prepare(`
+      await this.db
+        .prepare(`
         UPDATE agent_deployments
         SET delegated_signer_id = ?, delegated_signer_status = ?, status = ?
         WHERE id = ?
-      `).bind(
-        delegatedSigner.id,
-        deployment.delegatedSignerStatus,
-        delegatedSigner.alreadyActive ? 'running' : 'pending',
-        deployment.id
-      ).run();
+      `)
+        .bind(
+          delegatedSigner.id,
+          deployment.delegatedSignerStatus,
+          delegatedSigner.alreadyActive ? 'running' : 'pending',
+          deployment.id
+        )
+        .run();
 
       if (delegatedSigner.alreadyActive) {
         deployment.status = 'running';
@@ -152,25 +164,33 @@ export class DeploymentService {
   }
 
   async getDeployments(agentId: string): Promise<DeployedAgentConfig[]> {
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agent_deployments WHERE agent_id = ? ORDER BY created_at DESC
-    `).bind(agentId).all();
+    `)
+      .bind(agentId)
+      .all();
 
-    return (result.results || []).map(row => this.rowToDeployment(row));
+    return (result.results || []).map((row) => this.rowToDeployment(row));
   }
 
   async getAllDeployments(): Promise<DeployedAgentConfig[]> {
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agent_deployments ORDER BY created_at DESC LIMIT 100
-    `).all();
+    `)
+      .all();
 
-    return (result.results || []).map(row => this.rowToDeployment(row));
+    return (result.results || []).map((row) => this.rowToDeployment(row));
   }
 
   async getDeployment(deploymentId: string): Promise<DeployedAgentConfig | null> {
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agent_deployments WHERE id = ?
-    `).bind(deploymentId).first();
+    `)
+      .bind(deploymentId)
+      .first();
 
     return result ? this.rowToDeployment(result) : null;
   }
@@ -189,9 +209,12 @@ export class DeploymentService {
 
     values.push(deploymentId);
 
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agent_deployments SET ${updates.join(', ')} WHERE id = ?
-    `).bind(...values).run();
+    `)
+      .bind(...values)
+      .run();
   }
 
   async stopDeployment(deploymentId: string): Promise<void> {
@@ -228,7 +251,10 @@ export class DeploymentService {
 
       if (existingResponse.ok) {
         const existing = await existingResponse.json();
-        const parsed = this.parseDelegatedSignerResponse(existing, walletSignerType === 'evm-passkey');
+        const parsed = this.parseDelegatedSignerResponse(
+          existing,
+          walletSignerType === 'evm-passkey'
+        );
 
         if (parsed.status === 'active' || parsed.status === 'success') {
           return {
@@ -303,11 +329,13 @@ export class DeploymentService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          approvals: [{
-            signer: signerLocator,
-            metadata,
-            signature,
-          }],
+          approvals: [
+            {
+              signer: signerLocator,
+              metadata,
+              signature,
+            },
+          ],
         }),
       }
     );
@@ -334,10 +362,12 @@ export class DeploymentService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          approvals: [{
-            signer: signerLocator,
-            signature,
-          }],
+          approvals: [
+            {
+              signer: signerLocator,
+              signature,
+            },
+          ],
         }),
       }
     );
@@ -373,10 +403,10 @@ export class DeploymentService {
     const firstPending = pending[0] as Record<string, unknown>;
 
     return {
-      message: firstPending?.message as string || '',
-      id: t?.id as string || '',
-      status: t?.status as string || '',
-      targetSignerLocator: firstPending?.signer as string || '',
+      message: (firstPending?.message as string) || '',
+      id: (t?.id as string) || '',
+      status: (t?.status as string) || '',
+      targetSignerLocator: (firstPending?.signer as string) || '',
     };
   }
 
@@ -391,9 +421,13 @@ export class DeploymentService {
       chain: row.chain as 'solana' | 'solana-devnet',
       publicKey: row.public_key as string | undefined,
       delegatedSignerId: row.delegated_signer_id as string | undefined,
-      delegatedSignerStatus: row.delegated_signer_status as 'pending' | 'active' | 'rejected' | undefined,
-      configuration: JSON.parse(row.configuration as string || '{}'),
-      capabilities: JSON.parse(row.capabilities as string || '[]'),
+      delegatedSignerStatus: row.delegated_signer_status as
+        | 'pending'
+        | 'active'
+        | 'rejected'
+        | undefined,
+      configuration: JSON.parse((row.configuration as string) || '{}'),
+      capabilities: JSON.parse((row.capabilities as string) || '[]'),
       createdAt: row.created_at as string,
       deployedAt: row.deployed_at as string | undefined,
       lastActiveAt: row.last_active_at as string | undefined,

@@ -20,7 +20,7 @@ let errorCount = 0;
 agents.forEach((agent) => {
   const filename = `${agent.identifier}.json`;
   const filepath = path.join(srcDir, filename);
-  
+
   try {
     fs.writeFileSync(filepath, JSON.stringify(agent, null, 2));
     console.log(`✓ Created ${filename}`);
@@ -36,5 +36,3 @@ if (errorCount > 0) {
   console.log(`❌ Failed to create ${errorCount} agent files`);
 }
 console.log(`\nAll agents are now in the ${srcDir}/ directory`);
-
-

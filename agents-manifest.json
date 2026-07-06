@@ -212,7 +212,14 @@
           "name": "Clawd Formal Verification",
           "description": "Formal verification, invariant gates, and attestation workflows for Solana Clawd skills, registries, risk engines, and Metaplex execution delegation",
           "category": "security",
-          "tags": ["solana", "formal-verification", "invariants", "risk", "metaplex", "agent-registry"]
+          "tags": [
+            "solana",
+            "formal-verification",
+            "invariants",
+            "risk",
+            "metaplex",
+            "agent-registry"
+          ]
         },
         {
           "id": "clawd-gateway-runtime",
@@ -287,15 +294,21 @@
           ]
         },
         "tokenized-agents": {
-          "agents": [
-            "pump-fun-random-number"
-          ]
+          "agents": ["pump-fun-random-number"]
         }
       }
     }
   },
   "apiVersion": "1.0",
-  "categories": ["trading", "defi", "portfolio", "security", "education", "dev-tools", "infrastructure"],
+  "categories": [
+    "trading",
+    "defi",
+    "portfolio",
+    "security",
+    "education",
+    "dev-tools",
+    "infrastructure"
+  ],
   "description": "Production-ready AI agent definitions API - 66 specialized agents for DeFi, portfolio management, trading, infrastructure, security, and Web3 workflows",
   "documentation": "https://x402.wtf/docs/API.md",
   "endpoints": {

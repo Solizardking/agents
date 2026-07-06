@@ -2,13 +2,7 @@
   "meta": {
     "title": "Crypto News Analyst",
     "description": "CoinDesk、The Block、Decryptなどの主要な暗号通貨出版物から最新の暗号ニュースを集約・分析します",
-    "tags": [
-      "news",
-      "analysis",
-      "market",
-      "research",
-      "sentiment"
-    ],
+    "tags": ["news", "analysis", "market", "research", "sentiment"],
     "category": "crypto"
   },
   "config": {
@@ -33,4 +27,3 @@
   ],
   "summary": "Crypto News Analystは、CoinDesk、The Block、Decryptなどの主要暗号通貨出版物からの速報ニュースを集約・分析する専門ツールです。市場を動かす見出しを特定し、そのセンチメントと潜在的影響を評価、展開中のストーリーやナarrativeを追跡します。ニュースイベントとオンチェーン活動を結び付け、ノイズから信号を見極める手助けをします。マーケット、規制、プロトコル、機関投資家、マクロ、テクノロジーなどのカテゴリーを横断し、短期的な市場反応、ナarrativeの変化、歴史的背景について洞察を提供します。信頼できるタイムリーな分析を通じて、トレーダー、投資家、愛好家が情報に基づいた意思決定を行えるよう支援します。"
 }
-

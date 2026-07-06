@@ -1,1 +1,24 @@
-{"rustc":10088478398040096810,"features":"[\"init-if-needed\"]","declared_features":"[\"allow-missing-optionals\", \"anchor-debug\", \"idl-build\", \"init-if-needed\"]","target":3626188482415717748,"profile":3033921117576893,"path":13131439202889635916,"deps":[[1108254298283712113,"quote",false,14495425624718485528],[2713742371683562785,"syn",false,12148868827973640595],[17346089608576156608,"anchor_syn",false,14121472665963906821]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/anchor-derive-accounts-a51cd924e0ccf68e/dep-lib-anchor_derive_accounts","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"init-if-needed\"]",
+  "declared_features": "[\"allow-missing-optionals\", \"anchor-debug\", \"idl-build\", \"init-if-needed\"]",
+  "target": 3626188482415717748,
+  "profile": 3033921117576893,
+  "path": 13131439202889635916,
+  "deps": [
+    [1108254298283712113, "quote", false, 14495425624718485528],
+    [2713742371683562785, "syn", false, 12148868827973640595],
+    [17346089608576156608, "anchor_syn", false, 14121472665963906821]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/anchor-derive-accounts-a51cd924e0ccf68e/dep-lib-anchor_derive_accounts",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

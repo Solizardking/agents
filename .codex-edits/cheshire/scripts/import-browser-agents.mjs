@@ -1,88 +1,89 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const APP_ROOT = process.env.CHESHIRETERMINAL_ROOT
   ? path.resolve(process.env.CHESHIRETERMINAL_ROOT)
-  : path.resolve(scriptDir, "..");
-const LOCAL_SOURCE_ROOT = path.join(APP_ROOT, "agents");
-const EXTERNAL_SOURCE_ROOT = path.resolve(APP_ROOT, "../browser/agents");
+  : path.resolve(scriptDir, '..');
+const LOCAL_SOURCE_ROOT = path.join(APP_ROOT, 'agents');
+const EXTERNAL_SOURCE_ROOT = path.resolve(APP_ROOT, '../browser/agents');
 const SOURCE_ROOT = process.env.BROWSER_AGENTS_ROOT
   ? path.resolve(process.env.BROWSER_AGENTS_ROOT)
   : fs.existsSync(LOCAL_SOURCE_ROOT)
     ? LOCAL_SOURCE_ROOT
     : EXTERNAL_SOURCE_ROOT;
-const PUBLIC_APP_ROOT = process.env.CHESHIRETERMINAL_PUBLIC_ROOT || "cheshireterminal";
-const PUBLIC_SOURCE_ROOT = process.env.BROWSER_AGENTS_PUBLIC_ROOT
-  || (path.resolve(SOURCE_ROOT) === path.resolve(LOCAL_SOURCE_ROOT) ? "agents" : "browser-agents");
-const SOURCE_SRC = path.join(SOURCE_ROOT, "src");
-const SOURCE_CATALOG = path.join(SOURCE_ROOT, "agents-catalog.json");
-const SOURCE_CHARACTERS = path.join(SOURCE_ROOT, "characters");
-const SOURCE_TEMPLATES_DIR = path.join(SOURCE_ROOT, "templates");
-const SOURCE_SKILLS_DIR = path.join(SOURCE_ROOT, "skills");
-const SOURCE_DOCS_DIR = path.join(SOURCE_ROOT, "docs");
-const APP_DOCS_DIR = path.join(APP_ROOT, "docs");
-const SOURCE_LOCALES_DIR = path.join(SOURCE_ROOT, "locales");
-const SOURCE_WELL_KNOWN_DIR = path.join(SOURCE_ROOT, ".well-known");
-const SOURCE_PUBLIC_WELL_KNOWN_DIR = path.join(SOURCE_ROOT, "public", ".well-known");
-const SOURCE_SCHEMA_DIR = path.join(SOURCE_ROOT, "schema");
-const SOURCE_SCRIPTS_DIR = path.join(SOURCE_ROOT, "scripts");
-const SOURCE_PUBLIC_DIR = path.join(SOURCE_ROOT, "public");
-const SOURCE_PUBLIC_AGENT_CATALOG_DIR = path.join(SOURCE_PUBLIC_DIR, "api", "agents", "catalog");
-const SOURCE_CURSOR_DIR = path.join(SOURCE_ROOT, ".cursor");
-const SOURCE_INTEGRATION_MANIFEST = path.join(SOURCE_ROOT, "INTEGRATION_MANIFEST.json");
+const PUBLIC_APP_ROOT = process.env.CHESHIRETERMINAL_PUBLIC_ROOT || 'cheshireterminal';
+const PUBLIC_SOURCE_ROOT =
+  process.env.BROWSER_AGENTS_PUBLIC_ROOT ||
+  (path.resolve(SOURCE_ROOT) === path.resolve(LOCAL_SOURCE_ROOT) ? 'agents' : 'browser-agents');
+const SOURCE_SRC = path.join(SOURCE_ROOT, 'src');
+const SOURCE_CATALOG = path.join(SOURCE_ROOT, 'agents-catalog.json');
+const SOURCE_CHARACTERS = path.join(SOURCE_ROOT, 'characters');
+const SOURCE_TEMPLATES_DIR = path.join(SOURCE_ROOT, 'templates');
+const SOURCE_SKILLS_DIR = path.join(SOURCE_ROOT, 'skills');
+const SOURCE_DOCS_DIR = path.join(SOURCE_ROOT, 'docs');
+const APP_DOCS_DIR = path.join(APP_ROOT, 'docs');
+const SOURCE_LOCALES_DIR = path.join(SOURCE_ROOT, 'locales');
+const SOURCE_WELL_KNOWN_DIR = path.join(SOURCE_ROOT, '.well-known');
+const SOURCE_PUBLIC_WELL_KNOWN_DIR = path.join(SOURCE_ROOT, 'public', '.well-known');
+const SOURCE_SCHEMA_DIR = path.join(SOURCE_ROOT, 'schema');
+const SOURCE_SCRIPTS_DIR = path.join(SOURCE_ROOT, 'scripts');
+const SOURCE_PUBLIC_DIR = path.join(SOURCE_ROOT, 'public');
+const SOURCE_PUBLIC_AGENT_CATALOG_DIR = path.join(SOURCE_PUBLIC_DIR, 'api', 'agents', 'catalog');
+const SOURCE_CURSOR_DIR = path.join(SOURCE_ROOT, '.cursor');
+const SOURCE_INTEGRATION_MANIFEST = path.join(SOURCE_ROOT, 'INTEGRATION_MANIFEST.json');
 
-const OUTPUT_FILE = path.join(APP_ROOT, "server/lib/clawd/browser-agents.generated.json");
+const OUTPUT_FILE = path.join(APP_ROOT, 'server/lib/clawd/browser-agents.generated.json');
 
 const curatedStarterIds = [
-  "solana-pumpfun-bot",
-  "solana-vulcan-clawd-autonomous-perps",
-  "solana-clawd-wallet-guardian",
-  "solana-openclawd-orchestrator",
-  "solana-helius-specialist",
-  "solana-nemoclawd-yield-treasurer",
-  "solana-x402-research-broker",
-  "solana-clawd-payment-gateway",
+  'solana-pumpfun-bot',
+  'solana-vulcan-clawd-autonomous-perps',
+  'solana-clawd-wallet-guardian',
+  'solana-openclawd-orchestrator',
+  'solana-helius-specialist',
+  'solana-nemoclawd-yield-treasurer',
+  'solana-x402-research-broker',
+  'solana-clawd-payment-gateway',
 ];
 
 const appDocFilenames = [
-  "agent-arena-creator-earnings.md",
-  "cheshire-launchpad-mainnet-plan.md",
-  "cheshire-terminal-api.md",
-  "live-agent-arena-trading.md",
-  "live-trading-release.md",
-  "open-source-release.md",
-  "phoenix-perps-integration.md",
-  "redpill-solana-attestation.md",
-  "supabase-clerk-setup.md",
+  'agent-arena-creator-earnings.md',
+  'cheshire-launchpad-mainnet-plan.md',
+  'cheshire-terminal-api.md',
+  'live-agent-arena-trading.md',
+  'live-trading-release.md',
+  'open-source-release.md',
+  'phoenix-perps-integration.md',
+  'redpill-solana-attestation.md',
+  'supabase-clerk-setup.md',
 ];
 
 const topLevelTemplates = [
-  "agent-template.json",
-  "agent-template-full.json",
-  "agent-template-attested.json",
-  "vault-agent.json",
+  'agent-template.json',
+  'agent-template-full.json',
+  'agent-template-attested.json',
+  'vault-agent.json',
 ];
 
 const subprojectDescriptors = [
-  ["agent-minter", "Agent Minter", "rust-workspace"],
-  ["Agent-Staking_Unstaking_solana_metaplex_core", "Agent Staking / Unstaking", "anchor-program"],
-  ["clawd-agents-perps", "Clawd Agents Perps", "frontend"],
-  ["cloudflare-agent-api", "Cloudflare Agent API", "edge-api"],
-  ["defi-agents", "DeFi Agents", "catalog-fork"],
-  ["plugin.delivery", "Plugin Delivery", "plugin-index"],
-  ["solana-gpt-oracle", "Solana GPT Oracle", "solana-program"],
-  ["solana-pumpfun-bot-master", "Solana PumpFun Bot", "rust-bot"],
-  ["lobster-council", "Lobster Council", "persona-pack"],
+  ['agent-minter', 'Agent Minter', 'rust-workspace'],
+  ['Agent-Staking_Unstaking_solana_metaplex_core', 'Agent Staking / Unstaking', 'anchor-program'],
+  ['clawd-agents-perps', 'Clawd Agents Perps', 'frontend'],
+  ['cloudflare-agent-api', 'Cloudflare Agent API', 'edge-api'],
+  ['defi-agents', 'DeFi Agents', 'catalog-fork'],
+  ['plugin.delivery', 'Plugin Delivery', 'plugin-index'],
+  ['solana-gpt-oracle', 'Solana GPT Oracle', 'solana-program'],
+  ['solana-pumpfun-bot-master', 'Solana PumpFun Bot', 'rust-bot'],
+  ['lobster-council', 'Lobster Council', 'persona-pack'],
 ];
 
 function loadJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
 function maybeLoad(file) {
-  return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+  return fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
 }
 
 function tryLoadJson(file) {
@@ -104,16 +105,27 @@ function arrayValue(value) {
 
 function summarizeText(raw, maxLines = 6) {
   return raw
-    .split("\n")
+    .split('\n')
     .map((line) => line.trim())
-    .filter((line) => line && !line.startsWith("```"))
+    .filter((line) => line && !line.startsWith('```'))
     .slice(0, maxLines)
-    .join("\n");
+    .join('\n');
 }
 
 function isTextAsset(filename) {
-  return /\.(cjs|css|html|js|json|md|mdc|mjs|rs|sh|sql|toml|ts|tsx|txt|yaml|yml)$/i.test(filename)
-    || [".editorconfig", ".env.example", ".gitattributes", ".gitignore", ".npmrc", "CITATION.cff", "CNAME", "LICENSE"].includes(path.basename(filename));
+  return (
+    /\.(cjs|css|html|js|json|md|mdc|mjs|rs|sh|sql|toml|ts|tsx|txt|yaml|yml)$/i.test(filename) ||
+    [
+      '.editorconfig',
+      '.env.example',
+      '.gitattributes',
+      '.gitignore',
+      '.npmrc',
+      'CITATION.cff',
+      'CNAME',
+      'LICENSE',
+    ].includes(path.basename(filename))
+  );
 }
 
 function listFilesRecursive(rootDir, options = {}) {
@@ -122,7 +134,7 @@ function listFilesRecursive(rootDir, options = {}) {
   const files = [];
   const visit = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (entry.name === ".DS_Store") continue;
+      if (entry.name === '.DS_Store') continue;
       const absolutePath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
         visit(absolutePath);
@@ -138,10 +150,12 @@ function listFilesRecursive(rootDir, options = {}) {
 }
 
 function findAgentSourceFile(identifier) {
-  return [
-    path.join(SOURCE_SRC, `${identifier}.json`),
-    path.join(SOURCE_PUBLIC_AGENT_CATALOG_DIR, `${identifier}.json`),
-  ].find((sourceFile) => fs.existsSync(sourceFile)) ?? null;
+  return (
+    [
+      path.join(SOURCE_SRC, `${identifier}.json`),
+      path.join(SOURCE_PUBLIC_AGENT_CATALOG_DIR, `${identifier}.json`),
+    ].find((sourceFile) => fs.existsSync(sourceFile)) ?? null
+  );
 }
 
 function normalizeAgent(raw, catalogEntry, sourceFile) {
@@ -161,16 +175,16 @@ function normalizeAgent(raw, catalogEntry, sourceFile) {
   return {
     id: raw.identifier,
     title: raw.meta?.title ?? raw.identifier,
-    description: raw.meta?.description ?? "",
-    category: raw.meta?.category ?? "trading",
-    avatar: raw.meta?.avatar ?? "🤖",
+    description: raw.meta?.description ?? '',
+    category: raw.meta?.category ?? 'trading',
+    avatar: raw.meta?.avatar ?? '🤖',
     tags: uniqueStrings(raw.meta?.tags ?? []),
     featured: Boolean(raw.featured || raw.meta?.featured),
     oneShot: Boolean(raw.oneShot),
     tokenUsage: raw.tokenUsage ?? null,
-    openingMessage: raw.config?.openingMessage ?? "",
+    openingMessage: raw.config?.openingMessage ?? '',
     openingQuestions: raw.config?.openingQuestions ?? [],
-    persona: raw.config?.systemRole ?? "",
+    persona: raw.config?.systemRole ?? '',
     capabilities,
     metaplexSkills,
     vulcanSkills,
@@ -178,9 +192,9 @@ function normalizeAgent(raw, catalogEntry, sourceFile) {
     source: {
       repoRoot: SOURCE_ROOT,
       file: sourceFile,
-      homepage: raw.homepage ?? "",
-      author: raw.author ?? "",
-      createdAt: raw.createdAt ?? "",
+      homepage: raw.homepage ?? '',
+      author: raw.author ?? '',
+      createdAt: raw.createdAt ?? '',
       deploy: catalogEntry?.deploy ?? null,
     },
   };
@@ -203,21 +217,17 @@ function normalizeAgentWithLocale(raw, catalogEntry, localeEntry, sourceFile) {
 
 function normalizeTemplate(filename, raw) {
   return {
-    id: filename.replace(/\.json$/, ""),
+    id: filename.replace(/\.json$/, ''),
     filename,
-    description:
-      raw.description ??
-      raw.meta?.description ??
-      raw.metadata?.category ??
-      "",
+    description: raw.description ?? raw.meta?.description ?? raw.metadata?.category ?? '',
     raw,
   };
 }
 
 function normalizeCharacter(filename, raw) {
   return {
-    id: filename.replace(/\.json$/, ""),
-    name: raw.name ?? filename.replace(/\.json$/, ""),
+    id: filename.replace(/\.json$/, ''),
+    name: raw.name ?? filename.replace(/\.json$/, ''),
     bio: raw.bio ?? [],
     lore: raw.lore ?? [],
     adjectives: raw.adjectives ?? [],
@@ -227,24 +237,26 @@ function normalizeCharacter(filename, raw) {
 }
 
 function normalizeSkill(dirName, rawText) {
-  const lines = rawText.split("\n");
-  const titleLine = lines.find((line) => line.startsWith("# "));
-  const descriptionLine = lines.find((line) => line.trim() && !line.startsWith("#") && !line.startsWith("---"));
+  const lines = rawText.split('\n');
+  const titleLine = lines.find((line) => line.startsWith('# '));
+  const descriptionLine = lines.find(
+    (line) => line.trim() && !line.startsWith('#') && !line.startsWith('---')
+  );
   return {
     id: dirName,
-    title: titleLine ? titleLine.replace(/^#\s+/, "").trim() : dirName,
-    summary: (descriptionLine ?? "").trim(),
-    file: path.join(SOURCE_SKILLS_DIR, dirName, "SKILL.md"),
+    title: titleLine ? titleLine.replace(/^#\s+/, '').trim() : dirName,
+    summary: (descriptionLine ?? '').trim(),
+    file: path.join(SOURCE_SKILLS_DIR, dirName, 'SKILL.md'),
   };
 }
 
-function normalizeDoc(filename, rawText, rootDir = SOURCE_DOCS_DIR, source = "agent-snapshot") {
-  const lines = rawText.split("\n");
-  const titleLine = lines.find((line) => line.startsWith("# "));
+function normalizeDoc(filename, rawText, rootDir = SOURCE_DOCS_DIR, source = 'agent-snapshot') {
+  const lines = rawText.split('\n');
+  const titleLine = lines.find((line) => line.startsWith('# '));
   return {
-    id: filename.replace(/\.[^.]+$/, "").toLowerCase(),
+    id: filename.replace(/\.[^.]+$/, '').toLowerCase(),
     filename,
-    title: titleLine ? titleLine.replace(/^#\s+/, "").trim() : filename,
+    title: titleLine ? titleLine.replace(/^#\s+/, '').trim() : filename,
     summary: summarizeText(rawText, 5),
     file: path.join(rootDir, filename),
     source,
@@ -253,15 +265,15 @@ function normalizeDoc(filename, rawText, rootDir = SOURCE_DOCS_DIR, source = "ag
 
 function normalizeLocale(dirName) {
   const dir = path.join(SOURCE_LOCALES_DIR, dirName);
-  const files = fs.readdirSync(dir).filter((filename) => filename.endsWith(".json"));
+  const files = fs.readdirSync(dir).filter((filename) => filename.endsWith('.json'));
   const locales = files
     .map((filename) => {
       const match = filename.match(/^index(?:\.([^.]+))?\.json$/);
-      return match ? match[1] ?? "default" : null;
+      return match ? (match[1] ?? 'default') : null;
     })
     .filter(Boolean);
 
-  const baseFile = path.join(dir, "index.json");
+  const baseFile = path.join(dir, 'index.json');
   const base = fs.existsSync(baseFile) ? tryLoadJson(baseFile) : null;
 
   return {
@@ -269,8 +281,8 @@ function normalizeLocale(dirName) {
     localeCount: locales.length,
     locales,
     defaultTitle: base?.meta?.title ?? dirName,
-    defaultDescription: base?.meta?.description ?? "",
-    openingMessage: base?.config?.openingMessage ?? "",
+    defaultDescription: base?.meta?.description ?? '',
+    openingMessage: base?.config?.openingMessage ?? '',
     openingQuestions: base?.config?.openingQuestions ?? [],
     fileCount: files.length,
     baseFile,
@@ -279,30 +291,26 @@ function normalizeLocale(dirName) {
 
 function normalizeWellKnown(scope, filename, raw) {
   return {
-    id: `${scope}:${filename.replace(/\.json$/, "")}`,
+    id: `${scope}:${filename.replace(/\.json$/, '')}`,
     scope,
     filename,
-    summary:
-      raw?.name_for_human ||
-      raw?.name ||
-      raw?.schemaVersion ||
-      raw?.protocol ||
-      filename,
+    summary: raw?.name_for_human || raw?.name || raw?.schemaVersion || raw?.protocol || filename,
     raw,
   };
 }
 
 function normalizeSubproject(dirName, title, kind) {
   const root = path.join(SOURCE_ROOT, dirName);
-  const packageJson = fs.existsSync(path.join(root, "package.json"))
-    ? tryLoadJson(path.join(root, "package.json"))
+  const packageJson = fs.existsSync(path.join(root, 'package.json'))
+    ? tryLoadJson(path.join(root, 'package.json'))
     : null;
-  const readmeText = ["README.md", "README.zh-CN.md"]
+  const readmeText = ['README.md', 'README.zh-CN.md']
     .map((filename) => path.join(root, filename))
     .find((filename) => fs.existsSync(filename));
   const summary = readmeText
-    ? summarizeText(fs.readFileSync(readmeText, "utf8"), 8)
-    : packageJson?.description || `${title} imported from the Cheshire Terminal Solana agents snapshot.`;
+    ? summarizeText(fs.readFileSync(readmeText, 'utf8'), 8)
+    : packageJson?.description ||
+      `${title} imported from the Cheshire Terminal Solana agents snapshot.`;
 
   return {
     id: dirName,
@@ -310,15 +318,15 @@ function normalizeSubproject(dirName, title, kind) {
     kind,
     path: root,
     packageName: packageJson?.name ?? null,
-    homepage: packageJson?.homepage ?? packageJson?.repository?.url ?? "",
+    homepage: packageJson?.homepage ?? packageJson?.repository?.url ?? '',
     summary,
   };
 }
 
 function normalizeRepoAsset(scope, filename, filePath) {
-  const rawText = isTextAsset(filename) ? maybeLoad(filePath) : "";
+  const rawText = isTextAsset(filename) ? maybeLoad(filePath) : '';
   return {
-    id: `${scope}:${filename.replace(/\.[^.]+$/, "").toLowerCase()}`,
+    id: `${scope}:${filename.replace(/\.[^.]+$/, '').toLowerCase()}`,
     scope,
     filename,
     file: filePath,
@@ -327,22 +335,21 @@ function normalizeRepoAsset(scope, filename, filePath) {
 }
 
 function sanitizeGeneratedValue(value) {
-  if (typeof value === "string") {
-    return value
-      .split(SOURCE_ROOT).join(PUBLIC_SOURCE_ROOT)
-      .split(APP_ROOT).join(PUBLIC_APP_ROOT);
+  if (typeof value === 'string') {
+    return value.split(SOURCE_ROOT).join(PUBLIC_SOURCE_ROOT).split(APP_ROOT).join(PUBLIC_APP_ROOT);
   }
   if (Array.isArray(value)) return value.map(sanitizeGeneratedValue);
-  if (value && typeof value === "object") {
+  if (value && typeof value === 'object') {
     return Object.fromEntries(
-      Object.entries(value).map(([key, item]) => [key, sanitizeGeneratedValue(item)]),
+      Object.entries(value).map(([key, item]) => [key, sanitizeGeneratedValue(item)])
     );
   }
   return value;
 }
 
 const locales = fs.existsSync(SOURCE_LOCALES_DIR)
-  ? fs.readdirSync(SOURCE_LOCALES_DIR)
+  ? fs
+      .readdirSync(SOURCE_LOCALES_DIR)
       .filter((entry) => fs.statSync(path.join(SOURCE_LOCALES_DIR, entry)).isDirectory())
       .map((entry) => normalizeLocale(entry))
   : [];
@@ -358,7 +365,12 @@ const agents = catalogEntries
     const sourceFile = findAgentSourceFile(entry.identifier);
     if (!sourceFile) return null;
     const raw = loadJson(sourceFile);
-    return normalizeAgentWithLocale(raw, entry, localeById.get(entry.identifier) ?? null, sourceFile);
+    return normalizeAgentWithLocale(
+      raw,
+      entry,
+      localeById.get(entry.identifier) ?? null,
+      sourceFile
+    );
   })
   .filter(Boolean);
 
@@ -367,8 +379,9 @@ const templates = topLevelTemplates
   .map((filename) => normalizeTemplate(filename, loadJson(path.join(SOURCE_ROOT, filename))));
 
 const browserTemplates = fs.existsSync(SOURCE_TEMPLATES_DIR)
-  ? fs.readdirSync(SOURCE_TEMPLATES_DIR)
-      .filter((filename) => filename.endsWith(".json"))
+  ? fs
+      .readdirSync(SOURCE_TEMPLATES_DIR)
+      .filter((filename) => filename.endsWith('.json'))
       .map((filename) => {
         const raw = tryLoadJson(path.join(SOURCE_TEMPLATES_DIR, filename));
         return raw ? normalizeTemplate(filename, raw) : null;
@@ -377,8 +390,9 @@ const browserTemplates = fs.existsSync(SOURCE_TEMPLATES_DIR)
   : [];
 
 const characters = fs.existsSync(SOURCE_CHARACTERS)
-  ? fs.readdirSync(SOURCE_CHARACTERS)
-      .filter((filename) => filename.endsWith(".json"))
+  ? fs
+      .readdirSync(SOURCE_CHARACTERS)
+      .filter((filename) => filename.endsWith('.json'))
       .map((filename) => {
         const raw = tryLoadJson(path.join(SOURCE_CHARACTERS, filename));
         return raw ? normalizeCharacter(filename, raw) : null;
@@ -387,13 +401,17 @@ const characters = fs.existsSync(SOURCE_CHARACTERS)
   : [];
 
 const skills = fs.existsSync(SOURCE_SKILLS_DIR)
-  ? fs.readdirSync(SOURCE_SKILLS_DIR)
-      .filter((entry) => fs.existsSync(path.join(SOURCE_SKILLS_DIR, entry, "SKILL.md")))
-      .map((entry) => normalizeSkill(entry, maybeLoad(path.join(SOURCE_SKILLS_DIR, entry, "SKILL.md"))))
+  ? fs
+      .readdirSync(SOURCE_SKILLS_DIR)
+      .filter((entry) => fs.existsSync(path.join(SOURCE_SKILLS_DIR, entry, 'SKILL.md')))
+      .map((entry) =>
+        normalizeSkill(entry, maybeLoad(path.join(SOURCE_SKILLS_DIR, entry, 'SKILL.md')))
+      )
   : [];
 
 const sourceDocs = fs.existsSync(SOURCE_DOCS_DIR)
-  ? fs.readdirSync(SOURCE_DOCS_DIR)
+  ? fs
+      .readdirSync(SOURCE_DOCS_DIR)
       .filter((filename) => /\.(md|cjs)$/i.test(filename))
       .map((filename) => normalizeDoc(filename, maybeLoad(path.join(SOURCE_DOCS_DIR, filename))))
   : [];
@@ -402,7 +420,12 @@ const appDocs = fs.existsSync(APP_DOCS_DIR)
   ? appDocFilenames
       .filter((filename) => fs.existsSync(path.join(APP_DOCS_DIR, filename)))
       .map((filename) =>
-        normalizeDoc(filename, maybeLoad(path.join(APP_DOCS_DIR, filename)), APP_DOCS_DIR, "cheshire-terminal-docs"),
+        normalizeDoc(
+          filename,
+          maybeLoad(path.join(APP_DOCS_DIR, filename)),
+          APP_DOCS_DIR,
+          'cheshire-terminal-docs'
+        )
       )
   : [];
 
@@ -410,15 +433,29 @@ const docs = [...appDocs, ...sourceDocs];
 
 const wellKnown = [
   fs.existsSync(SOURCE_WELL_KNOWN_DIR)
-    ? fs.readdirSync(SOURCE_WELL_KNOWN_DIR)
-        .filter((filename) => filename.endsWith(".json"))
-        .map((filename) => normalizeWellKnown("root", filename, tryLoadJson(path.join(SOURCE_WELL_KNOWN_DIR, filename))))
+    ? fs
+        .readdirSync(SOURCE_WELL_KNOWN_DIR)
+        .filter((filename) => filename.endsWith('.json'))
+        .map((filename) =>
+          normalizeWellKnown(
+            'root',
+            filename,
+            tryLoadJson(path.join(SOURCE_WELL_KNOWN_DIR, filename))
+          )
+        )
         .filter(Boolean)
     : [],
   fs.existsSync(SOURCE_PUBLIC_WELL_KNOWN_DIR)
-    ? fs.readdirSync(SOURCE_PUBLIC_WELL_KNOWN_DIR)
-        .filter((filename) => filename.endsWith(".json"))
-        .map((filename) => normalizeWellKnown("public", filename, tryLoadJson(path.join(SOURCE_PUBLIC_WELL_KNOWN_DIR, filename))))
+    ? fs
+        .readdirSync(SOURCE_PUBLIC_WELL_KNOWN_DIR)
+        .filter((filename) => filename.endsWith('.json'))
+        .map((filename) =>
+          normalizeWellKnown(
+            'public',
+            filename,
+            tryLoadJson(path.join(SOURCE_PUBLIC_WELL_KNOWN_DIR, filename))
+          )
+        )
         .filter(Boolean)
     : [],
 ].flat();
@@ -426,57 +463,61 @@ const wellKnown = [
 const schemaAssets = fs.existsSync(SOURCE_SCHEMA_DIR)
   ? listFilesRecursive(SOURCE_SCHEMA_DIR, {
       include: (filename) => /\.(json|ts|js|md|sql)$/i.test(filename),
-    }).map(({ relativePath, absolutePath }) => normalizeRepoAsset("schema", relativePath, absolutePath))
+    }).map(({ relativePath, absolutePath }) =>
+      normalizeRepoAsset('schema', relativePath, absolutePath)
+    )
   : [];
 
 const scriptAssets = fs.existsSync(SOURCE_SCRIPTS_DIR)
   ? listFilesRecursive(SOURCE_SCRIPTS_DIR, {
       include: (filename) => /\.(js|mjs|cjs|ts|sh|md)$/i.test(filename),
-    }).map(({ relativePath, absolutePath }) => normalizeRepoAsset("scripts", relativePath, absolutePath))
+    }).map(({ relativePath, absolutePath }) =>
+      normalizeRepoAsset('scripts', relativePath, absolutePath)
+    )
   : [];
 
 const publicAssets = fs.existsSync(SOURCE_PUBLIC_DIR)
   ? listFilesRecursive(SOURCE_PUBLIC_DIR).map(({ relativePath, absolutePath }) =>
-      normalizeRepoAsset("public", relativePath, absolutePath),
+      normalizeRepoAsset('public', relativePath, absolutePath)
     )
   : [];
 
 const cursorAssets = fs.existsSync(SOURCE_CURSOR_DIR)
   ? listFilesRecursive(SOURCE_CURSOR_DIR).map(({ relativePath, absolutePath }) =>
-      normalizeRepoAsset(".cursor", relativePath, absolutePath),
+      normalizeRepoAsset('.cursor', relativePath, absolutePath)
     )
   : [];
 
 const rootAssetFiles = [
-  "AGENTS.md",
-  "README.md",
-  "CHANGELOG.md",
-  "CLAUDE.md",
-  "GEMINI.md",
-  "CONTRIBUTING.md",
-  "SECURITY.md",
-  "LICENSE",
-  "CODE_OF_CONDUCT.md",
-  "CITATION.cff",
-  "humans.txt",
-  "CNAME",
-  "package.json",
-  "bun.lock",
-  ".editorconfig",
-  ".eslintrc.cjs",
-  ".gitattributes",
-  ".gitignore",
-  ".i18nignore",
-  ".i18nrc.js",
-  ".npmrc",
-  ".releaserc.cjs",
-  ".vercel-deploy",
-  "INTEGRATION_MANIFEST.json",
+  'AGENTS.md',
+  'README.md',
+  'CHANGELOG.md',
+  'CLAUDE.md',
+  'GEMINI.md',
+  'CONTRIBUTING.md',
+  'SECURITY.md',
+  'LICENSE',
+  'CODE_OF_CONDUCT.md',
+  'CITATION.cff',
+  'humans.txt',
+  'CNAME',
+  'package.json',
+  'bun.lock',
+  '.editorconfig',
+  '.eslintrc.cjs',
+  '.gitattributes',
+  '.gitignore',
+  '.i18nignore',
+  '.i18nrc.js',
+  '.npmrc',
+  '.releaserc.cjs',
+  '.vercel-deploy',
+  'INTEGRATION_MANIFEST.json',
 ];
 
 const rootAssets = rootAssetFiles
   .filter((filename) => fs.existsSync(path.join(SOURCE_ROOT, filename)))
-  .map((filename) => normalizeRepoAsset("root", filename, path.join(SOURCE_ROOT, filename)));
+  .map((filename) => normalizeRepoAsset('root', filename, path.join(SOURCE_ROOT, filename)));
 
 const projects = subprojectDescriptors
   .filter(([dirName]) => fs.existsSync(path.join(SOURCE_ROOT, dirName)))
@@ -487,25 +528,25 @@ const starters = curatedStarterIds
   .filter(Boolean);
 
 const integratedRoots = [
-  ".cursor",
-  ".well-known",
-  "agent-minter",
-  "Agent-Staking_Unstaking_solana_metaplex_core",
-  "characters",
-  "clawd-agents-perps",
-  "cloudflare-agent-api",
-  "defi-agents",
-  "docs",
-  "lobster-council",
-  "locales",
-  "plugin.delivery",
-  "public",
-  "schema",
-  "scripts",
-  "skills",
-  "solana-gpt-oracle",
-  "solana-gpt-oracle/pumpfun-docs",
-  "solana-gpt-oracle/src",
+  '.cursor',
+  '.well-known',
+  'agent-minter',
+  'Agent-Staking_Unstaking_solana_metaplex_core',
+  'characters',
+  'clawd-agents-perps',
+  'cloudflare-agent-api',
+  'defi-agents',
+  'docs',
+  'lobster-council',
+  'locales',
+  'plugin.delivery',
+  'public',
+  'schema',
+  'scripts',
+  'skills',
+  'solana-gpt-oracle',
+  'solana-gpt-oracle/pumpfun-docs',
+  'solana-gpt-oracle/src',
 ].map((root) => ({
   path: root,
   present: fs.existsSync(path.join(SOURCE_ROOT, root)),
@@ -519,17 +560,17 @@ const payload = {
     roots: integratedRoots,
   },
   catalogMeta: {
-    apiVersion: catalog.apiVersion ?? "",
-    generatedAt: catalog.generatedAt ?? "",
+    apiVersion: catalog.apiVersion ?? '',
+    generatedAt: catalog.generatedAt ?? '',
     stats: catalog.stats ?? {},
     categories: catalog.categories ?? [],
     deployPaths: catalog.deployPaths ?? [],
     hub: catalog.hub ?? {},
     metaplexSkill: catalog.metaplexSkill ?? {},
   },
-  manifest: tryLoadJson(path.join(SOURCE_ROOT, "agents-manifest.json")) ?? {},
-  meta: tryLoadJson(path.join(SOURCE_ROOT, "meta.json")) ?? {},
-  clawd: tryLoadJson(path.join(SOURCE_ROOT, "clawd.json")) ?? {},
+  manifest: tryLoadJson(path.join(SOURCE_ROOT, 'agents-manifest.json')) ?? {},
+  meta: tryLoadJson(path.join(SOURCE_ROOT, 'meta.json')) ?? {},
+  clawd: tryLoadJson(path.join(SOURCE_ROOT, 'clawd.json')) ?? {},
   starters: {
     ids: curatedStarterIds,
     count: starters.length,
@@ -555,5 +596,5 @@ const payload = {
 
 fs.writeFileSync(OUTPUT_FILE, `${JSON.stringify(sanitizeGeneratedValue(payload), null, 2)}\n`);
 console.log(
-  `Wrote ${agents.length} agents, ${starters.length} starters, ${templates.length} top-level templates, ${browserTemplates.length} browser templates, ${characters.length} characters, ${skills.length} skills, ${docs.length} docs, ${locales.length} locales, ${wellKnown.length} well-known records, ${schemaAssets.length} schema assets, ${scriptAssets.length} script assets, ${publicAssets.length} public assets, ${cursorAssets.length} cursor assets, ${rootAssets.length} root assets, and ${projects.length} subprojects to ${OUTPUT_FILE}`,
+  `Wrote ${agents.length} agents, ${starters.length} starters, ${templates.length} top-level templates, ${browserTemplates.length} browser templates, ${characters.length} characters, ${skills.length} skills, ${docs.length} docs, ${locales.length} locales, ${wellKnown.length} well-known records, ${schemaAssets.length} schema assets, ${scriptAssets.length} script assets, ${publicAssets.length} public assets, ${cursorAssets.length} cursor assets, ${rootAssets.length} root assets, and ${projects.length} subprojects to ${OUTPUT_FILE}`
 );

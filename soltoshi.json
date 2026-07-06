@@ -167,12 +167,7 @@
       "path": "skills/bags-solana-ops"
     }
   ],
-  "supportedTrust": [
-    "reputation",
-    "crypto-economic",
-    "x402-payments",
-    "metaplex-core-asset"
-  ],
+  "supportedTrust": ["reputation", "crypto-economic", "x402-payments", "metaplex-core-asset"],
   "metadata": {
     "author": "OpenClawd / x402agent",
     "created": "2026-06-08",

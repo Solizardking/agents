@@ -1,1 +1,30 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[\"dev-context-only-utils\"]","target":7758763119056657304,"profile":13904601386562544002,"path":1604406628919398112,"deps":[[4876843447960876563,"solana_serialize_utils",false,7484908526598879611],[4917153833802766511,"solana_program_error",false,15632358889915324426],[10902372339037899502,"bitflags",false,13576225619048356286],[11091540729177102731,"solana_pubkey",false,11710405735049232457],[14591356476411885690,"solana_sdk_ids",false,8383103166970577823],[14666756292968957341,"solana_account_info",false,752746031345739308],[14762038526286640848,"solana_sysvar_id",false,13630360528583628159],[15429715045911386410,"solana_sanitize",false,6860136693776437069],[17882862367587183543,"solana_instruction",false,10178517780293575491]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-instructions-sysvar-b7b9a4f9f912fd0e/dep-lib-solana_instructions_sysvar","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[\"dev-context-only-utils\"]",
+  "target": 7758763119056657304,
+  "profile": 13904601386562544002,
+  "path": 1604406628919398112,
+  "deps": [
+    [4876843447960876563, "solana_serialize_utils", false, 7484908526598879611],
+    [4917153833802766511, "solana_program_error", false, 15632358889915324426],
+    [10902372339037899502, "bitflags", false, 13576225619048356286],
+    [11091540729177102731, "solana_pubkey", false, 11710405735049232457],
+    [14591356476411885690, "solana_sdk_ids", false, 8383103166970577823],
+    [14666756292968957341, "solana_account_info", false, 752746031345739308],
+    [14762038526286640848, "solana_sysvar_id", false, 13630360528583628159],
+    [15429715045911386410, "solana_sanitize", false, 6860136693776437069],
+    [17882862367587183543, "solana_instruction", false, 10178517780293575491]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-instructions-sysvar-b7b9a4f9f912fd0e/dep-lib-solana_instructions_sysvar",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

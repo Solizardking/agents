@@ -88,7 +88,10 @@ export class CatalogService {
   }
 
   getSkillBySlug(slug: string): Promise<CatalogResponse> {
-    return this.cachedFetch(`gateway:skill:slug:${slug}`, `${this.gatewayBase}/api/skills/slug/${slug}`);
+    return this.cachedFetch(
+      `gateway:skill:slug:${slug}`,
+      `${this.gatewayBase}/api/skills/slug/${slug}`
+    );
   }
 
   getSkillById(id: string): Promise<CatalogResponse> {
@@ -133,7 +136,7 @@ export class CatalogService {
     try {
       const res = await fetch(url, {
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'User-Agent': 'cloudflare-agent-api/2.1.0',
         },
         // Cloudflare edge cache hint
@@ -151,9 +154,13 @@ export class CatalogService {
       const data: unknown = await res.json();
       const cachedAt = new Date().toISOString();
 
-      this.kv.put(kvKey, JSON.stringify({ data, cachedAt }), {
-        expirationTtl: CATALOG_TTL_SECONDS,
-      }).catch(() => {/* ignore KV write errors */});
+      this.kv
+        .put(kvKey, JSON.stringify({ data, cachedAt }), {
+          expirationTtl: CATALOG_TTL_SECONDS,
+        })
+        .catch(() => {
+          /* ignore KV write errors */
+        });
 
       return { success: true, source: 'upstream', cachedAt, data };
     } catch (err) {
@@ -174,13 +181,20 @@ export class CatalogService {
 
   async invalidate(scope?: 'catalog' | 'gateway' | 'all'): Promise<void> {
     const catalogKeys = ['catalog:all'];
-    const gatewayKeys = ['gateway:skills', 'gateway:skills:catalog', 'gateway:skills:kinds', 'gateway:registry', 'gateway:identity', 'gateway:health'];
+    const gatewayKeys = [
+      'gateway:skills',
+      'gateway:skills:catalog',
+      'gateway:skills:kinds',
+      'gateway:registry',
+      'gateway:identity',
+      'gateway:health',
+    ];
 
     let keys: string[];
     if (scope === 'catalog') keys = catalogKeys;
     else if (scope === 'gateway') keys = gatewayKeys;
     else keys = [...catalogKeys, ...gatewayKeys];
 
-    await Promise.allSettled(keys.map(k => this.kv.delete(k)));
+    await Promise.allSettled(keys.map((k) => this.kv.delete(k)));
   }
 }

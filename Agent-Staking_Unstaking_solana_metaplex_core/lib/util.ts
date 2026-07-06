@@ -1,16 +1,9 @@
-import * as anchor from "@coral-xyz/anchor";
-import { PublicKey } from "@solana/web3.js";
-import {
-  ASSOCIATED_TOKEN_PROGRAM_ID,
-  TOKEN_PROGRAM_ID,
-} from "@solana/spl-token";
+import * as anchor from '@coral-xyz/anchor';
+import { ASSOCIATED_TOKEN_PROGRAM_ID, TOKEN_PROGRAM_ID } from '@solana/spl-token';
+import { PublicKey } from '@solana/web3.js';
 
-export const METAPLEX = new PublicKey(
-  "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
-);
-export const MPL_DEFAULT_RULE_SET = new PublicKey(
-  "AdH2Utn6Fus15ZhtenW4hZBQnvtLgM1YCW2MfVp7pYS5"
-);
+export const METAPLEX = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
+export const MPL_DEFAULT_RULE_SET = new PublicKey('AdH2Utn6Fus15ZhtenW4hZBQnvtLgM1YCW2MfVp7pYS5');
 
 const getAssociatedTokenAccount = async (
   ownerPubkey: PublicKey,
@@ -103,38 +96,28 @@ const getATokenAccountsNeedCreate = async (
 const getMetadata = async (mint: PublicKey): Promise<PublicKey> => {
   return (
     await PublicKey.findProgramAddress(
-      [Buffer.from("metadata"), METAPLEX.toBuffer(), mint.toBuffer()],
+      [Buffer.from('metadata'), METAPLEX.toBuffer(), mint.toBuffer()],
       METAPLEX
     )
   )[0];
 };
 
-const getMasterEdition = async (
-  mint: anchor.web3.PublicKey
-): Promise<anchor.web3.PublicKey> => {
+const getMasterEdition = async (mint: anchor.web3.PublicKey): Promise<anchor.web3.PublicKey> => {
   return (
     await anchor.web3.PublicKey.findProgramAddress(
-      [
-        Buffer.from("metadata"),
-        METAPLEX.toBuffer(),
-        mint.toBuffer(),
-        Buffer.from("edition"),
-      ],
+      [Buffer.from('metadata'), METAPLEX.toBuffer(), mint.toBuffer(), Buffer.from('edition')],
       METAPLEX
     )
   )[0];
 };
 
-export function findTokenRecordPda(
-  mint: PublicKey,
-  token: PublicKey
-): PublicKey {
+export function findTokenRecordPda(mint: PublicKey, token: PublicKey): PublicKey {
   return PublicKey.findProgramAddressSync(
     [
-      Buffer.from("metadata"),
+      Buffer.from('metadata'),
       METAPLEX.toBuffer(),
       mint.toBuffer(),
-      Buffer.from("token_record"),
+      Buffer.from('token_record'),
       token.toBuffer(),
     ],
     METAPLEX
@@ -149,9 +132,4 @@ export function getUTCTimestamps(date: string) {
   return now + offset * 60;
 }
 
-export {
-  getAssociatedTokenAccount,
-  getATokenAccountsNeedCreate,
-  getMetadata,
-  getMasterEdition,
-};
+export { getAssociatedTokenAccount, getATokenAccountsNeedCreate, getMetadata, getMasterEdition };

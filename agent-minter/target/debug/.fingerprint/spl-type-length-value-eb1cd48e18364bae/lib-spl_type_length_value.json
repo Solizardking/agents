@@ -1,1 +1,31 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[\"derive\"]","target":4936690485685825485,"profile":8276155916380437441,"path":7617499213701204209,"deps":[[761872526999005629,"solana_msg",false,1219892521562148489],[790673365560624081,"spl_pod",false,5735556521568486463],[2348231670893597196,"spl_discriminator",false,9805542642566169772],[4145337479814240220,"solana_decode_error",false,9874968205060029542],[4917153833802766511,"solana_program_error",false,7971800277136418334],[5157631553186200874,"num_traits",false,16151257895603573568],[8008191657135824715,"thiserror",false,8412273811496714573],[11263754829263059703,"num_derive",false,14514163362931294420],[14589292995769234176,"bytemuck",false,6962721579057444693],[14666756292968957341,"solana_account_info",false,6468413427890588760]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/spl-type-length-value-eb1cd48e18364bae/dep-lib-spl_type_length_value","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[\"derive\"]",
+  "target": 4936690485685825485,
+  "profile": 8276155916380437441,
+  "path": 7617499213701204209,
+  "deps": [
+    [761872526999005629, "solana_msg", false, 1219892521562148489],
+    [790673365560624081, "spl_pod", false, 5735556521568486463],
+    [2348231670893597196, "spl_discriminator", false, 9805542642566169772],
+    [4145337479814240220, "solana_decode_error", false, 9874968205060029542],
+    [4917153833802766511, "solana_program_error", false, 7971800277136418334],
+    [5157631553186200874, "num_traits", false, 16151257895603573568],
+    [8008191657135824715, "thiserror", false, 8412273811496714573],
+    [11263754829263059703, "num_derive", false, 14514163362931294420],
+    [14589292995769234176, "bytemuck", false, 6962721579057444693],
+    [14666756292968957341, "solana_account_info", false, 6468413427890588760]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/spl-type-length-value-eb1cd48e18364bae/dep-lib-spl_type_length_value",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

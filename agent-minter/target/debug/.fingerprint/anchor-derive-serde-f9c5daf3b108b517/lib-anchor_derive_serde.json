@@ -1,1 +1,26 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[\"idl-build\", \"lazy-account\"]","target":16637939580755531082,"profile":11031753823811942044,"path":1082831319737693108,"deps":[[1108254298283712113,"quote",false,14495425624718485528],[1283153597415333113,"anchor_syn",false,11077288540257853745],[4289358735036141001,"proc_macro2",false,14111575391740693242],[14607138199358211871,"syn",false,3237549679663277290],[17452867115756150398,"proc_macro_crate",false,7513052473356404923]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/anchor-derive-serde-f9c5daf3b108b517/dep-lib-anchor_derive_serde","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[\"idl-build\", \"lazy-account\"]",
+  "target": 16637939580755531082,
+  "profile": 11031753823811942044,
+  "path": 1082831319737693108,
+  "deps": [
+    [1108254298283712113, "quote", false, 14495425624718485528],
+    [1283153597415333113, "anchor_syn", false, 11077288540257853745],
+    [4289358735036141001, "proc_macro2", false, 14111575391740693242],
+    [14607138199358211871, "syn", false, 3237549679663277290],
+    [17452867115756150398, "proc_macro_crate", false, 7513052473356404923]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/anchor-derive-serde-f9c5daf3b108b517/dep-lib-anchor_derive_serde",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

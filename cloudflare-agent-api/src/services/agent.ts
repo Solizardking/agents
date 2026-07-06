@@ -2,7 +2,7 @@
 // AGENT SERVICE - Database operations and business logic
 // ═══════════════════════════════════════════════════════════════
 
-import type { Env, Agent, AgentPermissions } from '../index';
+import type { Agent, AgentPermissions, Env } from '../index';
 
 // ─────────────────────────────────────────────────
 // CRYPTO HELPERS
@@ -11,7 +11,9 @@ import type { Env, Agent, AgentPermissions } from '../index';
 async function generateApiKey(): Promise<string> {
   const array = new Uint8Array(32);
   crypto.getRandomValues(array);
-  const hex = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
+  const hex = Array.from(array)
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
   return `agent_${hex}`;
 }
 
@@ -20,13 +22,15 @@ async function hashString(str: string): Promise<string> {
   const data = encoder.encode(str);
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
 function generateId(prefix: string): string {
   const array = new Uint8Array(12);
   crypto.getRandomValues(array);
-  const hex = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
+  const hex = Array.from(array)
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
   return `${prefix}_${hex}`;
 }
 
@@ -69,25 +73,31 @@ export class AgentService {
       maxDailyVolume: 1000,
     };
 
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO agents (id, name, description, api_key_hash, api_key_prefix, chain, permissions, metadata)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    `).bind(
-      id,
-      params.name,
-      params.description || null,
-      apiKeyHash,
-      apiKeyPrefix,
-      params.chain || 'solana-devnet',
-      JSON.stringify(defaultPermissions),
-      params.metadata ? JSON.stringify(params.metadata) : null
-    ).run();
+    `)
+      .bind(
+        id,
+        params.name,
+        params.description || null,
+        apiKeyHash,
+        apiKeyPrefix,
+        params.chain || 'solana-devnet',
+        JSON.stringify(defaultPermissions),
+        params.metadata ? JSON.stringify(params.metadata) : null
+      )
+      .run();
 
     // Record API key history
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO api_key_history (agent_id, api_key_prefix)
       VALUES (?, ?)
-    `).bind(id, apiKeyPrefix).run();
+    `)
+      .bind(id, apiKeyPrefix)
+      .run();
 
     const agent = await this.getAgentById(id);
     if (!agent) {
@@ -108,9 +118,12 @@ export class AgentService {
   ): Promise<{ agent: Agent; sessionToken: string; expiresAt: string } | null> {
     const apiKeyHash = await hashString(apiKey);
 
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agents WHERE api_key_hash = ? AND status = 'active'
-    `).bind(apiKeyHash).first<Agent>();
+    `)
+      .bind(apiKeyHash)
+      .first<Agent>();
 
     if (!result) {
       return null;
@@ -127,28 +140,31 @@ export class AgentService {
     const expiresAt = new Date(now.getTime() + this.sessionDurationMs);
 
     // Store session in D1
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO sessions (id, agent_id, token_hash, ip_address, user_agent, expires_at)
       VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(
-      sessionId,
-      agent.id,
-      tokenHash,
-      ipAddress,
-      userAgent,
-      expiresAt.toISOString()
-    ).run();
+    `)
+      .bind(sessionId, agent.id, tokenHash, ipAddress, userAgent, expiresAt.toISOString())
+      .run();
 
     // Also store in KV for fast lookup
-    await this.sessions.put(tokenHash, JSON.stringify({
-      agentId: agent.id,
-      expiresAt: expiresAt.toISOString(),
-    }), { expirationTtl: Math.floor(this.sessionDurationMs / 1000) });
+    await this.sessions.put(
+      tokenHash,
+      JSON.stringify({
+        agentId: agent.id,
+        expiresAt: expiresAt.toISOString(),
+      }),
+      { expirationTtl: Math.floor(this.sessionDurationMs / 1000) }
+    );
 
     // Update last active
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agents SET last_active_at = datetime('now') WHERE id = ?
-    `).bind(agent.id).run();
+    `)
+      .bind(agent.id)
+      .run();
 
     return {
       agent,
@@ -160,18 +176,24 @@ export class AgentService {
   async validateApiKey(apiKey: string): Promise<Agent | null> {
     const apiKeyHash = await hashString(apiKey);
 
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agents WHERE api_key_hash = ? AND status = 'active'
-    `).bind(apiKeyHash).first<Agent>();
+    `)
+      .bind(apiKeyHash)
+      .first<Agent>();
 
     if (!result) {
       return null;
     }
 
     // Update last active
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agents SET last_active_at = datetime('now') WHERE id = ?
-    `).bind(result.id).run();
+    `)
+      .bind(result.id)
+      .run();
 
     return this.parseAgentRow(result);
   }
@@ -192,23 +214,32 @@ export class AgentService {
       const agent = await this.getAgentById(agentId);
       if (agent && agent.status === 'active') {
         // Update last active
-        await this.db.prepare(`
+        await this.db
+          .prepare(`
           UPDATE agents SET last_active_at = datetime('now') WHERE id = ?
-        `).bind(agentId).run();
+        `)
+          .bind(agentId)
+          .run();
 
         // Update session last used
-        await this.db.prepare(`
+        await this.db
+          .prepare(`
           UPDATE sessions SET last_used_at = datetime('now') WHERE token_hash = ?
-        `).bind(tokenHash).run();
+        `)
+          .bind(tokenHash)
+          .run();
 
         return agent;
       }
     }
 
     // Fallback to D1
-    const session = await this.db.prepare(`
+    const session = await this.db
+      .prepare(`
       SELECT * FROM sessions WHERE token_hash = ? AND expires_at > datetime('now')
-    `).bind(tokenHash).first();
+    `)
+      .bind(tokenHash)
+      .first();
 
     if (!session) {
       return null;
@@ -220,9 +251,12 @@ export class AgentService {
     }
 
     // Update last active
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agents SET last_active_at = datetime('now') WHERE id = ?
-    `).bind(agent.id).run();
+    `)
+      .bind(agent.id)
+      .run();
 
     return agent;
   }
@@ -231,9 +265,12 @@ export class AgentService {
     const tokenHash = await hashString(sessionToken);
 
     await this.sessions.delete(tokenHash);
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       DELETE FROM sessions WHERE token_hash = ?
-    `).bind(tokenHash).run();
+    `)
+      .bind(tokenHash)
+      .run();
   }
 
   // ═══════════════════════════════════════════════════
@@ -241,17 +278,23 @@ export class AgentService {
   // ═══════════════════════════════════════════════════
 
   async getAgentById(id: string): Promise<Agent | null> {
-    const result = await this.db.prepare(`
+    const result = await this.db
+      .prepare(`
       SELECT * FROM agents WHERE id = ?
-    `).bind(id).first<Agent>();
+    `)
+      .bind(id)
+      .first<Agent>();
 
     return result ? this.parseAgentRow(result) : null;
   }
 
   async updateWallet(agentId: string, walletAddress: string): Promise<void> {
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agents SET wallet_address = ?, updated_at = datetime('now') WHERE id = ?
-    `).bind(walletAddress, agentId).run();
+    `)
+      .bind(walletAddress, agentId)
+      .run();
   }
 
   async regenerateApiKey(agentId: string): Promise<string> {
@@ -266,29 +309,41 @@ export class AgentService {
     }
 
     // Update old key history as revoked
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE api_key_history
       SET revoked_at = datetime('now'), revoke_reason = 'regenerated'
       WHERE agent_id = ? AND revoked_at IS NULL
-    `).bind(agentId).run();
+    `)
+      .bind(agentId)
+      .run();
 
     // Update agent with new key
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       UPDATE agents
       SET api_key_hash = ?, api_key_prefix = ?, updated_at = datetime('now')
       WHERE id = ?
-    `).bind(newApiKeyHash, newApiKeyPrefix, agentId).run();
+    `)
+      .bind(newApiKeyHash, newApiKeyPrefix, agentId)
+      .run();
 
     // Add new key to history
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO api_key_history (agent_id, api_key_prefix)
       VALUES (?, ?)
-    `).bind(agentId, newApiKeyPrefix).run();
+    `)
+      .bind(agentId, newApiKeyPrefix)
+      .run();
 
     // Invalidate all sessions for this agent
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       DELETE FROM sessions WHERE agent_id = ?
-    `).bind(agentId).run();
+    `)
+      .bind(agentId)
+      .run();
 
     return newApiKey;
   }
@@ -311,13 +366,11 @@ export class AgentService {
     const dayKey = `rate:${agentId}:day:${Math.floor(now / 86400000)}`;
 
     const [minuteCount, dayCount] = await Promise.all([
-      this.rateLimits.get(minuteKey).then(v => parseInt(v || '0', 10)),
-      this.rateLimits.get(dayKey).then(v => parseInt(v || '0', 10)),
+      this.rateLimits.get(minuteKey).then((v) => parseInt(v || '0', 10)),
+      this.rateLimits.get(dayKey).then((v) => parseInt(v || '0', 10)),
     ]);
 
-    const allowed =
-      minuteCount < agent.requests_per_minute &&
-      dayCount < agent.requests_per_day;
+    const allowed = minuteCount < agent.requests_per_minute && dayCount < agent.requests_per_day;
 
     return {
       allowed,
@@ -334,8 +387,8 @@ export class AgentService {
     const dayKey = `rate:${agentId}:day:${Math.floor(now / 86400000)}`;
 
     const [minuteCount, dayCount] = await Promise.all([
-      this.rateLimits.get(minuteKey).then(v => parseInt(v || '0', 10)),
-      this.rateLimits.get(dayKey).then(v => parseInt(v || '0', 10)),
+      this.rateLimits.get(minuteKey).then((v) => parseInt(v || '0', 10)),
+      this.rateLimits.get(dayKey).then((v) => parseInt(v || '0', 10)),
     ]);
 
     await Promise.all([
@@ -356,17 +409,13 @@ export class AgentService {
     status: 'success' | 'failed' | 'pending' = 'success',
     errorMessage?: string
   ): Promise<void> {
-    await this.db.prepare(`
+    await this.db
+      .prepare(`
       INSERT INTO agent_activity (agent_id, action, details, ip_address, status, error_message)
       VALUES (?, ?, ?, ?, ?, ?)
-    `).bind(
-      agentId,
-      action,
-      JSON.stringify(details),
-      ipAddress,
-      status,
-      errorMessage || null
-    ).run();
+    `)
+      .bind(agentId, action, JSON.stringify(details), ipAddress, status, errorMessage || null)
+      .run();
   }
 
   // ─────────────────────────────────────────────────
@@ -376,12 +425,10 @@ export class AgentService {
   private parseAgentRow(row: Agent): Agent {
     return {
       ...row,
-      permissions: typeof row.permissions === 'string'
-        ? JSON.parse(row.permissions)
-        : row.permissions,
-      metadata: row.metadata && typeof row.metadata === 'string'
-        ? JSON.parse(row.metadata)
-        : row.metadata,
+      permissions:
+        typeof row.permissions === 'string' ? JSON.parse(row.permissions) : row.permissions,
+      metadata:
+        row.metadata && typeof row.metadata === 'string' ? JSON.parse(row.metadata) : row.metadata,
     };
   }
 }

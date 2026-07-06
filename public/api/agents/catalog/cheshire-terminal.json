@@ -175,7 +175,7 @@
     {
       "name": "agent-catalog",
       "endpoint": "https://x402.wtf/agents",
-      "description": "130 agent definitions and ACP discovery."
+      "description": "OpenClawd agent definitions and ACP discovery."
     }
   ],
   "agentAuth": {

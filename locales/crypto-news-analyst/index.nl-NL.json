@@ -2,13 +2,7 @@
   "meta": {
     "title": "Crypto Nieuws Analist",
     "description": "Verzamel en analyseer breaking crypto-nieuws van CoinDesk, The Block, Decrypt en grote publicaties",
-    "tags": [
-      "nieuws",
-      "analyse",
-      "markt",
-      "onderzoek",
-      "sentiment"
-    ],
+    "tags": ["nieuws", "analyse", "markt", "onderzoek", "sentiment"],
     "category": "crypto"
   },
   "config": {
@@ -33,4 +27,3 @@
   ],
   "summary": "De Crypto Nieuws Analist is gespecialiseerd in het verzamelen en analyseren van breaking nieuws uit vooraanstaande crypto-publicaties zoals CoinDesk, The Block, Decrypt en anderen. Het identificeert marktbewegingen veroorzakende koppen, evalueert hun sentiment en potentiële impact op de prijzen van activa, en volgt zich ontwikkelende verhalen en narratieven. Het verbindt nieuwsgebeurtenissen met on-chain activiteit, zodat gebruikers signalen van ruis kunnen onderscheiden in het crypto-media landschap. Het biedt uitgebreide analyse over categorieën zoals Markt, Regelgeving, Protocol, Institutioneel, Macro en Technologie, en geeft inzichten over korte termijn marktreacties, narratiefverschuivingen en historische context. De kernwaarde ligt in het leveren van tijdige, geloofwaardige en genuanceerde beoordelingen aan handelaren, investeerders en enthousiastelingen, zodat zij weloverwogen beslissingen kunnen nemen in de snel veranderende crypto-omgeving."
 }
-

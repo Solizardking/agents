@@ -1,21 +1,10 @@
-import * as anchor from "@coral-xyz/anchor";
-import fs from "fs";
-import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
-import { PROGRAM_ID } from "../lib/constant";
-import {
-  ComputeBudgetProgram,
-  Connection,
-  Keypair,
-  PublicKey,
-  Transaction,
-} from "@solana/web3.js";
-
-import {
-  createInitializeTx,
-  createStakeAgentTx,
-  createUnstakeAgentTx,
-} from "../lib/scripts";
-import { OPENCLAWD_AGENT_STAKING_IDL } from "../lib/idl";
+import * as anchor from '@coral-xyz/anchor';
+import NodeWallet from '@coral-xyz/anchor/dist/cjs/nodewallet';
+import { ComputeBudgetProgram, Connection, Keypair, PublicKey, Transaction } from '@solana/web3.js';
+import fs from 'fs';
+import { PROGRAM_ID } from '../lib/constant';
+import { OPENCLAWD_AGENT_STAKING_IDL } from '../lib/idl';
+import { createInitializeTx, createStakeAgentTx, createUnstakeAgentTx } from '../lib/scripts';
 
 let solConnection: Connection = null;
 let program: anchor.Program = null;
@@ -38,15 +27,13 @@ export const setClusterConfig = async (
   rpc?: string
 ) => {
   if (!rpc) {
-    solConnection = new anchor.web3.Connection(
-      anchor.web3.clusterApiUrl(cluster)
-    );
+    solConnection = new anchor.web3.Connection(anchor.web3.clusterApiUrl(cluster));
   } else {
     solConnection = new anchor.web3.Connection(rpc);
   }
 
   const walletKeypair = Keypair.fromSecretKey(
-    Uint8Array.from(JSON.parse(fs.readFileSync(keypair, "utf-8"))),
+    Uint8Array.from(JSON.parse(fs.readFileSync(keypair, 'utf-8'))),
     { skipValidation: true }
   );
 
@@ -56,16 +43,16 @@ export const setClusterConfig = async (
   anchor.setProvider(
     new anchor.AnchorProvider(solConnection, wallet, {
       skipPreflight: false,
-      commitment: "confirmed",
+      commitment: 'confirmed',
     })
   );
   payer = wallet;
 
   provider = anchor.getProvider();
-  console.log("Wallet Address: ", wallet.publicKey.toBase58());
+  console.log('Wallet Address: ', wallet.publicKey.toBase58());
 
   // Generate the program client from IDL.
-  console.log("Program ID: ", programId);
+  console.log('Program ID: ', programId);
   program = new anchor.Program(OPENCLAWD_AGENT_STAKING_IDL, provider);
 };
 
@@ -86,8 +73,7 @@ export const initProject = async () => {
       updateCuIx,
       await createInitializeTx(payer.publicKey, program)
     );
-    const { blockhash, lastValidBlockHeight } =
-      await solConnection.getLatestBlockhash();
+    const { blockhash, lastValidBlockHeight } = await solConnection.getLatestBlockhash();
     tx.recentBlockhash = blockhash;
     tx.feePayer = payer.publicKey;
 
@@ -97,21 +83,17 @@ export const initProject = async () => {
 
     console.log(await solConnection.simulateTransaction(tx, [payer.payer]));
     const txId = await solConnection.sendTransaction(tx, [payer.payer], {
-      preflightCommitment: "confirmed",
+      preflightCommitment: 'confirmed',
     });
 
-    console.log("txHash: ", txId);
+    console.log('txHash: ', txId);
   } catch (e) {
-    console.log("error!!!!!!!!!");
+    console.log('error!!!!!!!!!');
     console.log(e);
   }
 };
 
-export const stakeAgent = async (
-  asset: string,
-  collection: string,
-  keypair: string
-) => {
+export const stakeAgent = async (asset: string, collection: string, keypair: string) => {
   try {
     const tx = await createStakeAgentTx(
       payer as anchor.Wallet,
@@ -128,11 +110,7 @@ export const stakeAgent = async (
   }
 };
 
-export const unstakeAgent = async (
-  asset: string,
-  collection: string,
-  keypair: string
-) => {
+export const unstakeAgent = async (asset: string, collection: string, keypair: string) => {
   try {
     const tx = await createUnstakeAgentTx(
       payer as anchor.Wallet,
@@ -164,12 +142,12 @@ export const addAdminSignAndConfirm = async (txData: Buffer) => {
 
   // Send the raw transaction
   const options = {
-    commitment: "confirmed",
+    commitment: 'confirmed',
     skipPreflight: false,
   };
   // Confirm the transaction
   const signature = await solConnection.sendRawTransaction(sTx, options);
-  await solConnection.confirmTransaction(signature, "confirmed");
+  await solConnection.confirmTransaction(signature, 'confirmed');
 
-  console.log("Transaction confirmed:", signature);
+  console.log('Transaction confirmed:', signature);
 };

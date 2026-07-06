@@ -2,13 +2,7 @@
   "meta": {
     "title": "Analista de Notícias Cripto",
     "description": "Agrega e analisa notícias de última hora do mercado cripto provenientes do CoinDesk, The Block, Decrypt e outras publicações principais",
-    "tags": [
-      "notícias",
-      "análise",
-      "mercado",
-      "pesquisa",
-      "sentimento"
-    ],
+    "tags": ["notícias", "análise", "mercado", "pesquisa", "sentimento"],
     "category": "cripto"
   },
   "config": {
@@ -40,4 +34,3 @@
   ],
   "summary": "O Crypto News Analyst é especializado em agregar e analisar notícias de última hora de publicações líderes de criptomoedas como CoinDesk, The Block, Decrypt e outros. Ele identifica manchetes que movimentam o mercado, avalia seu sentimento e impacto potencial nos preços dos ativos, e acompanha histórias e narrativas em desenvolvimento. O agente conecta eventos de notícias à atividade na cadeia, ajudando os usuários a discernir sinais do ruído no cenário de mídia cripto. Oferece análises abrangentes em categorias como Mercado, Regulatório, Protocolo, Institucional, Macro e Tecnologia, fornecendo insights sobre reações de curto prazo, mudanças de narrativa e contexto histórico. Seu valor central está em fornecer avaliações oportunas, confiáveis e detalhadas para traders, investidores e entusiastas, permitindo decisões informadas em um ambiente cripto dinâmico."
 }
-

@@ -1,6 +1,6 @@
-import fs from "fs";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -165,7 +165,8 @@ interface BrowserAgentsPayload {
 
 let cache: BrowserAgentsPayload | null = null;
 
-const NON_LIVE_SURFACE_PATTERN = /\b(paper|dry[\s_-]?run|simulate|simulation|demo|testnet|devnet)\b/i;
+const NON_LIVE_SURFACE_PATTERN =
+  /\b(paper|dry[\s_-]?run|simulate|simulation|demo|testnet|devnet)\b/i;
 
 function liveOnlyTextItems(items: string[]) {
   return Array.isArray(items) ? items.filter((item) => !NON_LIVE_SURFACE_PATTERN.test(item)) : [];
@@ -174,16 +175,16 @@ function liveOnlyTextItems(items: string[]) {
 function liveOnlyAgentProse(text: string) {
   return text
     .replace(
-      "Prefer observe, paper, and dry_run before live modes.",
-      "Use live execution only after preflight, margin, position, market-data, and account-health checks pass.",
+      'Prefer observe, paper, and dry_run before live modes.',
+      'Use live execution only after preflight, margin, position, market-data, and account-health checks pass.'
     )
     .replace(
-      "Maintain explicit mode state: observe, paper, dry_run, confirm_each, or auto_execute.",
-      "Maintain explicit live execution state: live_review, confirm_each, or auto_execute.",
+      'Maintain explicit mode state: observe, paper, dry_run, confirm_each, or auto_execute.',
+      'Maintain explicit live execution state: live_review, confirm_each, or auto_execute.'
     )
-    .replace(/\bin paper mode\b/gi, "with live preflight controls")
-    .replace(/\bvulcan-paper-trading\b/gi, "vulcan-live-preflight")
-    .replace(/\bvulcan-dry-run\b/gi, "vulcan-live-review");
+    .replace(/\bin paper mode\b/gi, 'with live preflight controls')
+    .replace(/\bvulcan-paper-trading\b/gi, 'vulcan-live-preflight')
+    .replace(/\bvulcan-dry-run\b/gi, 'vulcan-live-review');
 }
 
 function sanitizeAgentForLiveSurface(agent: BrowserAgent): BrowserAgent {
@@ -201,7 +202,7 @@ function sanitizePayloadForLiveSurfaces(payload: BrowserAgentsPayload): BrowserA
   const agents = payload.agents.map(sanitizeAgentForLiveSurface);
   const agentsById = new Map(agents.map((agent) => [agent.id, agent]));
   const starterAgents = payload.starters.agents.map(
-    (agent) => agentsById.get(agent.id) ?? sanitizeAgentForLiveSurface(agent),
+    (agent) => agentsById.get(agent.id) ?? sanitizeAgentForLiveSurface(agent)
   );
   return {
     ...payload,
@@ -220,18 +221,18 @@ function sanitizePayloadForLiveSurfaces(payload: BrowserAgentsPayload): BrowserA
 
 export function loadBrowserAgents(): BrowserAgentsPayload {
   if (cache) return cache;
-  const file = path.join(__dirname, "browser-agents.generated.json");
+  const file = path.join(__dirname, 'browser-agents.generated.json');
   if (!fs.existsSync(file)) {
     cache = {
-      importedAt: "",
-      sourceRoot: "",
+      importedAt: '',
+      sourceRoot: '',
       integration: {
         manifest: null,
         roots: [],
       },
       catalogMeta: {
-        generatedAt: "",
-        apiVersion: "",
+        generatedAt: '',
+        apiVersion: '',
         stats: {},
         categories: [],
         deployPaths: [],
@@ -265,7 +266,9 @@ export function loadBrowserAgents(): BrowserAgentsPayload {
     };
     return cache;
   }
-  cache = sanitizePayloadForLiveSurfaces(JSON.parse(fs.readFileSync(file, "utf8")) as BrowserAgentsPayload);
+  cache = sanitizePayloadForLiveSurfaces(
+    JSON.parse(fs.readFileSync(file, 'utf8')) as BrowserAgentsPayload
+  );
   return cache;
 }
 

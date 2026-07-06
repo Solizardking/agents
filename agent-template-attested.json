@@ -110,12 +110,24 @@
     "skill_schema": {
       "name": "OpenClawdSkillAttestation",
       "layout": [12, 32, 12, 8, 1],
-      "field_names": ["skill_id", "verifier_pubkey", "proof_hash", "verification_timestamp", "is_formally_verified"]
+      "field_names": [
+        "skill_id",
+        "verifier_pubkey",
+        "proof_hash",
+        "verification_timestamp",
+        "is_formally_verified"
+      ]
     },
     "agent_identity_schema": {
       "name": "OpenClawdAgentIdentity",
       "layout": [12, 32, 12, 32, 1],
-      "field_names": ["agent_id", "wallet_pubkey", "skill_attestation", "vault_address", "is_vault_initialized"]
+      "field_names": [
+        "agent_id",
+        "wallet_pubkey",
+        "skill_attestation",
+        "vault_address",
+        "is_vault_initialized"
+      ]
     }
   },
   "permissions": {
@@ -129,12 +141,7 @@
       "./scripts/",
       "./acp_registry/"
     ],
-    "blockedPatterns": [
-      "**/.env",
-      "**/*.key",
-      "**/secrets/**",
-      "**/credentials/**"
-    ]
+    "blockedPatterns": ["**/.env", "**/*.key", "**/secrets/**", "**/credentials/**"]
   },
   "securityRules": {
     "neverExpose": true,

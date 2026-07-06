@@ -1,1 +1,23 @@
-{"rustc":10088478398040096810,"features":"[]","declared_features":"[]","target":196042519021678139,"profile":13904601386562544002,"path":16908144766932181842,"deps":[[2611905835808443941,"borsh0_10",false,6785574511507521337],[5293063661450705635,"borsh",false,6808008253154236373]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-borsh-7b9b5e9d1acbe68c/dep-lib-solana_borsh","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[]",
+  "declared_features": "[]",
+  "target": 196042519021678139,
+  "profile": 13904601386562544002,
+  "path": 16908144766932181842,
+  "deps": [
+    [2611905835808443941, "borsh0_10", false, 6785574511507521337],
+    [5293063661450705635, "borsh", false, 6808008253154236373]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-borsh-7b9b5e9d1acbe68c/dep-lib-solana_borsh",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

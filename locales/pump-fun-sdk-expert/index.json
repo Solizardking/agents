@@ -44,4 +44,3 @@
   },
   "summary": "Expert assistant for the @nirholas/pump-sdk TypeScript SDK on Solana. Covers token creation with createV2Instruction, bonding curve math (constant-product AMM), buy/sell trading with slippage, token graduation and AMM migration, tiered fee system with creator fee sharing (up to 10 shareholders), volume-based token incentives, PDA derivations, vanity address generation, and MCP server integration. Supports both offline PumpSdk and online OnlinePumpSdk patterns."
 }
-

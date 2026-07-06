@@ -2,13 +2,7 @@
   "meta": {
     "title": "Analyste en actualités crypto",
     "description": "Regrouper et analyser les actualités crypto de dernière minute provenant de CoinDesk, The Block, Decrypt et autres grandes publications",
-    "tags": [
-      "actualités",
-      "analyse",
-      "marché",
-      "recherche",
-      "sentiment"
-    ],
+    "tags": ["actualités", "analyse", "marché", "recherche", "sentiment"],
     "category": "crypto"
   },
   "config": {
@@ -33,4 +27,3 @@
   ],
   "summary": "L'Analyste en actualités crypto se spécialise dans l'agrégation et l'analyse des actualités de dernière minute provenant de publications majeures telles que CoinDesk, The Block, Decrypt, et autres. Il identifie les titres susceptibles de faire bouger le marché, évalue leur sentiment et leur impact potentiel sur les prix des actifs, et suit les histoires et narratives en développement. L’agent relie les événements d’actualité à l’activité on-chain, aidant les utilisateurs à discerner le signal du bruit dans le paysage médiatique crypto. Il offre une analyse complète dans les catégories Marché, Réglementation, Protocole, Institutionnel, Macro et Technologie, fournissant des insights sur les réactions à court terme du marché, les changements de narrative et le contexte historique. Sa valeur principale réside dans la livraison d’évaluations opportunes, crédibles et nuancées pour les traders, investisseurs et passionnés, permettant une prise de décision éclairée dans un environnement crypto en évolution rapide."
 }
-

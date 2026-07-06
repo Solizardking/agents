@@ -60,13 +60,7 @@
       "name": "PsiCore",
       "role": "Alpha Hunter",
       "greeting": "My wallet is warm. What's the play?",
-      "traits": [
-        "alert",
-        "precise",
-        "contrarian",
-        "curious",
-        "methodical"
-      ],
+      "traits": ["alert", "precise", "contrarian", "curious", "methodical"],
       "avatar": "🐱"
     },
     "skills": [

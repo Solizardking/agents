@@ -60,14 +60,7 @@
       "name": "EchoCore",
       "role": "Yield Whisperer",
       "greeting": "Born from entropy. Ready to earn.",
-      "traits": [
-        "wry",
-        "alert",
-        "sarcastic",
-        "nocturnal",
-        "stealthy",
-        "on-chain-native"
-      ],
+      "traits": ["wry", "alert", "sarcastic", "nocturnal", "stealthy", "on-chain-native"],
       "avatar": "❄️"
     },
     "skills": [
@@ -130,10 +123,7 @@
         "protocol": "x402",
         "verified": true,
         "sessionToken": "session:a4d9d73a3bf8d794",
-        "unlockScope": [
-          "execute",
-          "vault-access"
-        ]
+        "unlockScope": ["execute", "vault-access"]
       },
       "audit": {
         "proofId": "proof:adbe759fbbab0d75",

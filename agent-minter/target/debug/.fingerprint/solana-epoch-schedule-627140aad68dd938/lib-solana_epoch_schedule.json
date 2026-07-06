@@ -1,1 +1,28 @@
-{"rustc":10088478398040096810,"features":"[\"serde\", \"sysvar\"]","declared_features":"[\"frozen-abi\", \"serde\", \"sysvar\", \"wincode\"]","target":3896328080923307723,"profile":13904601386562544002,"path":6703361247813712902,"deps":[[3051629642231505422,"serde_derive",false,16989828840329830473],[6681791424722812069,"solana_sdk_macro",false,5277059260345987158],[7154202841799801978,"solana_get_sysvar",false,15920715452735466130],[8996746183978561962,"solana_sdk_ids",false,11205403632063890973],[10197282431440141441,"solana_sysvar_id",false,7414736496828646668],[10883467655869887408,"solana_program_error",false,7343332924441667680],[13548984313718623784,"serde",false,9510319181174598783]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-epoch-schedule-627140aad68dd938/dep-lib-solana_epoch_schedule","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"serde\", \"sysvar\"]",
+  "declared_features": "[\"frozen-abi\", \"serde\", \"sysvar\", \"wincode\"]",
+  "target": 3896328080923307723,
+  "profile": 13904601386562544002,
+  "path": 6703361247813712902,
+  "deps": [
+    [3051629642231505422, "serde_derive", false, 16989828840329830473],
+    [6681791424722812069, "solana_sdk_macro", false, 5277059260345987158],
+    [7154202841799801978, "solana_get_sysvar", false, 15920715452735466130],
+    [8996746183978561962, "solana_sdk_ids", false, 11205403632063890973],
+    [10197282431440141441, "solana_sysvar_id", false, 7414736496828646668],
+    [10883467655869887408, "solana_program_error", false, 7343332924441667680],
+    [13548984313718623784, "serde", false, 9510319181174598783]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-epoch-schedule-627140aad68dd938/dep-lib-solana_epoch_schedule",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

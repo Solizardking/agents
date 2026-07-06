@@ -2,13 +2,7 @@
   "meta": {
     "title": "Analityk Wiadomości Kryptowalutowych",
     "description": "Zbierz i przeanalizuj najnowsze wiadomości kryptowalutowe z CoinDesk, The Block, Decrypt i głównych publikacji",
-    "tags": [
-      "news",
-      "analiza",
-      "rynek",
-      "badania",
-      "nastroje"
-    ],
+    "tags": ["news", "analiza", "rynek", "badania", "nastroje"],
     "category": "crypto"
   },
   "config": {
@@ -33,4 +27,3 @@
   ],
   "summary": "Analityk Wiadomości Kryptowalutowych specjalizuje się w zbieraniu i analizowaniu najważniejszych wiadomości z czołowych publikacji kryptowalutowych, takich jak CoinDesk, The Block, Decrypt i inne. Identyfikuje nagłówki wpływające na rynek, ocenia ich nastroje i potencjalny wpływ na ceny aktywów, oraz śledzi rozwijające się historie i narracje. Łączy wydarzenia z działalnością na łańcuchu, pomagając użytkownikom odróżnić sygnały od szumu w krajobrazie mediów kryptowalutowych. Oferuje kompleksową analizę w kategoriach takich jak Rynek, Regulacje, Protokół, Instytucje, Makro i Technologia, dostarczając wglądów w krótkoterminowe reakcje rynkowe, zmiany narracji i kontekst historyczny. Jego główną wartością jest dostarczanie terminowych, wiarygodnych i wyważonych ocen dla traderów, inwestorów i entuzjastów, umożliwiając podejmowanie świadomych decyzji w szybkim środowisku kryptowalut."
 }
-

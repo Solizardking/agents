@@ -1,1 +1,32 @@
-{"rustc":10088478398040096810,"features":"[\"bincode\", \"serde\", \"sysvar\"]","declared_features":"[\"bincode\", \"borsh\", \"frozen-abi\", \"serde\", \"sysvar\"]","target":10019617591771620592,"profile":8276155916380437441,"path":17832011811421929712,"deps":[[489914253943773544,"solana_sysvar",false,10693581571122658214],[3051629642231505422,"serde_derive",false,15529710997026889675],[5157631553186200874,"num_traits",false,16151257895603573568],[6441467336895101535,"solana_cpi",false,10902097240400609053],[9692256146513515265,"solana_clock",false,13808333703823254246],[10197282431440141441,"solana_sysvar_id",false,6202176567356988970],[10724389477006146107,"solana_pubkey",false,17532202208676656194],[10883467655869887408,"solana_program_error",false,5967081705868823017],[12473226919498561387,"solana_instruction",false,10531142495252569059],[13548984313718623784,"serde",false,527428657150016053],[17059706796953924819,"solana_system_interface",false,15379809028112028661]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/solana-stake-interface-e1378e1648b5f7d9/dep-lib-solana_stake_interface","checksum":false}}],"rustflags":[],"config":8247474407144887393,"compile_kind":0}
+{
+  "rustc": 10088478398040096810,
+  "features": "[\"bincode\", \"serde\", \"sysvar\"]",
+  "declared_features": "[\"bincode\", \"borsh\", \"frozen-abi\", \"serde\", \"sysvar\"]",
+  "target": 10019617591771620592,
+  "profile": 8276155916380437441,
+  "path": 17832011811421929712,
+  "deps": [
+    [489914253943773544, "solana_sysvar", false, 10693581571122658214],
+    [3051629642231505422, "serde_derive", false, 15529710997026889675],
+    [5157631553186200874, "num_traits", false, 16151257895603573568],
+    [6441467336895101535, "solana_cpi", false, 10902097240400609053],
+    [9692256146513515265, "solana_clock", false, 13808333703823254246],
+    [10197282431440141441, "solana_sysvar_id", false, 6202176567356988970],
+    [10724389477006146107, "solana_pubkey", false, 17532202208676656194],
+    [10883467655869887408, "solana_program_error", false, 5967081705868823017],
+    [12473226919498561387, "solana_instruction", false, 10531142495252569059],
+    [13548984313718623784, "serde", false, 527428657150016053],
+    [17059706796953924819, "solana_system_interface", false, 15379809028112028661]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/solana-stake-interface-e1378e1648b5f7d9/dep-lib-solana_stake_interface",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "config": 8247474407144887393,
+  "compile_kind": 0
+}

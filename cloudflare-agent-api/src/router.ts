@@ -3,17 +3,11 @@
 // Includes: Agent, Wallet, Smart Wallet, and GOAT Tool routes
 // ═══════════════════════════════════════════════════════════════
 
-import type {
-  Agent,
-  Env,
-} from './index';
+import type { Agent, Env } from './index';
 import type { AgentService } from './services/agent';
 import { CatalogService } from './services/catalog';
 import type { CrossmintService } from './services/crossmint';
-import type {
-  DeploymentRequest,
-  DeploymentService,
-} from './services/deployment';
+import type { DeploymentRequest, DeploymentService } from './services/deployment';
 import {
   type AgentExecutionContext,
   AgentRuntimeService,
@@ -25,15 +19,19 @@ import {
 // ─────────────────────────────────────────────────
 
 function corsHeaders(env: Env, requestOrigin?: string): HeadersInit {
-  const allowed = (env.CORS_ORIGIN || '').split(',').map(o => o.trim()).filter(Boolean);
-  const origin = requestOrigin && allowed.includes(requestOrigin)
-    ? requestOrigin
-    : allowed[0] ?? 'https://x402.wtf';
+  const allowed = (env.CORS_ORIGIN || '')
+    .split(',')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const origin =
+    requestOrigin && allowed.includes(requestOrigin)
+      ? requestOrigin
+      : (allowed[0] ?? 'https://x402.wtf');
   return {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, X-Agent-API-Key, X-Agent-Session',
-    'Vary': 'Origin',
+    Vary: 'Origin',
   };
 }
 
@@ -84,11 +82,15 @@ export class Router {
     // Rate limit check
     const rateLimitResult = await this.agentService.checkRateLimit(agent.id);
     if (!rateLimitResult.allowed) {
-      return jsonResponse({
-        success: false,
-        error: 'Rate limit exceeded',
-        remaining: rateLimitResult.remaining,
-      }, 429, this.env);
+      return jsonResponse(
+        {
+          success: false,
+          error: 'Rate limit exceeded',
+          remaining: rateLimitResult.remaining,
+        },
+        429,
+        this.env
+      );
     }
 
     await this.agentService.recordRequest(agent.id);
@@ -116,22 +118,26 @@ export class Router {
   }
 
   private getFactoryInfo(): Response {
-    return jsonResponse({
-      success: true,
-      data: {
-        service: 'Agent Factory API',
-        version: '1.0.0',
-        endpoints: {
-          deploy: 'POST /api/v1/factory/deploy',
-          deployments: 'GET /api/v1/factory/deployments',
-          deployment: 'GET /api/v1/factory/deployments/:id',
-          stop: 'POST /api/v1/factory/deployments/:id/stop',
-        },
-        requiredFields: {
-          deploy: ['walletAddress', 'walletSignerType'],
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          service: 'Agent Factory API',
+          version: '1.0.0',
+          endpoints: {
+            deploy: 'POST /api/v1/factory/deploy',
+            deployments: 'GET /api/v1/factory/deployments',
+            deployment: 'GET /api/v1/factory/deployments/:id',
+            stop: 'POST /api/v1/factory/deployments/:id/stop',
+          },
+          requiredFields: {
+            deploy: ['walletAddress', 'walletSignerType'],
+          },
         },
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   // ═══════════════════════════════════════════════════
@@ -162,11 +168,15 @@ export class Router {
     // Rate limit check
     const rateLimitResult = await this.agentService.checkRateLimit(agent.id);
     if (!rateLimitResult.allowed) {
-      return jsonResponse({
-        success: false,
-        error: 'Rate limit exceeded',
-        remaining: rateLimitResult.remaining,
-      }, 429, this.env);
+      return jsonResponse(
+        {
+          success: false,
+          error: 'Rate limit exceeded',
+          remaining: rateLimitResult.remaining,
+        },
+        429,
+        this.env
+      );
     }
 
     // Record this request
@@ -279,11 +289,15 @@ export class Router {
     // Rate limit check
     const rateLimitResult = await this.agentService.checkRateLimit(agent.id);
     if (!rateLimitResult.allowed) {
-      return jsonResponse({
-        success: false,
-        error: 'Rate limit exceeded',
-        remaining: rateLimitResult.remaining,
-      }, 429, this.env);
+      return jsonResponse(
+        {
+          success: false,
+          error: 'Rate limit exceeded',
+          remaining: rateLimitResult.remaining,
+        },
+        429,
+        this.env
+      );
     }
 
     await this.agentService.recordRequest(agent.id);
@@ -344,45 +358,53 @@ export class Router {
   private getSmartWalletInfo(): Response {
     const tools = this.crossmintService.getAvailableGoatTools();
 
-    return jsonResponse({
-      success: true,
-      data: {
-        service: 'Smart Wallet API',
-        version: '1.0.0',
-        walletTypes: ['smart', 'mpc'],
-        features: [
-          'Solana Smart Wallets with admin signer',
-          'MPC Wallets (custodial)',
-          'Delegated signer support',
-          'GOAT SDK tool integration',
-          'Jupiter swap quotes',
-          'CoinGecko price feeds',
-          'Devnet airdrops',
-        ],
-        goatTools: tools.map(t => t.name),
-        endpoints: {
-          createSmart: 'POST /api/smart-wallets/create-smart',
-          createMpc: 'POST /api/smart-wallets/create-mpc',
-          getOrCreate: 'POST /api/smart-wallets/get-or-create',
-          balances: 'GET /api/smart-wallets/:address/balances',
-          airdrop: 'POST /api/smart-wallets/:address/airdrop',
-          transfer: 'POST /api/smart-wallets/:address/transfer',
-          registerSigner: 'POST /api/smart-wallets/:address/signers',
-          approveSigner: 'POST /api/smart-wallets/:address/signers/:signerId/approve',
-          executeTool: 'POST /api/smart-wallets/execute-tool',
-          executeToolWithWallet: 'POST /api/smart-wallets/:address/execute-tool',
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          service: 'Smart Wallet API',
+          version: '1.0.0',
+          walletTypes: ['smart', 'mpc'],
+          features: [
+            'Solana Smart Wallets with admin signer',
+            'MPC Wallets (custodial)',
+            'Delegated signer support',
+            'GOAT SDK tool integration',
+            'Jupiter swap quotes',
+            'CoinGecko price feeds',
+            'Devnet airdrops',
+          ],
+          goatTools: tools.map((t) => t.name),
+          endpoints: {
+            createSmart: 'POST /api/smart-wallets/create-smart',
+            createMpc: 'POST /api/smart-wallets/create-mpc',
+            getOrCreate: 'POST /api/smart-wallets/get-or-create',
+            balances: 'GET /api/smart-wallets/:address/balances',
+            airdrop: 'POST /api/smart-wallets/:address/airdrop',
+            transfer: 'POST /api/smart-wallets/:address/transfer',
+            registerSigner: 'POST /api/smart-wallets/:address/signers',
+            approveSigner: 'POST /api/smart-wallets/:address/signers/:signerId/approve',
+            executeTool: 'POST /api/smart-wallets/execute-tool',
+            executeToolWithWallet: 'POST /api/smart-wallets/:address/execute-tool',
+          },
         },
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   private getGoatTools(): Response {
     const tools = this.crossmintService.getAvailableGoatTools();
 
-    return jsonResponse({
-      success: true,
-      data: { tools },
-    }, 200, this.env);
+    return jsonResponse(
+      {
+        success: true,
+        data: { tools },
+      },
+      200,
+      this.env
+    );
   }
 
   private async createSmartWallet(request: Request, agent: Agent): Promise<Response> {
@@ -391,7 +413,7 @@ export class Router {
         return errorResponse('Agent does not have permission to create wallets', 403, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         adminSignerAddress?: string;
         linkedUser?: string;
         chain?: 'solana' | 'solana-devnet';
@@ -404,16 +426,25 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'smart_wallet_create', {
-        address: wallet.address,
-        type: 'smart',
-        chain: wallet.chain,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'smart_wallet_create',
+        {
+          address: wallet.address,
+          type: 'smart',
+          chain: wallet.chain,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: { wallet },
-      }, 201, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { wallet },
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Create smart wallet error:', error);
       return errorResponse(
@@ -430,7 +461,7 @@ export class Router {
         return errorResponse('Agent does not have permission to create wallets', 403, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         identifier?: string;
         alias?: string;
         chain?: 'solana' | 'solana-devnet';
@@ -443,16 +474,25 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'mpc_wallet_create', {
-        address: wallet.address,
-        type: 'mpc',
-        chain: wallet.chain,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'mpc_wallet_create',
+        {
+          address: wallet.address,
+          type: 'mpc',
+          chain: wallet.chain,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: { wallet },
-      }, 201, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { wallet },
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Create MPC wallet error:', error);
       return errorResponse(
@@ -469,7 +509,7 @@ export class Router {
         return errorResponse('Agent does not have permission to create wallets', 403, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         adminSignerAddress?: string;
         linkedUser?: string;
         chain?: 'solana' | 'solana-devnet';
@@ -481,10 +521,14 @@ export class Router {
         chain: body.chain || agent.chain,
       });
 
-      return jsonResponse({
-        success: true,
-        data: { wallet },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { wallet },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Get or create smart wallet error:', error);
       return errorResponse(
@@ -508,17 +552,21 @@ export class Router {
         chain: agent.chain,
       });
 
-      return jsonResponse({
-        success: true,
-        data: {
-          address,
-          chain: agent.chain,
-          balances: {
-            sol: balance,
-            usdc: usdcBalance,
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            address,
+            chain: agent.chain,
+            balances: {
+              sol: balance,
+              usdc: usdcBalance,
+            },
           },
         },
-      }, 200, this.env);
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Get smart wallet balances error:', error);
       return errorResponse(
@@ -539,7 +587,7 @@ export class Router {
         return errorResponse('Airdrop only available on devnet', 400, this.env);
       }
 
-      const body = await request.json() as { amount?: number };
+      const body = (await request.json()) as { amount?: number };
 
       const result = await this.crossmintService.goatAirdropDevnet({
         address,
@@ -547,16 +595,25 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'airdrop', {
-        address,
-        amount: result.amount,
-        signature: result.signature,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'airdrop',
+        {
+          address,
+          amount: result.amount,
+          signature: result.signature,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Airdrop error:', error);
       return errorResponse(
@@ -577,7 +634,7 @@ export class Router {
         return errorResponse('Agent does not have permission to transfer', 403, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         toAddress: string;
         token: string;
         amount: string;
@@ -608,18 +665,27 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'smart_wallet_transfer', {
-        from: address,
-        to: body.toAddress,
-        token: body.token,
-        amount: body.amount,
-        txId: result.id,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'smart_wallet_transfer',
+        {
+          from: address,
+          to: body.toAddress,
+          token: body.token,
+          amount: body.amount,
+          txId: result.id,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Smart wallet transfer error:', error);
       return errorResponse(
@@ -636,7 +702,7 @@ export class Router {
     agent: Agent
   ): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         signerAddress: string;
         expiresAt?: string;
       };
@@ -652,16 +718,25 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'register_delegated_signer', {
-        walletAddress,
-        signerAddress: body.signerAddress,
-        signerId: result.id,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'register_delegated_signer',
+        {
+          walletAddress,
+          signerAddress: body.signerAddress,
+          signerId: result.id,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 201, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Register delegated signer error:', error);
       return errorResponse(
@@ -679,7 +754,7 @@ export class Router {
     agent: Agent
   ): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         signerLocator: string;
         signature: unknown;
         metadata?: Record<string, unknown>;
@@ -698,15 +773,24 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'approve_delegated_signer', {
-        walletAddress,
-        signerId,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'approve_delegated_signer',
+        {
+          walletAddress,
+          signerId,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Approve delegated signer error:', error);
       return errorResponse(
@@ -719,7 +803,7 @@ export class Router {
 
   private async executeGoatTool(request: Request, agent: Agent): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         tool: string;
         params: Record<string, unknown>;
       };
@@ -735,15 +819,24 @@ export class Router {
       );
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'goat_tool_execute', {
-        tool: body.tool,
-        params: body.params,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'goat_tool_execute',
+        {
+          tool: body.tool,
+          params: body.params,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: { tool: body.tool, result },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { tool: body.tool, result },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Execute GOAT tool error:', error);
       return errorResponse(
@@ -760,7 +853,7 @@ export class Router {
     agent: Agent
   ): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         tool: string;
         params: Record<string, unknown>;
       };
@@ -776,16 +869,25 @@ export class Router {
       );
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'goat_tool_execute', {
-        tool: body.tool,
-        walletAddress,
-        params: body.params,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'goat_tool_execute',
+        {
+          tool: body.tool,
+          walletAddress,
+          params: body.params,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: { tool: body.tool, walletAddress, result },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { tool: body.tool, walletAddress, result },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Execute GOAT tool with wallet error:', error);
       return errorResponse(
@@ -822,7 +924,7 @@ export class Router {
 
   private async register(request: Request): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         name?: string;
         description?: string;
         chain?: 'solana' | 'solana-devnet';
@@ -841,31 +943,40 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(result.agent.id, 'register', {
-        name: body.name,
-        chain: body.chain || 'solana-devnet',
-      }, request.headers.get('CF-Connecting-IP'));
-
-      return jsonResponse({
-        success: true,
-        data: {
-          agent: {
-            id: result.agent.id,
-            name: result.agent.name,
-            description: result.agent.description,
-            chain: result.agent.chain,
-            status: result.agent.status,
-            createdAt: result.agent.created_at,
-            permissions: result.agent.permissions,
-            rateLimit: {
-              requestsPerMinute: result.agent.requests_per_minute,
-              requestsPerDay: result.agent.requests_per_day,
-            },
-          },
-          apiKey: result.apiKey,
-          message: 'Save your API key securely - it will not be shown again!',
+      await this.agentService.logActivity(
+        result.agent.id,
+        'register',
+        {
+          name: body.name,
+          chain: body.chain || 'solana-devnet',
         },
-      }, 201, this.env);
+        request.headers.get('CF-Connecting-IP')
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            agent: {
+              id: result.agent.id,
+              name: result.agent.name,
+              description: result.agent.description,
+              chain: result.agent.chain,
+              status: result.agent.status,
+              createdAt: result.agent.created_at,
+              permissions: result.agent.permissions,
+              rateLimit: {
+                requestsPerMinute: result.agent.requests_per_minute,
+                requestsPerDay: result.agent.requests_per_day,
+              },
+            },
+            apiKey: result.apiKey,
+            message: 'Save your API key securely - it will not be shown again!',
+          },
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Registration error:', error);
       return errorResponse(
@@ -878,7 +989,7 @@ export class Router {
 
   private async login(request: Request): Promise<Response> {
     try {
-      const body = await request.json() as { apiKey?: string };
+      const body = (await request.json()) as { apiKey?: string };
 
       if (!body.apiKey) {
         return errorResponse('API key is required', 400, this.env);
@@ -894,69 +1005,78 @@ export class Router {
       }
 
       // Log activity
-      await this.agentService.logActivity(result.agent.id, 'login', {
-        ip: ipAddress,
-      }, ipAddress);
-
-      return jsonResponse({
-        success: true,
-        data: {
-          agent: {
-            id: result.agent.id,
-            name: result.agent.name,
-            description: result.agent.description,
-            walletAddress: result.agent.wallet_address,
-            chain: result.agent.chain,
-            status: result.agent.status,
-            createdAt: result.agent.created_at,
-            lastActiveAt: result.agent.last_active_at,
-            permissions: result.agent.permissions,
-            rateLimit: {
-              requestsPerMinute: result.agent.requests_per_minute,
-              requestsPerDay: result.agent.requests_per_day,
-            },
-          },
-          sessionToken: result.sessionToken,
-          expiresAt: result.expiresAt,
+      await this.agentService.logActivity(
+        result.agent.id,
+        'login',
+        {
+          ip: ipAddress,
         },
-      }, 200, this.env);
-    } catch (error) {
-      console.error('Login error:', error);
-      return errorResponse(
-        error instanceof Error ? error.message : 'Login failed',
-        401,
+        ipAddress
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            agent: {
+              id: result.agent.id,
+              name: result.agent.name,
+              description: result.agent.description,
+              walletAddress: result.agent.wallet_address,
+              chain: result.agent.chain,
+              status: result.agent.status,
+              createdAt: result.agent.created_at,
+              lastActiveAt: result.agent.last_active_at,
+              permissions: result.agent.permissions,
+              rateLimit: {
+                requestsPerMinute: result.agent.requests_per_minute,
+                requestsPerDay: result.agent.requests_per_day,
+              },
+            },
+            sessionToken: result.sessionToken,
+            expiresAt: result.expiresAt,
+          },
+        },
+        200,
         this.env
       );
+    } catch (error) {
+      console.error('Login error:', error);
+      return errorResponse(error instanceof Error ? error.message : 'Login failed', 401, this.env);
     }
   }
 
   private getInfo(): Response {
-    return jsonResponse({
-      success: true,
-      data: {
-        service: 'AI Agent API',
-        version: '1.0.0',
-        environment: this.env.ENVIRONMENT,
-        features: [
-          'Agent registration with API keys',
-          'Session-based authentication',
-          'Crossmint wallet integration',
-          'Rate limiting',
-          'Activity logging',
-        ],
-        endpoints: {
-          register: 'POST /api/agents/register',
-          login: 'POST /api/agents/login',
-          me: 'GET /api/agents/me',
-          wallet: 'GET /api/agents/wallet',
-          createWallet: 'POST /api/agents/wallet/create',
-          fundWallet: 'POST /api/agents/wallet/fund',
-          transfer: 'POST /api/agents/wallet/transfer',
-          rateLimit: 'GET /api/agents/rate-limit',
-          regenerateKey: 'POST /api/agents/api-key/regenerate',
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          service: 'AI Agent API',
+          version: '1.0.0',
+          environment: this.env.ENVIRONMENT,
+          features: [
+            'Agent registration with API keys',
+            'Session-based authentication',
+            'Crossmint wallet integration',
+            'Rate limiting',
+            'Activity logging',
+          ],
+          endpoints: {
+            register: 'POST /api/agents/register',
+            login: 'POST /api/agents/login',
+            me: 'GET /api/agents/me',
+            wallet: 'GET /api/agents/wallet',
+            createWallet: 'POST /api/agents/wallet/create',
+            fundWallet: 'POST /api/agents/wallet/fund',
+            transfer: 'POST /api/agents/wallet/transfer',
+            rateLimit: 'GET /api/agents/rate-limit',
+            regenerateKey: 'POST /api/agents/api-key/regenerate',
+          },
         },
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   // ─────────────────────────────────────────────────
@@ -964,25 +1084,29 @@ export class Router {
   // ─────────────────────────────────────────────────
 
   private getMe(agent: Agent): Response {
-    return jsonResponse({
-      success: true,
-      data: {
-        id: agent.id,
-        name: agent.name,
-        description: agent.description,
-        walletAddress: agent.wallet_address,
-        chain: agent.chain,
-        status: agent.status,
-        createdAt: agent.created_at,
-        lastActiveAt: agent.last_active_at,
-        permissions: agent.permissions,
-        rateLimit: {
-          requestsPerMinute: agent.requests_per_minute,
-          requestsPerDay: agent.requests_per_day,
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          id: agent.id,
+          name: agent.name,
+          description: agent.description,
+          walletAddress: agent.wallet_address,
+          chain: agent.chain,
+          status: agent.status,
+          createdAt: agent.created_at,
+          lastActiveAt: agent.last_active_at,
+          permissions: agent.permissions,
+          rateLimit: {
+            requestsPerMinute: agent.requests_per_minute,
+            requestsPerDay: agent.requests_per_day,
+          },
+          metadata: agent.metadata,
         },
-        metadata: agent.metadata,
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   private async logout(request: Request): Promise<Response> {
@@ -991,10 +1115,14 @@ export class Router {
       await this.agentService.invalidateSession(sessionToken);
     }
 
-    return jsonResponse({
-      success: true,
-      message: 'Logged out successfully',
-    }, 200, this.env);
+    return jsonResponse(
+      {
+        success: true,
+        message: 'Logged out successfully',
+      },
+      200,
+      this.env
+    );
   }
 
   private async createWallet(request: Request, agent: Agent): Promise<Response> {
@@ -1004,14 +1132,18 @@ export class Router {
       }
 
       if (agent.wallet_address) {
-        return jsonResponse({
-          success: false,
-          error: 'Agent already has a wallet',
-          walletAddress: agent.wallet_address,
-        }, 400, this.env);
+        return jsonResponse(
+          {
+            success: false,
+            error: 'Agent already has a wallet',
+            walletAddress: agent.wallet_address,
+          },
+          400,
+          this.env
+        );
       }
 
-      const body = await request.json() as { alias?: string };
+      const body = (await request.json()) as { alias?: string };
 
       const wallet = await this.crossmintService.createWallet({
         identifier: agent.id,
@@ -1023,18 +1155,27 @@ export class Router {
       await this.agentService.updateWallet(agent.id, wallet.address);
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'wallet_create', {
-        address: wallet.address,
-        chain: agent.chain,
-      }, request.headers.get('CF-Connecting-IP'));
-
-      return jsonResponse({
-        success: true,
-        data: {
-          wallet,
-          message: 'Wallet created successfully',
+      await this.agentService.logActivity(
+        agent.id,
+        'wallet_create',
+        {
+          address: wallet.address,
+          chain: agent.chain,
         },
-      }, 201, this.env);
+        request.headers.get('CF-Connecting-IP')
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            wallet,
+            message: 'Wallet created successfully',
+          },
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Create wallet error:', error);
       return errorResponse(
@@ -1053,12 +1194,19 @@ export class Router {
 
       // Use wallet address for lookup (Crossmint doesn't support locator lookup for MPC wallets)
       const wallet = await this.crossmintService.getWalletByAddress(agent.wallet_address);
-      const balances = await this.crossmintService.getBalancesByAddress(agent.wallet_address, agent.chain);
+      const balances = await this.crossmintService.getBalancesByAddress(
+        agent.wallet_address,
+        agent.chain
+      );
 
-      return jsonResponse({
-        success: true,
-        data: { wallet, balances },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { wallet, balances },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Get wallet error:', error);
       return errorResponse(
@@ -1079,21 +1227,30 @@ export class Router {
         return errorResponse('Funding is only available on devnet', 400, this.env);
       }
 
-      const body = await request.json() as { amount?: number };
+      const body = (await request.json()) as { amount?: number };
       const amount = body.amount || 10;
 
       const result = await this.crossmintService.fundWallet(agent.id, amount);
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'fund', {
-        amount,
-        chain: agent.chain,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'fund',
+        {
+          amount,
+          chain: agent.chain,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Fund wallet error:', error);
       return errorResponse(
@@ -1114,7 +1271,7 @@ export class Router {
         return errorResponse('Agent does not have permission to transfer', 403, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         toAddress?: string;
         token?: string;
         amount?: string;
@@ -1143,17 +1300,26 @@ export class Router {
       });
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'transfer', {
-        to: body.toAddress,
-        token: body.token,
-        amount: body.amount,
-        txId: result.id,
-      }, request.headers.get('CF-Connecting-IP'));
+      await this.agentService.logActivity(
+        agent.id,
+        'transfer',
+        {
+          to: body.toAddress,
+          token: body.token,
+          amount: body.amount,
+          txId: result.id,
+        },
+        request.headers.get('CF-Connecting-IP')
+      );
 
-      return jsonResponse({
-        success: true,
-        data: result,
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: result,
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Transfer error:', error);
       return errorResponse(
@@ -1167,16 +1333,20 @@ export class Router {
   private async getRateLimit(agent: Agent): Promise<Response> {
     const rateLimitResult = await this.agentService.checkRateLimit(agent.id);
 
-    return jsonResponse({
-      success: true,
-      data: {
-        limits: {
-          requestsPerMinute: agent.requests_per_minute,
-          requestsPerDay: agent.requests_per_day,
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          limits: {
+            requestsPerMinute: agent.requests_per_minute,
+            requestsPerDay: agent.requests_per_day,
+          },
+          remaining: rateLimitResult.remaining,
         },
-        remaining: rateLimitResult.remaining,
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   private async regenerateApiKey(agent: Agent): Promise<Response> {
@@ -1186,13 +1356,17 @@ export class Router {
       // Log activity
       await this.agentService.logActivity(agent.id, 'api_key_regenerate', {}, null);
 
-      return jsonResponse({
-        success: true,
-        data: {
-          apiKey: newApiKey,
-          message: 'API key regenerated. Save it securely!',
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            apiKey: newApiKey,
+            message: 'API key regenerated. Save it securely!',
+          },
         },
-      }, 200, this.env);
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Regenerate API key error:', error);
       return errorResponse(
@@ -1213,14 +1387,18 @@ export class Router {
       ? 'staging'
       : 'production';
 
-    return jsonResponse({
-      success: true,
-      data: {
-        configured: isConfigured,
-        environment,
-        hasClientKey: !!this.env.CROSSMINT_CLIENTSIDE_API_KEY,
+    return jsonResponse(
+      {
+        success: true,
+        data: {
+          configured: isConfigured,
+          environment,
+          hasClientKey: !!this.env.CROSSMINT_CLIENTSIDE_API_KEY,
+        },
       },
-    }, 200, this.env);
+      200,
+      this.env
+    );
   }
 
   // ═══════════════════════════════════════════════════
@@ -1229,33 +1407,45 @@ export class Router {
 
   private async deployAgent(request: Request, agent: Agent): Promise<Response> {
     try {
-      const body = await request.json() as DeploymentRequest;
+      const body = (await request.json()) as DeploymentRequest;
 
       if (!body.walletAddress || !body.walletSignerType) {
         return errorResponse('walletAddress and walletSignerType are required', 400, this.env);
       }
 
-      const result = await this.deploymentService.deployAgent({
-        ...body,
-        agentId: agent.id,
-      }, agent);
+      const result = await this.deploymentService.deployAgent(
+        {
+          ...body,
+          agentId: agent.id,
+        },
+        agent
+      );
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'deploy', {
-        deploymentId: result.deployment.id,
-        walletAddress: body.walletAddress,
-      }, request.headers.get('CF-Connecting-IP'));
-
-      return jsonResponse({
-        success: true,
-        data: {
-          deployment: result.deployment,
-          delegatedSignerMessage: result.delegatedSigner?.message,
-          delegatedSignerId: result.delegatedSigner?.id,
-          targetSignerLocator: result.delegatedSigner?.targetSignerLocator,
-          delegatedSignerAlreadyActive: result.delegatedSigner?.alreadyActive || false,
+      await this.agentService.logActivity(
+        agent.id,
+        'deploy',
+        {
+          deploymentId: result.deployment.id,
+          walletAddress: body.walletAddress,
         },
-      }, 201, this.env);
+        request.headers.get('CF-Connecting-IP')
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            deployment: result.deployment,
+            delegatedSignerMessage: result.delegatedSigner?.message,
+            delegatedSignerId: result.delegatedSigner?.id,
+            targetSignerLocator: result.delegatedSigner?.targetSignerLocator,
+            delegatedSignerAlreadyActive: result.delegatedSigner?.alreadyActive || false,
+          },
+        },
+        201,
+        this.env
+      );
     } catch (error) {
       console.error('Deploy agent error:', error);
       return errorResponse(
@@ -1270,10 +1460,14 @@ export class Router {
     try {
       const deployments = await this.deploymentService.getDeployments(agent.id);
 
-      return jsonResponse({
-        success: true,
-        data: { deployments },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { deployments },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Get deployments error:', error);
       return errorResponse(
@@ -1296,10 +1490,14 @@ export class Router {
         return errorResponse('Unauthorized', 403, this.env);
       }
 
-      return jsonResponse({
-        success: true,
-        data: { deployment },
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          data: { deployment },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Get deployment error:', error);
       return errorResponse(
@@ -1325,14 +1523,23 @@ export class Router {
       await this.deploymentService.stopDeployment(deploymentId);
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'stop_deployment', {
-        deploymentId,
-      }, null);
+      await this.agentService.logActivity(
+        agent.id,
+        'stop_deployment',
+        {
+          deploymentId,
+        },
+        null
+      );
 
-      return jsonResponse({
-        success: true,
-        message: 'Deployment stopped',
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          message: 'Deployment stopped',
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Stop deployment error:', error);
       return errorResponse(
@@ -1345,7 +1552,7 @@ export class Router {
 
   private async submitSignatureApproval(request: Request, agent: Agent): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         walletAddress: string;
         signatureId: string;
         signerLocator: string;
@@ -1373,10 +1580,14 @@ export class Router {
         }
       }
 
-      return jsonResponse({
-        success: true,
-        message: 'Signature approval submitted',
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          message: 'Signature approval submitted',
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Signature approval error:', error);
       return errorResponse(
@@ -1389,7 +1600,7 @@ export class Router {
 
   private async submitTransactionApproval(request: Request, agent: Agent): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         walletAddress: string;
         transactionId: string;
         signerLocator: string;
@@ -1415,10 +1626,14 @@ export class Router {
         }
       }
 
-      return jsonResponse({
-        success: true,
-        message: 'Transaction approval submitted',
-      }, 200, this.env);
+      return jsonResponse(
+        {
+          success: true,
+          message: 'Transaction approval submitted',
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Transaction approval error:', error);
       return errorResponse(
@@ -1435,15 +1650,19 @@ export class Router {
 
   private getModels(): Response {
     const models = this.runtimeService.getAvailableModels();
-    return jsonResponse({
-      success: true,
-      data: { models },
-    }, 200, this.env);
+    return jsonResponse(
+      {
+        success: true,
+        data: { models },
+      },
+      200,
+      this.env
+    );
   }
 
   private async chat(request: Request, agent: Agent): Promise<Response> {
     try {
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         messages: ChatMessage[];
         model?: string;
         temperature?: number;
@@ -1479,22 +1698,22 @@ export class Router {
         return errorResponse(result.error || 'Chat failed', 500, this.env);
       }
 
-      return jsonResponse({
-        success: true,
-        data: {
-          response: result.response,
-          toolCalls: result.toolCalls,
-          tokensUsed: result.tokensUsed,
-          executionTimeMs: result.executionTimeMs,
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            response: result.response,
+            toolCalls: result.toolCalls,
+            tokensUsed: result.tokensUsed,
+            executionTimeMs: result.executionTimeMs,
+          },
         },
-      }, 200, this.env);
-    } catch (error) {
-      console.error('Chat error:', error);
-      return errorResponse(
-        error instanceof Error ? error.message : 'Chat failed',
-        500,
+        200,
         this.env
       );
+    } catch (error) {
+      console.error('Chat error:', error);
+      return errorResponse(error instanceof Error ? error.message : 'Chat failed', 500, this.env);
     }
   }
 
@@ -1518,7 +1737,7 @@ export class Router {
         return errorResponse('Deployment is not running', 400, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         messages: ChatMessage[];
         tools?: boolean;
         stream?: boolean;
@@ -1549,27 +1768,32 @@ export class Router {
       }
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'chat', {
-        deploymentId,
-        tokensUsed: result.tokensUsed,
-      }, null);
-
-      return jsonResponse({
-        success: true,
-        data: {
-          response: result.response,
-          toolCalls: result.toolCalls,
+      await this.agentService.logActivity(
+        agent.id,
+        'chat',
+        {
+          deploymentId,
           tokensUsed: result.tokensUsed,
-          executionTimeMs: result.executionTimeMs,
         },
-      }, 200, this.env);
-    } catch (error) {
-      console.error('Chat with deployment error:', error);
-      return errorResponse(
-        error instanceof Error ? error.message : 'Chat failed',
-        500,
+        null
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            response: result.response,
+            toolCalls: result.toolCalls,
+            tokensUsed: result.tokensUsed,
+            executionTimeMs: result.executionTimeMs,
+          },
+        },
+        200,
         this.env
       );
+    } catch (error) {
+      console.error('Chat with deployment error:', error);
+      return errorResponse(error instanceof Error ? error.message : 'Chat failed', 500, this.env);
     }
   }
 
@@ -1593,7 +1817,7 @@ export class Router {
         return errorResponse('Deployment is not running', 400, this.env);
       }
 
-      const body = await request.json() as {
+      const body = (await request.json()) as {
         toolCall: {
           id: string;
           type: 'function';
@@ -1620,18 +1844,27 @@ export class Router {
       const result = await this.runtimeService.executeTool(context, body.toolCall);
 
       // Log activity
-      await this.agentService.logActivity(agent.id, 'execute_tool', {
-        deploymentId,
-        tool: body.toolCall.function.name,
-      }, null);
-
-      return jsonResponse({
-        success: true,
-        data: {
-          result: result.result,
-          error: result.error,
+      await this.agentService.logActivity(
+        agent.id,
+        'execute_tool',
+        {
+          deploymentId,
+          tool: body.toolCall.function.name,
         },
-      }, 200, this.env);
+        null
+      );
+
+      return jsonResponse(
+        {
+          success: true,
+          data: {
+            result: result.result,
+            error: result.error,
+          },
+        },
+        200,
+        this.env
+      );
     } catch (error) {
       console.error('Execute tool error:', error);
       return errorResponse(
@@ -1666,42 +1899,72 @@ export class Router {
     // GET /api/catalog — full catalog from x402.wtf
     if ((route === '/' || route === '') && method === 'GET') {
       const result = await catalog.getCatalog();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Catalog unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Catalog unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
     // GET /api/catalog/registry
     if (route === '/registry' && method === 'GET') {
       const result = await catalog.getRegistry();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Registry unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Registry unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
     // GET /api/catalog/skills
     if (route === '/skills' && method === 'GET') {
       const result = await catalog.getSkills();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Skills unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Skills unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
     // GET /api/catalog/stats
     if (route === '/stats' && method === 'GET') {
       const result = await catalog.getStats();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Stats unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Stats unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
     // GET /api/catalog/skills/catalog → gateway skills catalog (KV-cached)
     if (route === '/skills/catalog' && method === 'GET') {
       const result = await catalog.getSkillsCatalog();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Skills catalog unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Skills catalog unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
     // GET /api/catalog/skills/kinds → gateway skill kinds (KV-cached)
     if (route === '/skills/kinds' && method === 'GET') {
       const result = await catalog.getSkillKinds();
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Skill kinds unavailable'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Skill kinds unavailable'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 
@@ -1711,15 +1974,22 @@ export class Router {
       const gatewayBase = this.env.CLAWD_GATEWAY_URL || 'https://clawd-gateway.fly.dev';
       try {
         const resp = await fetch(`${gatewayBase}${gatewayPath}`, {
-          headers: { 'Accept': 'application/json', 'User-Agent': 'cloudflare-agent-api/2.1.0' },
+          headers: { Accept: 'application/json', 'User-Agent': 'cloudflare-agent-api/2.1.0' },
         });
         const text = await resp.text();
         return new Response(text, {
           status: resp.status,
-          headers: { 'Content-Type': resp.headers.get('Content-Type') || 'application/json', ...corsHeaders(this.env) },
+          headers: {
+            'Content-Type': resp.headers.get('Content-Type') || 'application/json',
+            ...corsHeaders(this.env),
+          },
         });
       } catch (err) {
-        return errorResponse(`Gateway unreachable: ${err instanceof Error ? err.message : 'unknown'}`, 502, this.env);
+        return errorResponse(
+          `Gateway unreachable: ${err instanceof Error ? err.message : 'unknown'}`,
+          502,
+          this.env
+        );
       }
     }
 
@@ -1728,7 +1998,12 @@ export class Router {
       const id = route.replace('/', '');
       if (id.includes('/')) return errorResponse('Not Found', 404, this.env);
       const result = await catalog.getAgent(id);
-      if (!result.success) return errorResponse(String((result.data as { error?: string })?.error ?? 'Agent not found'), 502, this.env);
+      if (!result.success)
+        return errorResponse(
+          String((result.data as { error?: string })?.error ?? 'Agent not found'),
+          502,
+          this.env
+        );
       return jsonResponse(result, 200, this.env);
     }
 

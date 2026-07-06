@@ -1,48 +1,60 @@
-import dotenv from "dotenv";
-import Steel from "steel-sdk";
+import dotenv from 'dotenv';
+import Steel from 'steel-sdk';
 
 dotenv.config();
 
-const STEEL_API_KEY = process.env.STEEL_API_KEY?.trim() ?? "";
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() ?? "";
-const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY?.trim() ?? "";
-const TASK = process.env.TASK?.trim() ?? "Go to steel.dev and summarize the latest news";
-const OPENAI_MODEL = process.env.OPENAI_MODEL?.trim() ?? "gpt-5.5";
+const STEEL_API_KEY = process.env.STEEL_API_KEY?.trim() ?? '';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() ?? '';
+const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY?.trim() ?? '';
+const TASK = process.env.TASK?.trim() ?? 'Go to steel.dev and summarize the latest news';
+const OPENAI_MODEL = process.env.OPENAI_MODEL?.trim() ?? 'gpt-5.5';
 
 const VIEWPORT_WIDTH = 1280;
 const VIEWPORT_HEIGHT = 768;
 const MAX_STEPS = 30;
 
 type SteelAction =
-  | { action: "move_mouse"; coordinates: [number, number]; screenshot?: boolean }
+  | { action: 'move_mouse'; coordinates: [number, number]; screenshot?: boolean }
   | {
-      action: "click_mouse";
-      button: "left" | "right" | "middle" | "back" | "forward";
+      action: 'click_mouse';
+      button: 'left' | 'right' | 'middle' | 'back' | 'forward';
       coordinates?: [number, number];
       num_clicks?: number;
       screenshot?: boolean;
     }
-  | { action: "scroll"; coordinates?: [number, number]; delta_x?: number; delta_y?: number; screenshot?: boolean }
-  | { action: "type_text"; text: string; screenshot?: boolean }
-  | { action: "press_key"; keys: string[]; screenshot?: boolean }
-  | { action: "wait"; duration: number; screenshot?: boolean }
-  | { action: "take_screenshot" };
+  | {
+      action: 'scroll';
+      coordinates?: [number, number];
+      delta_x?: number;
+      delta_y?: number;
+      screenshot?: boolean;
+    }
+  | { action: 'type_text'; text: string; screenshot?: boolean }
+  | { action: 'press_key'; keys: string[]; screenshot?: boolean }
+  | { action: 'wait'; duration: number; screenshot?: boolean }
+  | { action: 'take_screenshot' };
 
 type ParsedAction =
-  | { kind: "move"; x: number; y: number }
-  | { kind: "click"; x: number; y: number; button?: "left" | "right" | "middle"; numClicks?: number }
-  | { kind: "double_click"; x: number; y: number }
-  | { kind: "scroll"; x?: number; y?: number; deltaX?: number; deltaY?: number }
-  | { kind: "type"; text: string }
-  | { kind: "keypress"; keys: string[] }
-  | { kind: "wait"; ms?: number }
-  | { kind: "screenshot" }
-  | { kind: "final"; message: string };
+  | { kind: 'move'; x: number; y: number }
+  | {
+      kind: 'click';
+      x: number;
+      y: number;
+      button?: 'left' | 'right' | 'middle';
+      numClicks?: number;
+    }
+  | { kind: 'double_click'; x: number; y: number }
+  | { kind: 'scroll'; x?: number; y?: number; deltaX?: number; deltaY?: number }
+  | { kind: 'type'; text: string }
+  | { kind: 'keypress'; keys: string[] }
+  | { kind: 'wait'; ms?: number }
+  | { kind: 'screenshot' }
+  | { kind: 'final'; message: string };
 
 function assertEnv(): void {
-  if (!STEEL_API_KEY) throw new Error("Missing STEEL_API_KEY in .env");
-  if (!OPENAI_API_KEY) throw new Error("Missing OPENAI_API_KEY in .env");
-  if (!STEEL_API_KEY.startsWith("ste-")) {
+  if (!STEEL_API_KEY) throw new Error('Missing STEEL_API_KEY in .env');
+  if (!OPENAI_API_KEY) throw new Error('Missing OPENAI_API_KEY in .env');
+  if (!STEEL_API_KEY.startsWith('ste-')) {
     throw new Error("Invalid STEEL_API_KEY format (expected key starting with 'ste-')");
   }
 }
@@ -59,48 +71,56 @@ function normalizedToPixel(x: number, y: number): [number, number] {
 
 function mapActionToSteel(action: ParsedAction): SteelAction {
   switch (action.kind) {
-    case "move": {
-      return { action: "move_mouse", coordinates: normalizedToPixel(action.x, action.y), screenshot: true };
-    }
-    case "click": {
+    case 'move': {
       return {
-        action: "click_mouse",
-        button: action.button ?? "left",
+        action: 'move_mouse',
+        coordinates: normalizedToPixel(action.x, action.y),
+        screenshot: true,
+      };
+    }
+    case 'click': {
+      return {
+        action: 'click_mouse',
+        button: action.button ?? 'left',
         coordinates: normalizedToPixel(action.x, action.y),
         ...(action.numClicks && action.numClicks > 1 ? { num_clicks: action.numClicks } : {}),
         screenshot: true,
       };
     }
-    case "double_click": {
+    case 'double_click': {
       return {
-        action: "click_mouse",
-        button: "left",
+        action: 'click_mouse',
+        button: 'left',
         coordinates: normalizedToPixel(action.x, action.y),
         num_clicks: 2,
         screenshot: true,
       };
     }
-    case "scroll": {
+    case 'scroll': {
       return {
-        action: "scroll",
-        ...(typeof action.x === "number" && typeof action.y === "number"
+        action: 'scroll',
+        ...(typeof action.x === 'number' && typeof action.y === 'number'
           ? { coordinates: normalizedToPixel(action.x, action.y) }
           : {}),
-        ...(typeof action.deltaX === "number" ? { delta_x: action.deltaX } : {}),
-        ...(typeof action.deltaY === "number" ? { delta_y: action.deltaY } : {}),
+        ...(typeof action.deltaX === 'number' ? { delta_x: action.deltaX } : {}),
+        ...(typeof action.deltaY === 'number' ? { delta_y: action.deltaY } : {}),
         screenshot: true,
       };
     }
-    case "type":
-      return { action: "type_text", text: action.text, screenshot: true };
-    case "keypress":
-      return { action: "press_key", keys: action.keys, screenshot: true };
-    case "wait":
-      return { action: "wait", duration: Math.max(0.05, (action.ms ?? 1000) / 1000), screenshot: true };
-    case "screenshot":
-      return { action: "take_screenshot" };
-    case "final":
-      return { action: "take_screenshot" };
+    case 'type':
+      return { action: 'type_text', text: action.text, screenshot: true };
+    case 'keypress':
+      return { action: 'press_key', keys: action.keys, screenshot: true };
+    case 'wait':
+      return {
+        action: 'wait',
+        duration: Math.max(0.05, (action.ms ?? 1000) / 1000),
+        screenshot: true,
+      };
+    case 'screenshot':
+      return { action: 'take_screenshot' };
+    case 'final':
+      return { action: 'take_screenshot' };
   }
 }
 
@@ -109,41 +129,46 @@ function mapActionToSteel(action: ParsedAction): SteelAction {
  * Returns null if the object doesn't map to a recognized action.
  */
 function parseSingleObject(obj: Record<string, unknown>): ParsedAction | null {
-  if (typeof obj.final === "string") return { kind: "final", message: obj.final };
-  if (typeof obj.message === "string" && obj.done === true) return { kind: "final", message: obj.message };
+  if (typeof obj.final === 'string') return { kind: 'final', message: obj.final };
+  if (typeof obj.message === 'string' && obj.done === true)
+    return { kind: 'final', message: obj.message };
 
   const action = (obj.action ?? obj) as Record<string, unknown>;
-  const type = String(action.type ?? "").toLowerCase();
+  const type = String(action.type ?? '').toLowerCase();
 
-  if (type === "move") return { kind: "move", x: Number(action.x), y: Number(action.y) };
-  if (type === "click") {
+  if (type === 'move') return { kind: 'move', x: Number(action.x), y: Number(action.y) };
+  if (type === 'click') {
     return {
-      kind: "click",
+      kind: 'click',
       x: Number(action.x),
       y: Number(action.y),
-      button: typeof action.button === "string" ? (action.button as "left" | "right" | "middle") : "left",
-      numClicks: typeof action.num_clicks === "number" ? action.num_clicks : 1,
+      button:
+        typeof action.button === 'string' ? (action.button as 'left' | 'right' | 'middle') : 'left',
+      numClicks: typeof action.num_clicks === 'number' ? action.num_clicks : 1,
     };
   }
-  if (type === "double_click" || type === "doubleclick") {
-    return { kind: "double_click", x: Number(action.x), y: Number(action.y) };
+  if (type === 'double_click' || type === 'doubleclick') {
+    return { kind: 'double_click', x: Number(action.x), y: Number(action.y) };
   }
-  if (type === "scroll") {
+  if (type === 'scroll') {
     return {
-      kind: "scroll",
-      x: typeof action.x === "number" ? action.x : undefined,
-      y: typeof action.y === "number" ? action.y : undefined,
-      deltaX: typeof action.delta_x === "number" ? action.delta_x : 0,
-      deltaY: typeof action.delta_y === "number" ? action.delta_y : 500,
+      kind: 'scroll',
+      x: typeof action.x === 'number' ? action.x : undefined,
+      y: typeof action.y === 'number' ? action.y : undefined,
+      deltaX: typeof action.delta_x === 'number' ? action.delta_x : 0,
+      deltaY: typeof action.delta_y === 'number' ? action.delta_y : 500,
     };
   }
-  if (type === "type") return { kind: "type", text: String(action.text ?? "") };
-  if (type === "keypress") {
-    if (Array.isArray(action.keys)) return { kind: "keypress", keys: action.keys.map((k) => String(k)) };
-    if (typeof action.keys === "string") return { kind: "keypress", keys: action.keys.split("+").map((k) => k.trim()) };
+  if (type === 'type') return { kind: 'type', text: String(action.text ?? '') };
+  if (type === 'keypress') {
+    if (Array.isArray(action.keys))
+      return { kind: 'keypress', keys: action.keys.map((k) => String(k)) };
+    if (typeof action.keys === 'string')
+      return { kind: 'keypress', keys: action.keys.split('+').map((k) => k.trim()) };
   }
-  if (type === "wait") return { kind: "wait", ms: typeof action.ms === "number" ? action.ms : 1000 };
-  if (type === "screenshot") return { kind: "screenshot" };
+  if (type === 'wait')
+    return { kind: 'wait', ms: typeof action.ms === 'number' ? action.ms : 1000 };
+  if (type === 'screenshot') return { kind: 'screenshot' };
 
   return null;
 }
@@ -166,7 +191,7 @@ function splitJSONObjects(raw: string): string[] {
       escape = false;
       continue;
     }
-    if (ch === "\\" && inString) {
+    if (ch === '\\' && inString) {
       escape = true;
       continue;
     }
@@ -176,10 +201,10 @@ function splitJSONObjects(raw: string): string[] {
     }
     if (inString) continue;
 
-    if (ch === "{") {
+    if (ch === '{') {
       if (depth === 0) start = i;
       depth++;
-    } else if (ch === "}") {
+    } else if (ch === '}') {
       depth--;
       if (depth === 0 && start >= 0) {
         results.push(raw.slice(start, i + 1));
@@ -232,13 +257,13 @@ async function callRalphOrchestrator(
   task: string,
   step: number,
   screenshotBase64: string,
-  history: string[],
+  history: string[]
 ): Promise<string> {
   const system = [
-    "You are Dark Ralph, the Clawd computer-use orchestrator for a Steel remote browser.",
-    "You run an OODA loop: observe the screenshot, orient to the task, decide one action, act through JSON.",
-    "Use normalized coordinates from 0..1000 for x and y.",
-    "Return ONLY valid JSON with one of:",
+    'You are Dark Ralph, the Clawd computer-use orchestrator for a Steel remote browser.',
+    'You run an OODA loop: observe the screenshot, orient to the task, decide one action, act through JSON.',
+    'Use normalized coordinates from 0..1000 for x and y.',
+    'Return ONLY valid JSON with one of:',
     '{"action":{"type":"move","x":500,"y":500}}',
     '{"action":{"type":"click","x":500,"y":500,"button":"left","num_clicks":1}}',
     '{"action":{"type":"double_click","x":500,"y":500}}',
@@ -248,29 +273,29 @@ async function callRalphOrchestrator(
     '{"action":{"type":"wait","ms":1000}}',
     '{"action":{"type":"screenshot"}}',
     '{"final":"short final answer"}',
-    "Prefer deliberate progress over repeated screenshots. Use final only when the task is complete.",
-    "No markdown, no prose outside JSON.",
-  ].join("\n");
+    'Prefer deliberate progress over repeated screenshots. Use final only when the task is complete.',
+    'No markdown, no prose outside JSON.',
+  ].join('\n');
 
   const prompt = [
     `Task: ${task}`,
     `Step: ${step}/${MAX_STEPS}`,
-    history.length ? `Recent history:\n${history.slice(-6).join("\n")}` : "",
-    "Use the screenshot to decide the next best action.",
+    history.length ? `Recent history:\n${history.slice(-6).join('\n')}` : '',
+    'Use the screenshot to decide the next best action.',
   ]
     .filter(Boolean)
-    .join("\n\n");
+    .join('\n\n');
 
   const body = {
     model: OPENAI_MODEL,
     instructions: system,
     input: [
       {
-        role: "user",
+        role: 'user',
         content: [
-          { type: "input_text", text: prompt },
+          { type: 'input_text', text: prompt },
           {
-            type: "input_image",
+            type: 'input_image',
             image_url: `data:image/png;base64,${screenshotBase64}`,
           },
         ],
@@ -279,10 +304,10 @@ async function callRalphOrchestrator(
     max_output_tokens: 800,
   };
 
-  const resp = await fetch("https://api.openai.com/v1/responses", {
-    method: "POST",
+  const resp = await fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${OPENAI_API_KEY}`,
     },
     body: JSON.stringify(body),
@@ -306,8 +331,8 @@ async function callRalphOrchestrator(
       ?.flatMap((item) => item.content ?? [])
       .map((part) => part.text)
       .filter(Boolean)
-      .join("\n");
-  if (!text) throw new Error("OpenAI returned no text action payload");
+      .join('\n');
+  if (!text) throw new Error('OpenAI returned no text action payload');
   return text;
 }
 
@@ -325,16 +350,16 @@ async function run(): Promise<void> {
     });
 
     sessionId = session.id;
-    console.log("✅ Steel session started");
+    console.log('✅ Steel session started');
     console.log(`🔗 Live viewer: ${session.sessionViewerUrl}`);
 
     const history: string[] = [];
-    let finalMessage = "Task ended without explicit final message.";
+    let finalMessage = 'Task ended without explicit final message.';
 
-    let screenshotResp = await steel.sessions.computer(session.id, { action: "take_screenshot" });
+    let screenshotResp = await steel.sessions.computer(session.id, { action: 'take_screenshot' });
     let screenshotBase64 = screenshotResp.base64_image;
 
-    if (!screenshotBase64) throw new Error("No screenshot from initial Steel capture");
+    if (!screenshotBase64) throw new Error('No screenshot from initial Steel capture');
 
     for (let step = 1; step <= MAX_STEPS; step++) {
       const modelText = await callRalphOrchestrator(TASK, step, screenshotBase64, history);
@@ -344,7 +369,7 @@ async function run(): Promise<void> {
         throw new Error(`Unable to parse OpenAI action JSON at step ${step}. Raw:\n${modelText}`);
       }
 
-      if (parsed.kind === "final") {
+      if (parsed.kind === 'final') {
         finalMessage = parsed.message;
         console.log(`\n🎉 Final: ${finalMessage}`);
         break;
@@ -358,26 +383,26 @@ async function run(): Promise<void> {
       screenshotBase64 = computerResp.base64_image;
 
       if (!screenshotBase64) {
-        const fallback = await steel.sessions.computer(session.id, { action: "take_screenshot" });
+        const fallback = await steel.sessions.computer(session.id, { action: 'take_screenshot' });
         screenshotBase64 = fallback.base64_image;
       }
 
       if (!screenshotBase64) {
-        throw new Error("No screenshot returned after action");
+        throw new Error('No screenshot returned after action');
       }
     }
 
-    console.log("\n🧾 Task:", TASK);
-    console.log("✅ Result:", finalMessage);
+    console.log('\n🧾 Task:', TASK);
+    console.log('✅ Result:', finalMessage);
   } finally {
     if (sessionId) {
       await steel.sessions.release(sessionId);
-      console.log("🧹 Steel session released");
+      console.log('🧹 Steel session released');
     }
   }
 }
 
 run().catch((err) => {
-  console.error("❌ Runner failed:", err);
+  console.error('❌ Runner failed:', err);
   process.exit(1);
 });
