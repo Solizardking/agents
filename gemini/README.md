@@ -56,7 +56,7 @@ pip install google-cloud-aiplatform[agent_engines,adk]>=1.111.0
 from google.genai import types
 from google import genai
 
-client = genai.Client(project="DEFI-AGENTS-PROJECT", location="us-central1")
+client = genai.Client(project="DEFI-AGENTS-PROJECT", location="us-central1", vertexai=True)
 
 # Create Memory Bank for long-term memory across sessions
 memory_bank = client.agent_engines.create(
