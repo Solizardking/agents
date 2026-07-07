@@ -1,0 +1,36 @@
+{
+  "$schema": "https://cloud.google.com/gemini-enterprise-agent-platform/govern/policies/schema/v1",
+  "name": "solana-access-control",
+  "version": "1.0.0",
+  "description": "Access control and authorization policies for Solana DeFi agent interactions.",
+  "policies": [
+    {
+      "id": "tier-based-tool-access",
+      "description": "Tool access is tiered based on CLAWD token holdings.",
+      "constraint": "Restrict access to swap-execution tools based on the user's CLAWD token tier. Users below the operator tier must not have access to multi-signature or high-value transaction tools.",
+      "rationale": "Token-gated access ensures that high-value operations require skin in the game. Users with more tokens have access to more powerful operations.",
+      "severity": "high"
+    },
+    {
+      "id": "read-only-default",
+      "description": "Agents default to read-only mode for new sessions.",
+      "constraint": "All agents must start in read-only mode at the beginning of a new session. Write operations (swaps, transactions, state changes) are only permitted after explicit user authorization in that session.",
+      "rationale": "Safety-first approach. Prevents accidental or unauthorized transactions from occurring in new or recovered sessions.",
+      "severity": "high"
+    },
+    {
+      "id": "audit-trail-required",
+      "description": "All on-chain operations must be logged with full detail.",
+      "constraint": "Every executed transaction, swap, or on-chain operation must include a complete audit trail in the session events: timestamps, transaction signatures, amounts, tokens, and counterparties.",
+      "rationale": "Provides accountability and traceability. Audit trails enable post-hoc analysis and dispute resolution.",
+      "severity": "high"
+    },
+    {
+      "id": "rate-limit-transactions",
+      "description": "Rate limit transaction execution to prevent abuse.",
+      "constraint": "Limit transaction execution to a maximum of 5 transactions per minute per session. High-frequency trading strategies must be explicitly authorized.",
+      "rationale": "Prevents runaway agents from executing excessive transactions. Provides a safety buffer against automated attack patterns.",
+      "severity": "medium"
+    }
+  ]
+}

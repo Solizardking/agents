@@ -1,0 +1,43 @@
+{
+  "$schema": "https://cloud.google.com/gemini-enterprise-agent-platform/govern/policies/schema/v1",
+  "name": "skill-lifecycle-governance",
+  "version": "1.0.0",
+  "description": "Semantic Governance Policy for Agent Skills lifecycle management on Solana DeFi agents.",
+  "policies": [
+    {
+      "id": "prevent-tainted-skill-loading",
+      "description": "Prevent loading outbound skills when session contains untrusted content.",
+      "constraint": "Do not load any skill that can send transactions, messages, or write to external systems if the current chat history contains content fetched from web pages, uploaded documents, or untrusted third-party sources.",
+      "rationale": "Prevents instruction injection via tool loading. An agent that scraped web content should not be able to load a swap-execution skill in the same session.",
+      "affected_skills": ["jupiter-swap", "dca-strategy", "arbitrage-scanning", "swap-execution"],
+      "affected_tools": ["execute_swap", "create_dca_order", "execute_bundle"],
+      "severity": "critical"
+    },
+    {
+      "id": "limit-dependency-installation",
+      "description": "Restrict package installations to approved allowlist.",
+      "constraint": "Only allow the npm_install and pip_install tools to run for packages on the approved list: google-cloud-aiplatform, google-cloud-storage, cloudpickle, websockets, solders, spl-token, or anchor-py.",
+      "rationale": "Prevents supply-chain attacks through skill dependency installations. An attacker who compromises a skill repository cannot install arbitrary malicious packages.",
+      "affected_skills": ["skill-lifecycle-management"],
+      "severity": "critical"
+    },
+    {
+      "id": "session-scoped-tool-access",
+      "description": "Restrict tool access based on session authentication level.",
+      "constraint": "Only allow tools that execute on-chain transactions if the user has completed wallet authentication in the current session. Read-only analysis tools are always permitted.",
+      "rationale": "Ensures wallet operations only occur in authenticated sessions. Prevents unauthorized transaction execution through session replay or cross-session injection.",
+      "affected_skills": ["jupiter-swap", "dca-strategy", "arbitrage-scanning"],
+      "affected_tools": ["execute_swap", "create_dca_order"],
+      "severity": "high"
+    }
+  ],
+  "references": {
+    "adk_tools": {
+      "list_skills": "Displays all available skill packages to the model.",
+      "load_skill": "Imports a specific skill and its associated tools into the current context dynamically.",
+      "load_skill_resource": "Retrieves necessary data or assets for a skill's operation.",
+      "run_skill_script": "Executes the underlying logic defined within the skill."
+    },
+    "model": "Google ADK skill-management tool lifecycle governed by Semantic Governance Policy (SGP)"
+  }
+}

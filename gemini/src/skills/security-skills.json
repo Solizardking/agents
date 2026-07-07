@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agentskills.io/schema/v1/skill-package.json",
+  "name": "solana-security-skills",
+  "version": "1.0.0",
+  "description": "Solana security skills package for auditing, risk monitoring, and wallet protection.",
+  "skills": [
+    {
+      "name": "smart-contract-auditing",
+      "description": "Solana smart contract security auditing tools.",
+      "tools": [
+        {"name": "analyze_program_security", "description": "Analyze Solana program for security vulnerabilities.", "input_schema": {"type": "object", "properties": {"program_id": {"type": "string"}, "code": {"type": "string"}}, "required": ["program_id", "code"]}},
+        {"name": "check_anchor_patterns", "description": "Check Anchor framework patterns for security issues.", "input_schema": {"type": "object", "properties": {"code": {"type": "string"}}, "required": ["code"]}}
+      ]
+    },
+    {
+      "name": "wallet-security",
+      "description": "Wallet security assessment and advisory tools.",
+      "tools": [
+        {"name": "assess_wallet_security", "description": "Assess wallet security posture and recommend improvements.", "input_schema": {"type": "object", "properties": {"wallet_type": {"type": "string"}, "security_concerns": {"type": "string"}}, "required": ["wallet_type"]}},
+        {"name": "analyze_transaction_risk", "description": "Analyze a transaction for security risks.", "input_schema": {"type": "object", "properties": {"transaction": {"type": "string"}}, "required": ["transaction"]}}
+      ]
+    },
+    {
+      "name": "mev-protection",
+      "description": "MEV protection tools for Solana transactions.",
+      "tools": [
+        {"name": "check_mev_risk", "description": "Check a transaction for MEV exposure.", "input_schema": {"type": "object", "properties": {"transaction_type": {"type": "string"}}, "required": ["transaction_type"]}},
+        {"name": "recommend_protection", "description": "Recommend MEV protection strategy for a transaction.", "input_schema": {"type": "object", "properties": {"swap_amount": {"type": "number"}, "token": {"type": "string"}}, "required": ["swap_amount", "token"]}}
+      ]
+    }
+  ]
+}

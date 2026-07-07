@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agentskills.io/schema/v1/skill-package.json",
+  "name": "solana-defi-skills",
+  "version": "1.0.0",
+  "description": "Solana DeFi skills package for yield farming, lending, staking, and protocol analysis.",
+  "skills": [
+    {
+      "name": "yield-farming",
+      "description": "Yield farming strategy analysis and execution on Solana.",
+      "tools": [
+        {"name": "analyze_yield_opportunities", "description": "Analyze yield farming opportunities across protocols.", "input_schema": {"type": "object", "properties": {"min_apr": {"type": "number"}, "protocols": {"type": "array", "items": {"type": "string"}}, "max_risk_score": {"type": "number"}}}},
+        {"name": "calculate_impermanent_loss", "description": "Calculate impermanent loss for a liquidity pool position.", "input_schema": {"type": "object", "properties": {"token0": {"type": "string"}, "token1": {"type": "string"}}, "required": ["token0", "token1"]}}
+      ]
+    },
+    {
+      "name": "lending-analysis",
+      "description": "Lending and borrowing protocol analysis.",
+      "tools": [
+        {"name": "compare_lending_rates", "description": "Compare lending and borrowing rates across protocols.", "input_schema": {"type": "object", "properties": {"token": {"type": "string"}, "protocols": {"type": "array", "items": {"type": "string"}}}}},
+        {"name": "check_liquidation_risk", "description": "Check liquidation risk for a lending position.", "input_schema": {"type": "object", "properties": {"position_id": {"type": "string"}, "asset_symbol": {"type": "string"}}, "required": ["position_id"]}}
+      ]
+    },
+    {
+      "name": "staking-calculator",
+      "description": "Staking rewards calculation and comparison.",
+      "tools": [
+        {"name": "calculate_staking_rewards", "description": "Calculate staking rewards for a given amount and duration.", "input_schema": {"type": "object", "properties": {"amount_sol": {"type": "number"}, "duration_days": {"type": "integer"}, "validator": {"type": "string"}}, "required": ["amount_sol", "duration_days"]}},
+        {"name": "compare_validators", "description": "Compare validator performance and commissions.", "input_schema": {"type": "object", "properties": {"top_n": {"type": "integer", "default": 10}}}}
+      ]
+    }
+  ]
+}
