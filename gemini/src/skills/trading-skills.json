@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agentskills.io/schema/v1/skill-package.json",
+  "name": "solana-trading-skills",
+  "version": "1.0.0",
+  "description": "Solana trading skills package for DEX swaps, DCA, arbitrage, and market making.",
+  "skills": [
+    {
+      "name": "jupiter-swap",
+      "description": "Execute token swaps using Jupiter DEX aggregator with optimal routing.",
+      "tools": [
+        {"name": "quote_swap", "description": "Get a quote for a token swap with price impact estimation.", "input_schema": {"type": "object", "properties": {"input_mint": {"type": "string"}, "output_mint": {"type": "string"}, "amount": {"type": "number"}}, "required": ["input_mint", "output_mint", "amount"]}},
+        {"name": "execute_swap", "description": "Execute a token swap transaction.", "input_schema": {"type": "object", "properties": {"route": {"type": "object"}, "slippage_bps": {"type": "integer"}, "wallet": {"type": "string"}}, "required": ["route", "slippage_bps", "wallet"]}}
+      ]
+    },
+    {
+      "name": "dca-strategy",
+      "description": "Dollar-cost averaging strategy management.",
+      "tools": [
+        {"name": "create_dca_order", "description": "Create a recurring DCA buy order.", "input_schema": {"type": "object", "properties": {"token_mint": {"type": "string"}, "amount_per_interval": {"type": "number"}, "interval_hours": {"type": "integer"}, "total_cycles": {"type": "integer"}}, "required": ["token_mint", "amount_per_interval", "interval_hours"]}},
+        {"name": "get_dca_performance", "description": "Get DCA strategy performance metrics.", "input_schema": {"type": "object", "properties": {"strategy_id": {"type": "string"}}, "required": ["strategy_id"]}}
+      ]
+    },
+    {
+      "name": "arbitrage-scanning",
+      "description": "Cross-DEX arbitrage opportunity detection.",
+      "tools": [
+        {"name": "scan_arbitrage", "description": "Scan for arbitrage opportunities across Solana DEXs.", "input_schema": {"type": "object", "properties": {"min_profit_usd": {"type": "number"}, "dexes": {"type": "array", "items": {"type": "string"}}}}},
+        {"name": "get_arbitrage_details", "description": "Get detailed information about an arbitrage opportunity.", "input_schema": {"type": "object", "properties": {"opportunity_id": {"type": "string"}}, "required": ["opportunity_id"]}}
+      ]
+    }
+  ]
+}
