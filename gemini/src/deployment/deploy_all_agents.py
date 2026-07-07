@@ -44,11 +44,15 @@ def parse_args():
 
 
 def setup_client(project: str, location: str):
-    """Initialize the Agent Platform SDK client."""
+    """Initialize the Agent Platform SDK client with Vertex AI."""
     try:
         from google import genai
-        client = genai.Client(project=project, location=location)
-        logger.info(f"Initialized client for project={project} location={location}")
+        client = genai.Client(
+            project=project,
+            location=location,
+            vertexai=True,
+        )
+        logger.info(f"Initialized Vertex AI client for project={project} location={location}")
         return client
     except ImportError:
         logger.error("google-cloud-aiplatform not installed. Run: pip install google-cloud-aiplatform[agent_engines,adk]>=1.88.0")

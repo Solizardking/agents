@@ -117,7 +117,7 @@ info "Step 3/6: Creating Memory Bank instance..."
 
 MEMORY_BANK_OUTPUT=$(python3 -c "
 from google import genai
-client = genai.Client(project='$PROJECT', location='$LOCATION')
+client = genai.Client(project='$PROJECT', location='$LOCATION', vertexai=True)
 mb = client.agent_engines.create(config={
     'display_name': 'DeFi Agents Memory Bank',
     'context_spec': {
@@ -153,7 +153,7 @@ info "Step 4/6: Creating Sessions instance..."
 
 SESSIONS_OUTPUT=$(python3 -c "
 from google import genai
-client = genai.Client(project='$PROJECT', location='$LOCATION')
+client = genai.Client(project='$PROJECT', location='$LOCATION', vertexai=True)
 s = client.agent_engines.create(config={'display_name': 'DeFi Agents Sessions'})
 print(s.api_resource.name)
 ")
