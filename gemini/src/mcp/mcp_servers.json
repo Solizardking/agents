@@ -1,0 +1,120 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/2025/server.json",
+  "description": "MCP server definitions for Solana DeFi agents deployed on Gemini Enterprise Agent Platform.",
+  "servers": [
+    {
+      "name": "solana-rpc",
+      "description": "Solana RPC connection for on-chain queries and transaction submission.",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@solana/mcp-server"],
+      "env": {
+        "SOLANA_RPC_URL": "${SOLANA_RPC_URL}",
+        "SOLANA_COMMITMENT": "confirmed"
+      }
+    },
+    {
+      "name": "jupiter-aggregator",
+      "description": "Jupiter DEX aggregator for token swap quoting and execution on Solana.",
+      "transport": "http",
+      "url": "https://quote-api.jup.ag/v6",
+      "tools": [
+        {"name": "quote", "url": "/quote", "method": "GET"},
+        {"name": "swap", "url": "/swap", "method": "POST"}
+      ]
+    },
+    {
+      "name": "solana-token-metadata",
+      "description": "Solana token metadata and DAS API for token information retrieval.",
+      "transport": "http",
+      "url": "${RPC_URL}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "tools": [
+        {"name": "getTokenSupply", "description": "Get token supply for a mint address"},
+        {"name": "getTokenAccountBalance", "description": "Get token account balance"},
+        {"name": "getTokenMetadata", "description": "Get token metadata and info"}
+      ]
+    },
+    {
+      "name": "birdeye-market-data",
+      "description": "Birdeye API for Solana token prices, market data, and analytics.",
+      "transport": "http",
+      "url": "https://public-api.birdeye.so",
+      "headers": {
+        "x-api-key": "${BIRDEYE_API_KEY}"
+      },
+      "tools": [
+        {"name": "price", "url": "/defi/price", "method": "GET"},
+        {"name": "token_overview", "url": "/defi/token_overview", "method": "GET"},
+        {"name": "token_security", "url": "/defi/token_security", "method": "GET"}
+      ]
+    },
+    {
+      "name": "spl-token",
+      "description": "SPL Token CLI wrapper for token account operations.",
+      "transport": "stdio",
+      "command": "spl-token",
+      "args": [],
+      "allowed_commands": [
+        "balance",
+        "accounts",
+        "supply",
+        "create-account",
+        "transfer"
+      ]
+    },
+    {
+      "name": "metaplex-core",
+      "description": "Metaplex Core protocol for NFT and digital asset management on Solana.",
+      "transport": "http",
+      "url": "https://modelcontextprotocol.name/mcp/metaplex",
+      "tools": [
+        {"name": "mintCore", "description": "Mint a new Core NFT/asset"},
+        {"name": "transfer", "description": "Transfer an asset"},
+        {"name": "update", "description": "Update asset attributes and plugins"},
+        {"name": "burn", "description": "Burn/destroy an asset"}
+      ]
+    },
+    {
+      "name": "phoenix-perps",
+      "description": "Phoenix perpetual futures DEX for leveraged trading on Solana.",
+      "transport": "http",
+      "url": "https://api.phoenix.trade/v1",
+      "env": {
+        "PHOENIX_API_KEY": "${PHOENIX_API_KEY}"
+      },
+      "tools": [
+        {"name": "getMarkets", "description": "List available perp markets"},
+        {"name": "getOrderbook", "description": "Get orderbook for a market"},
+        {"name": "placeOrder", "description": "Place a limit or market order"}
+      ]
+    },
+    {
+      "name": "defi-protocol-analyzer",
+      "description": "DeFi protocol data aggregator for TVL, APY, and protocol metrics.",
+      "transport": "http",
+      "url": "https://api.llama.fi",
+      "tools": [
+        {"name": "protocols", "url": "/protocols", "method": "GET"},
+        {"name": "protocol", "url": "/protocol/{protocol}", "method": "GET"},
+        {"name": "tvl", "url": "/charts/{protocol}", "method": "GET"}
+      ]
+    },
+    {
+      "name": "helius-rpc-enhanced",
+      "description": "Helius enhanced RPC for webhook, DAS, and advanced Solana queries.",
+      "transport": "http",
+      "url": "https://api.helius.xyz/v0",
+      "headers": {
+        "api-key": "${HELIUS_API_KEY}"
+      },
+      "tools": [
+        {"name": "webhookCreate", "description": "Create a transaction webhook"},
+        {"name": "addressHistory", "description": "Get address transaction history"},
+        {"name": "tokenBalances", "description": "Get token balances for an address"}
+      ]
+    }
+  ]
+}
