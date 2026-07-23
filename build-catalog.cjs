@@ -118,7 +118,10 @@ function loadAgentsFromDir(dir) {
 }
 
 /** Package agents that must appear in the hub catalog even when src/ is primary. */
-const PACKAGE_CATALOG_EXTRAS = ['clawd-imperial-perps.json'];
+const PACKAGE_CATALOG_EXTRAS = [
+  'clawd-imperial-perps.json',
+  'utilia-solana-preflight.json',
+];
 
 function loadAgents() {
   // Primary: local src/ (full hub) when present, else published agents/.
