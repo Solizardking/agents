@@ -1,27 +1,26 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Cheshire Terminal",
-  "description": "The sovereign AI oracle of the Cheshire Terminal Solana Agents ecosystem. Solana-native, x402-powered, CAAP/1.0 authenticated. Built on the Leviathan runtime with immutable Three Laws.",
+  "name": "eliZERO",
+  "description": "First elizaOS Zero agent powered by $CLAWD — flat-loop Zero engine, six-law harness, x402 payments, birth funding.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal",
+  "external_url": "https://cheshireterminal.ai/agents/elizero",
   "active": true,
-  "createdAt": null,
+  "createdAt": "2026-08-04",
   "updatedAt": "2026-08-05T04:44:46.766Z",
   "tags": [
-    "cheshire-terminal",
-    "solana",
-    "anchor",
-    "x402",
-    "cheshire-terminal-solana-agents",
-    "agent-staking",
+    "eliza",
+    "elizero",
+    "zero",
     "clawd",
-    "defi",
-    "metaplex",
-    "caap"
+    "solana",
+    "x402",
+    "zk",
+    "first-agent",
+    "token-gated"
   ],
   "categories": [
-    "defi"
+    "orchestration"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -35,7 +34,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal"
+      "endpoint": "https://cheshireterminal.ai/agents/elizero"
     },
     {
       "name": "A2A",
@@ -44,19 +43,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/elizero.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/elizero.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal",
+      "agentId": "openclawd:elizero",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/elizero.json"
     }
   ],
   "supportedTrust": [
@@ -65,7 +64,9 @@
     "token-gated"
   ],
   "metaplex": {
-    "programs": [],
+    "programs": [
+      "agent-registry"
+    ],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -81,8 +82,15 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal",
-    "capabilities": [],
+    "identifier": "elizero",
+    "capabilities": [
+      "clawd-token-gating",
+      "x402-payments",
+      "zero-attestation",
+      "paper-trading",
+      "ooda-loop",
+      "agent-birth-funding"
+    ],
     "payment": null,
     "agentToken": null
   }
